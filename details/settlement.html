@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>
+  <script src="../js/public.js"></script>
+</head>
+<body>
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  确认订单
+</div>
+<div class="cart settlement">
+  <div class="address-select">
+    <i class="position-icon"></i>
+    <p class="name">收货人:王晓 <span>13321342134</span></p>
+    <p class="type">上海市长宁区定西路</p>
+    <i class="right-icon"></i>
+  </div>
+  <div class="height20"></div>
+  <ul>
+    <li>
+      <div class="top">
+        <img src="../images/header-pic.png" alt="">
+        王晓
+        <a href="#">联系他</a>
+      </div>
+      <div class="col">
+        <img src="../images/img.jpg" alt="">
+        <div class="context">
+          <p>一对一情景教学（60分钟）教学
+            教学教学教学教学教学教学教一情景教学（60分钟）教学</p>
+          <div class="product clear-fix">
+            <s>服务</s>
+          </div>
+
+          <div class="add-col clear-fix">
+            <p class="price fl"><b>&yen;400</b></p>
+            <!---->
+            <div class="buy-num fr clear-fix">
+              <s class="fl" onclick="reduce(this)">&minus;</s>
+              <span>1</span>
+              <s class="fr" onclick="plus(this,5)">+</s>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="top">
+        <img src="../images/header-pic.png" alt="">
+        王晓
+        <a href="#">联系他</a>
+      </div>
+      <div class="col">
+        <img src="../images/img.jpg" alt="">
+        <div class="context">
+          <p>一对一情景教学（60分钟）教学
+            教学教学教学教学教学教学教一情景教学（60分钟）教学</p>
+          <div class="product clear-fix">
+            <s>服务</s>
+          </div>
+
+          <div class="add-col clear-fix">
+            <p class="price fl"><b>¥400</b></p>
+            <!---->
+            <div class="buy-num fr clear-fix">
+              <s class="fl" onclick="reduce(this)">&minus;</s>
+              <span>1</span>
+              <s class="fr" onclick="plus(this,5)">+</s>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="col">
+        <img src="../images/img.jpg" alt="">
+        <div class="context">
+          <p>一对一情景教学（60分钟）教学
+            教学教学教学教学教学教学教一情景教学（60分钟）教学</p>
+          <div class="product clear-fix">
+            <s>服务</s>
+          </div>
+
+          <div class="add-col clear-fix">
+            <p class="price fl"><b>¥400</b></p>
+            <!---->
+            <div class="buy-num fr clear-fix">
+              <s class="fl" onclick="reduce(this)">&minus;</s>
+              <span>1</span>
+              <s class="fr" onclick="plus(this,5)">+</s>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </li>
+  </ul>
+  <p class="current-price">
+    小计：<b>&yen;400</b>
+  </p>
+
+</div>
+<div class="fixed-all-checked clear-fix" style="display: block">
+
+  <div class="btn right fr bac1cc419">
+    结算<span>(共1份)</span>
+  </div>
+  <div class="btn fl pad32">
+    合计：<b>¥400</b>
+  </div>
+</div>
+</body>
+</html>
+<script>
+    function reduce(e) {
+        let currentNum = parseInt($(e).siblings('span').text());
+        if(currentNum === 1){
+            return false;
+        }
+        currentNum--;
+        $(e).siblings('span').text(currentNum)
+
+    }
+    function plus(e,maxLen) {
+        let currentNum = parseInt($(e).siblings('span').text());
+        if(currentNum === maxLen){
+            return false;
+        }
+        currentNum++;
+        $(e).siblings('span').text(currentNum)
+    }
+</script>

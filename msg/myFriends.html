@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+  <div class="return fixed">
+    <i onclick="history.go(-1)"></i>
+    我的好友
+  </div>
+
+  <ul class="friends-nav clear-fix">
+    <li class="checked">我的好友</li>
+    <li>关注我的</li>
+    <li>我关注的</li>
+  </ul>
+
+
+      <div class="friends">
+        <dl>
+          <dd>
+            <div class="list-top">
+              <div class="user-msg clear-fix">
+                <div class="yes" onclick="checkedFriends(this,1)">
+                  <i></i>
+                </div>
+                <div class="off">
+                  <img src="../images/header-pic.png" alt="">
+                  <span>离线</span>
+                </div>
+                <div class="msg clear-fix">
+                  <div class="clear-fix">
+                    <p class="fl">王晓1</p>
+                    <i class="fl index-num">
+                      <s>1诺&nbsp;10次</s>
+                    </i>
+                    <!--<i class="fl sex-icon"></i>-->
+                    <i class="sex-icon fl woman"></i>
+                    <s class="fl age">18</s>
+                  </div>
+                  <dl>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                  </dl>
+                </div>
+                <a href="#" class="follow contact"></a>
+              </div>
+            </div>
+          </dd>
+          <dd>
+            <div class="list-top">
+              <div class="user-msg clear-fix">
+                <div class="yes" onclick="follow(this)">
+                  <i class="big"></i>
+                </div>
+                <div class="off">
+                  <img src="../images/header-pic.png" alt="">
+                  <span>离线</span>
+                </div>
+                <div class="msg clear-fix">
+                  <div class="clear-fix">
+                    <p class="fl col999">王晓</p>
+                    <i class="fl index-num">
+                      <s>1诺&nbsp;10次</s>
+                    </i>
+                    <i class="fl sex-icon"></i>
+                    <!--<i class="sex-icon woman"></i>-->
+                    <s class="fl age">18</s>
+                  </div>
+                  <dl>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                  </dl>
+                </div>
+                <a href="#" class="follow contact"></a>
+              </div>
+            </div>
+          </dd>
+          <dd>
+            <div class="list-top">
+              <div class="user-msg clear-fix">
+                <div class="yes checked" onclick="follow(this)">
+                  <i></i>
+                </div>
+                <div class="off">
+                  <img src="../images/header-pic.png" alt="">
+                  <!--<span>离线</span>-->
+                </div>
+                <div class="msg clear-fix">
+                  <div class="clear-fix">
+                    <p class="fl">王晓</p>
+                    <i class="fl index-num">
+                      <s>1诺&nbsp;10次</s>
+                    </i>
+                    <i class="fl sex-icon"></i>
+                    <!--<i class="sex-icon woman"></i>-->
+                    <s class="fl age">18</s>
+                  </div>
+                  <dl>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                  </dl>
+                </div>
+                <a href="#" class="follow contact"></a>
+              </div>
+            </div>
+          </dd>
+        </dl>
+        <!--没朋友-->
+       <!-- <div class="no-friends">
+          <p>您尚未添加任何好友，快去广交好友吧！</p>
+          <p>让别人发现您的价值！</p>
+        </div>-->
+      </div>
+      <div style="display: none" class="friends">
+        <dl>
+          <dd>
+            <div class="list-top">
+              <div class="user-msg clear-fix">
+                <div class="yes" onclick="checkedFriends(this,1)">
+                  <i></i>
+                </div>
+                <div class="off">
+                  <img src="../images/header-pic.png" alt="">
+                  <span>离线</span>
+                </div>
+                <div class="msg clear-fix">
+                  <div class="clear-fix">
+                    <p class="fl">王晓1</p>
+                    <i class="fl index-num">
+                      <s>1诺&nbsp;10次</s>
+                    </i>
+                    <!--<i class="fl sex-icon"></i>-->
+                    <i class="sex-icon fl woman"></i>
+                    <s class="fl age">18</s>
+                  </div>
+                  <dl>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                  </dl>
+                </div>
+                <div class="follow" onclick="follow(this)"></div>
+              </div>
+            </div>
+          </dd>
+          <dd>
+            <div class="list-top">
+              <div class="user-msg clear-fix">
+                <div class="yes" onclick="follow(this)">
+                  <i class="big"></i>
+                </div>
+                <div class="off">
+                  <img src="../images/header-pic.png" alt="">
+                  <span>离线</span>
+                </div>
+                <div class="msg clear-fix">
+                  <div class="clear-fix">
+                    <p class="fl">王晓</p>
+                    <i class="fl index-num">
+                      <s>1诺&nbsp;10次</s>
+                    </i>
+                    <i class="fl sex-icon"></i>
+                    <!--<i class="sex-icon woman"></i>-->
+                    <s class="fl age">18</s>
+                  </div>
+                  <dl>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                  </dl>
+                </div>
+                <div class="follow" onclick="follow(this)"></div>
+              </div>
+            </div>
+          </dd>
+          <dd>
+            <div class="list-top">
+              <div class="user-msg clear-fix">
+                <div class="yes checked" onclick="follow(this)">
+                  <i></i>
+                </div>
+                <div class="off">
+                  <img src="../images/header-pic.png" alt="">
+                  <!--<span>离线</span>-->
+                </div>
+                <div class="msg clear-fix">
+                  <div class="clear-fix">
+                    <p class="fl">王晓</p>
+                    <i class="fl index-num">
+                      <s>1诺&nbsp;10次</s>
+                    </i>
+                    <i class="fl sex-icon"></i>
+                    <!--<i class="sex-icon woman"></i>-->
+                    <s class="fl age">18</s>
+                  </div>
+                  <dl>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                  </dl>
+                </div>
+                <div class="follow" onclick="follow(this)"></div>
+              </div>
+            </div>
+          </dd>
+        </dl>
+        <!--没朋友-->
+       <!-- <div class="no-friends">
+          <p> 没人关注您？您做的还不够好哦！</p>
+        </div>-->
+      </div>
+      <div style="display: none" class="friends">
+        <dl>
+          <dd>
+            <div class="list-top">
+              <div class="user-msg clear-fix">
+                <div class="yes" onclick="checkedFriends(this,1)">
+                  <i></i>
+                </div>
+                <div class="off">
+                  <img src="../images/header-pic.png" alt="">
+                  <span>离线</span>
+                </div>
+                <div class="msg clear-fix">
+                  <div class="clear-fix">
+                    <p class="fl">王晓1</p>
+                    <i class="fl index-num">
+                      <s>1诺&nbsp;10次</s>
+                    </i>
+                    <!--<i class="fl sex-icon"></i>-->
+                    <i class="sex-icon fl woman"></i>
+                    <s class="fl age">18</s>
+                  </div>
+                  <dl>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                  </dl>
+                </div>
+                <div class="follow checked" onclick="follow(this)"></div>
+              </div>
+            </div>
+          </dd>
+          <dd>
+            <div class="list-top">
+              <div class="user-msg clear-fix">
+                <div class="yes" onclick="follow(this)">
+                  <i class="big"></i>
+                </div>
+                <div class="off">
+                  <img src="../images/header-pic.png" alt="">
+                  <span>离线</span>
+                </div>
+                <div class="msg clear-fix">
+                  <div class="clear-fix">
+                    <p class="fl">王晓</p>
+                    <i class="fl index-num">
+                      <s>1诺&nbsp;10次</s>
+                    </i>
+                    <i class="fl sex-icon"></i>
+                    <!--<i class="sex-icon woman"></i>-->
+                    <s class="fl age">18</s>
+                  </div>
+                  <dl>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                  </dl>
+                </div>
+                <div class="follow checked" onclick="follow(this)"></div>
+              </div>
+            </div>
+          </dd>
+          <dd>
+            <div class="list-top">
+              <div class="user-msg clear-fix">
+                <div class="yes checked" onclick="follow(this)">
+                  <i></i>
+                </div>
+                <div class="off">
+                  <img src="../images/header-pic.png" alt="">
+                  <!--<span>离线</span>-->
+                </div>
+                <div class="msg clear-fix">
+                  <div class="clear-fix">
+                    <p class="fl">王晓</p>
+                    <i class="fl index-num">
+                      <s>1诺&nbsp;10次</s>
+                    </i>
+                    <i class="fl sex-icon"></i>
+                    <!--<i class="sex-icon woman"></i>-->
+                    <s class="fl age">18</s>
+                  </div>
+                  <dl>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                    <dd>推拿</dd>
+                  </dl>
+                </div>
+                <div class="follow checked" onclick="follow(this)"></div>
+              </div>
+            </div>
+          </dd>
+        </dl>
+        <!--没朋友-->
+        <!--<div class="no-friends">
+          <p>您尚无关注对象，对TA感兴趣，还不点一下？</p>
+        </div>-->
+      </div>
+
+
+  <div class="fixed-all-checked clear-fix"  style="display: none">
+    <div class="btn left fl">
+      <i onclick="follow(this)"></i>&nbsp;&nbsp;全选
+    </div>
+    <div class="btn right fr">
+      <i></i>&nbsp;&nbsp;删除
+    </div>
+  </div>
+
+
+</body>
+</html>
+<script>
+  function follow(e) {
+    $(e).toggleClass('checked')
+  }
+  $('.friends-nav li').on('click',function () {
+    $(this).addClass('checked').siblings().removeClass('checked')
+    $('.friends').eq($(this).index()).show().siblings('.friends').hide()
+  })
+ function checkedFriends(e) {
+   $(e).toggleClass('checked')
+   $('.fixed-all-checked').show()
+ }
+</script>

@@ -1,0 +1,472 @@
+<!doctype html>
+<!--suppress ALL -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/public.js"></script>
+  <script src="../js/dataSelect.js"></script>
+</head>
+<body>
+<!--返回上一页-->
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  发布
+</div>
+
+<div class="release">
+  <!--发布内容1-->
+  <div class="swiper-container release1" style="display: none">
+    <div class="swiper-wrapper">
+      <div class="release-context swiper-slide">
+        <ul>
+          <li>
+            <label>服务类型</label>
+            <input type="text"  label="服务类型"  pattern="1" placeholder="请选择服务类型" name="type" readonly>
+            <div class="select" onclick="select()" >
+              <i></i>
+            </div>
+          </li>
+          <li class="text-area">
+            <label>服务名称</label>
+            <textarea maxlength="30"  label="服务名称"  pattern="1" onkeydown="textLen(this)" placeholder="请描述您的服务名称"></textarea>
+            <p class="text-length"><s>0</s>/30</p>
+          </li>
+          <li>
+            <label>发售额</label>
+            <input type="tel"  label="发售额"   pattern="1,/^[0-9]*[1-9][0-9]*$/" placeholder="默认1000元，可用额度10000元">
+            <div class="select">
+              元
+            </div>
+          </li>
+          <li>
+            <label>认购价</label>
+            <input type="tel" label="认购价" pattern="1,/^[0-9]*[1-9][0-9]*$/" placeholder="最小为1，不超过2000">
+            <div class="select">
+              元/份
+            </div>
+          </li>
+          <li>
+            <label>服务数</label>
+            <p>20份</p>
+          </li>
+          <li>
+            <label>服务规格</label>
+            <input type="tel" placeholder="您每份服务的数量" label="服务规格" pattern="1, /^[0-9]*[1-9][0-9]*$/">
+            <!--<p>您每份服务的数量</p>-->
+          </li>
+          <li>
+            <label>服务类型</label>
+            <input type="text" name="selectCompany" label="服务类型" pattern="1" placeholder="选择您服务的单位" onclick="releaseCompany()" readonly>
+            <!--<p>选择您服务的单位</p>-->
+            <div class="select" onclick="selectCompany(this)">
+              <i></i>
+              请选择单位
+            </div>
+          </li>
+          <li>
+            <label>最小认购数</label>
+            <input type="tel" placeholder="默认1" label="最小认购数"  pattern="1, /^[0-9]*[1-9][0-9]*$/">
+            <div class="select">
+              <i></i>
+              份
+            </div>
+          </li>
+        </ul>
+        <div class="release-footer clear-fix">
+          <label class="checkbox-input-sty2">
+            <input type="checkbox" id="a1" >
+            <span></span>
+          </label>
+          <label for="a1" class="label-text"><span>认购人确认后到账</span> (默认认购款立即到账)</label>
+        </div>
+        <div class="next" onclick="submitNext()">
+          下一步
+        </div>
+      </div>
+      <!--选择服务类型-->
+      <div class="release-type swiper-slide">
+        <div class="search">
+          <div style="display: block" class="box-dl">
+            <dl class="type clear-fix">
+              <dt>特色分类</dt>
+              <dd class="checked" onclick="follow(this)">
+                <i class="type1"></i>
+                扶贫专区
+              </dd>
+              <dd class="type2" onclick="follow(this)">
+                <i class="type2"></i>
+                慈善服务
+              </dd>
+            </dl>
+            <dl class="clear-fix">
+              <dt>产品</dt>
+              <dd onclick="follow(this)">日常用品</dd>
+              <dd onclick="follow(this)">大宗商品</dd>
+              <dd onclick="follow(this)">小商品</dd>
+              <dd onclick="follow(this)">农林产品</dd>
+              <dd onclick="follow(this)">手工制品</dd>
+              <dd onclick="follow(this)">家具用品</dd>
+              <dd onclick="follow(this)">创意产品</dd>
+              <dd onclick="follow(this)">其他产品</dd>
+            </dl>
+            <dl class="clear-fix">
+              <dt>技能</dt>
+              <dd onclick="follow(this)">日常用品</dd>
+              <dd onclick="follow(this)">大宗商品</dd>
+              <dd onclick="follow(this)">小商品</dd>
+              <dd onclick="follow(this)">农林产品</dd>
+              <dd onclick="follow(this)">手工制品</dd>
+              <dd onclick="follow(this)">家具用品</dd>
+              <dd onclick="follow(this)">创意产品</dd>
+              <dd onclick="follow(this)">其他产品</dd>
+            </dl>
+            <dl class="clear-fix">
+              <dt>服务</dt>
+              <dd onclick="follow(this)">日常用品</dd>
+              <dd onclick="follow(this)">大宗商品</dd>
+              <dd onclick="follow(this)">小商品</dd>
+              <dd onclick="follow(this)">农林产品</dd>
+              <dd onclick="follow(this)">手工制品</dd>
+              <dd onclick="follow(this)">家具用品</dd>
+              <dd onclick="follow(this)">创意产品</dd>
+              <dd onclick="follow(this)">其他产品</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <!--选择服务单位-->
+
+    </div>
+  </div>
+  <div class="mask"></div>
+  <dl class="release-company">
+    <dd onclick="releaseCompany(this)">个</dd>
+    <dd onclick="releaseCompany(this)">只</dd>
+    <dd onclick="releaseCompany(this)">兜</dd>
+  </dl>
+
+  <!--下一步-->
+  <!--发布内容2-->
+  <div style="display: none" class="release2">
+    <ul>
+      <li class="text-area">
+        <label>服务内容</label>
+        <textarea maxlength="200" label="服务内容"  pattern="1" onkeydown="textLen(this)" placeholder="请描述您的服务内容"></textarea>
+        <p class="text-length"><s>0</s>/200</p>
+      </li>
+      <li class="service-pic">
+        <label>服务图片</label>
+        <p>至少1张图片最多8张，单张小于5M</p>
+        <div class="clear"></div>
+        <div class="upload-img clear-fix" id="upload-img1">
+          <!-- <div class="item">
+             <img src="" alt="">
+             <div class="delete-img"><s></s></div>
+           </div>-->
+          <div class="load-file">
+            <input id="upload1" type="file" multiple accept="image/*">
+          </div>
+        </div>
+      </li>
+      <li class="service-pic">
+        <label>证明资料</label>
+        <p>扶贫慈善服务必填，最多5张单张小于5M</p>
+        <div class="clear"></div>
+        <div class="upload-img clear-fix">
+          <!-- <div class="item">
+             <img src="" alt="">
+             <div class="delete-img"><s></s></div>
+           </div>-->
+          <div class="load-file">
+            <input id="upload2" type="file" multiple accept="image/*">
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="next">
+      <div class="prev-btn" onclick="releasePrev()">上一步</div>
+      <div class="next-btn" onclick="releaseNext()">下一步</div>
+    </div>
+  </div>
+
+  <!--下一步-->
+  <!--上传身份证-->
+  <div class="release3" style="display: block">
+    <div  class="release-col ">
+      <h4>身份证正面</h4>
+      <div class="load-id">
+        <div class="delete-load-id" onclick="deleteImgId(this)"></div>
+        <!--<div class="load-id-mask"></div>-->
+        <div class="id-bj id-bj1"></div>
+        <div class="add-img" >
+          <input type="file" accept="image/*" id="upload3">
+        </div>
+        <!--<img src="../images/img.jpg" alt="">-->
+      </div>
+      <h4>身份证反面</h4>
+      <div class="load-id">
+        <div class="delete-load-id" onclick="deleteImgId(this)"></div>
+        <!--<div class="load-id-mask"></div>-->
+        <div class="id-bj id-bj2"></div>
+        <div class="add-img" >
+          <input type="file" accept="image/*" id="upload4">
+        </div>
+        <!--<img src="../images/img.jpg" alt="">-->
+      </div>
+      <h4>手持身份证照片</h4>
+      <div class="load-id">
+        <div class="delete-load-id" onclick="deleteImgId(this)"></div>
+        <div class="load-id-mask"></div>
+        <div class="id-bj id-bj3"></div>
+        <div class="add-img">
+          <input type="file" accept="image/*"  id="upload5">
+        </div>
+        <!--<img src="../images/img.jpg" alt="">-->
+      </div>
+      <h4>身份证有效期至</h4>
+      <dl class="id-time clear-fix" onclick="selectTime(new Date().getFullYear()+20)">
+        <dd><time>1987</time><s>年</s></dd>
+        <dd><time>1987</time><s>月</s></dd>
+        <dd><time>1987</time><s>日</s></dd>
+      </dl>
+
+    </div>
+    <div class="next" >
+      提&nbsp;&nbsp;&nbsp;交
+    </div>
+  </div>
+
+  <div class="mask" id="data-mask"></div>
+  <div class="data-select" style="display: none">
+
+    <div class="clear-fix">
+      <div class="time-btn fl" onclick="hideTime()">取消</div>
+      <div class="time-btn fr" onclick="idDate()">确定</div>
+    </div>
+
+    <!--年-月-日-->
+    <div class="time-context">
+      <div class="swiper-container-nian">
+        <ul class="swiper-wrapper data-years">
+        </ul>
+      </div>
+      <div class="swiper-container-yue">
+        <ul class="swiper-wrapper data-month">
+        </ul>
+      </div>
+      <div class="swiper-container-tian">
+        <ul class="swiper-wrapper data-date">
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--//最后一步预览-->
+<div style="display: none" class="service release4">
+  <div class="banner">
+    <img src="../images/img.jpg" alt="">
+  </div>
+  <section>
+    <div class="index-col clear-fix" >
+      <div class="msg clear-fix">
+        <span>往昔的撒</span>
+        <i class="index-num">1诺&nbsp;10次</i>
+        <i class="sex-icon"></i><s class="age">18</s>
+        <div class="follow" onclick="follow(this)"></div>
+        <!--<i class="sex-icon woman"></i><s class="age">18</s>-->
+        <img src="../images/header-pic.png" alt="">
+      </div>
+    </div>
+    <div class="index-col">
+      <dl class="clear-fix">
+        <dd>我是小明我很敬业</dd>
+        <dd>我是小明我很敬业</dd>
+        <dd>我是小明我很敬业</dd>
+        <dd>我是小明我很敬业</dd>
+        <dd>我是小明我很敬业</dd>
+      </dl>
+    </div>
+    <p class="col">我的承诺：英语不仅是一种工具，更是一种眼界种眼界种眼界
+      种眼界种眼界种眼界种眼界种眼界</p>
+  </section>
+  <section>
+
+    <div class="index-col">
+      <div class="item clear-fix">
+        <a href="../details">
+          <div class="col clear-fix">
+            <s>服务</s>
+            <h3>1对1情景实战课(60分钟)</h3>
+          </div>
+          <div class="price clear-fix">
+            <p>发售额：1200/3000元</p>
+            <span>26人认购</span>
+          </div>
+          <div class="progress-bar">
+            <p style="width:50%"></p>
+          </div>
+          <div class="min-price clear-fix">
+            <p>最小认购数：2份</p>
+            <span>认购价：<code><s>200</s>元</code> /份</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="details">
+      <dl class="clear-fix">
+        <dd class="checked">服务详情</dd>
+      </dl>
+    </div>
+    <ul class="service-details">
+      <!--服务详情-->
+      <li style="display:block;" class="service-context">
+        <p>服务内容</p>
+        <div class="box">
+          英语不好，不好意思去开口说英语，这里导师全程一
+          对一指导，让英语学习变成一个有意思的事情。
+          一对一情景教学，在60分钟内让你的哑巴英语变得更
+          有意思。
+        </div>
+        <p>证明资料</p>
+        <div class="box">
+          <img src="../images/img.jpg" alt="">
+          <img src="../images/img.jpg" alt="">
+        </div>
+        <p>服务图片</p>
+        <div class="box">
+          <img src="../images/img.jpg" alt="">
+          <img src="../images/img.jpg" alt="">
+        </div>
+      </li>
+    </ul>
+  </section>
+  <div class="next">
+    <div class="prev-btn" onclick="edit()">修改</div>
+    <div class="next-btn" onclick="complete()">发布</div>
+  </div>
+</div>
+
+<!--发布成功-->
+<div class="complete" style="display: none">
+  <i></i>
+</div>
+</body>
+</html>
+<script>
+
+    function textLen(e) {
+        $(e).siblings('.text-length').find('s').text($(e).val().length)
+    }
+
+    let mySwiper = new Swiper('.swiper-container',{
+        allowTouchMove: false,
+        init:false
+    });
+
+    function select(){
+        mySwiper.slideTo(1);
+    }
+    function follow(e) {
+        let className ='checked';
+        if($(e).hasClass(className)){
+            $(e).removeClass(className)
+            $('input[name="type"]').val('')
+        }else{
+            $('dl dd').removeClass(className);
+            $(e).addClass(className);
+            $('input[name="type"]').val($.trim($(e).text()))
+        }
+        mySwiper.slideTo(0);
+    }
+    function releaseCompany(e) {
+        let className ='checked';
+        $(e).addClass(className).siblings().removeClass(className);
+        $('.release-company').slideUp();
+        $('.mask').hide()
+        $('input[name="selectCompany"]').val($.trim($(e).text()))
+    }
+    function selectCompany(e) {
+        $('.release-company').slideDown();
+        $('.mask').show();
+        $('input[name="type"]').val($.trim($(e).text()));
+    }
+    // 删除图片
+    function deleteImg(e) {
+        $(e).parents('.upload-img').find('.load-file').show()
+        $(e).parent('.item').remove();
+    }
+
+    $(function(){
+        // 初始化图片上传
+        $('#upload1').uploadImg({type:'checkbox',len:8,id:'upload1'});
+        $('#upload2').uploadImg({type:'checkbox',len:5});
+        $('#upload3').uploadImg({type:'radio'});
+        $('#upload4').uploadImg({type:'radio'});
+        $('#upload5').uploadImg({type:'radio'});
+        mySwiper.init() //初始化服务类型
+    });
+
+    // 身份证 图片删除
+    function deleteImgId(self) {
+        $(self).siblings('img').remove()
+        $(self).hide()
+        $(self).siblings('.id-bj, .add-img').show();
+
+    }
+
+    function hideTime() {
+        $('.data-select').slideUp()
+        $('#data-mask').hide()
+    }
+    function idDate() {
+        $('.data-select').slideUp()
+        $('.id-time dd').eq(0).find('time').text(sYear.n)
+        $('.id-time dd').eq(1).find('time').text(sYear.y)
+        $('.id-time dd').eq(2).find('time').text(sYear.r)
+        $('#data-mask').hide()
+    }
+
+
+
+    // 下一步验证
+    function submitNext() {
+        let s = $(".release1").verification({})
+        if(s){
+            $('.release1').hide()
+            $('.release2').show()
+        }
+    }
+    //上一部
+    function releasePrev() {
+        $('.release1').show()
+        $('.release2').hide()
+    }
+    function releaseNext() {
+        let s = $(".release2").verification({})
+        if(s){
+            $('.release2').hide()
+            $('.release3').show()
+        }
+    }
+    // 修改
+    function edit() {
+        $('.release1').show()
+        $('.release3').hide()
+    }
+    //发布
+    function complete() {
+        $('.release1').show()
+    }
+</script>

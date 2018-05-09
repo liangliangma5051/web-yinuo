@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/swiper.min.css">
+  <script src="../../js/swiper.min.js"></script>
+  <script src="../../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/jquery-2.1.4.min.js"></script>
+  <script src="../../js/public.js"></script>
+</head>
+<body>
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  修改订单
+</div>
+<div class="order">
+  <div class="edit-order-address">
+    <a href="address.html">
+      <s></s>
+      <p class="clear-fix">
+        <span class="fl">收货人:王守义</span>
+        <span class="fr">10522447444</span>
+      </p>
+      <h5>
+        上海黄浦区南京东路8号外滩SOHO大厦
+        6楼外滩路1058号
+      </h5>
+      <i class="right-icon"></i>
+    </a>
+  </div>
+  <div class="hei20"></div>
+  <dl style="display: block" class="order-item">
+    <dd>
+      <div class="order-top clear-fix">
+        <img class="edit-order-img" src="../../images/header-pic.png" alt="">
+        <span class="col999">认购人:金喜善</span>
+        <i class="nan">18</i>
+        <div class="tel-people">
+          <a href="#">
+          联系他&nbsp;&nbsp;<i class="tel-msg-icon"></i>
+          </a>
+        </div>
+        <!--<time class="colec2">剩余 <s class="timer timer1" ></s></time>-->
+      </div>
+      <div class="order-body clear-fix">
+        <img src="../../images/img.jpg" alt="">
+        <div class="item-text">
+          <div class="clear-fix">
+            <h3>1对1情景实战课（60分钟）</h3>
+            <p class="colec2">待服务</p>
+            <h4>
+              <i>农产品</i>
+              <span>发布中</span>
+            </h4>
+            <h5>
+              每份1小时
+              <div class="select">
+                数量&nbsp;
+                <div class="box clear-fix">
+                  <i class="fl" onclick="reduce(this)">&minus;</i>
+                  <span>9</span>
+                  <i class="fr" onclick="plus(this,10)">+</i>
+                </div>
+              </div>
+            </h5>
+            <h6>
+              <!--<s class="colec2">30元/份×9</s>-->
+              <span>认购额:<i class="colec2">200元</i></span>
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div class="order-bottom">
+        <p>
+          共9份&nbsp;&nbsp;实付金额:<i class="colec2">200元</i>
+          <time class="colec2">
+            剩余 <s class="timer timer1"></s>
+          </time>
+        </p>
+      </div>
+    </dd>
+  </dl>
+</div>
+
+<div class="fixed-all-checked clear-fix" style="display: block">
+  <div class="controller-btn">
+    <a href="#" class="focus">保存</a>
+    <a href="#">取消</a>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+<script>
+    $(".timer1").countDown({second:60*60*0.5})
+    function reduce(e) {
+        let currentNum = parseInt($(e).siblings('span').text());
+        if(currentNum === 1){
+            return false;
+        }
+        currentNum--;
+        $(e).siblings('span').text(currentNum)
+
+    }
+    function plus(e,maxLen) {
+        let currentNum = parseInt($(e).siblings('span').text());
+        if(currentNum === maxLen){
+            return false;
+        }
+        currentNum++;
+        $(e).siblings('span').text(currentNum)
+    }
+</script>

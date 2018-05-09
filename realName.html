@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/h5rem.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<div>
+  <!--返回上一页-->
+  <div class="return">
+    <i onclick="history.go(-1)"></i>
+  </div>
+  <!--登录-->
+  <div class="login-wrap">
+    <h1>实名认证</h1>
+    <ul class="clear-fix">
+      <li>
+        <input id="tel" type="text" placeholder="请输入您的身份证姓名" onfocus="iconShow(this)" onblur="iconHide(this)">
+        <i class="input-close" onclick="clearNull('tel')" ></i>
+      </li>
+      <li>
+        <input id="number" type="text" placeholder="请输入您的身份证号码" onfocus="iconShow(this)" onblur="iconHide(this)">
+        <i  class="input-close" onclick="clearNull('number')"></i>
+      </li>
+    </ul>
+    <div>
+      <div class="see col1cc419">
+        为了保障您的权益，请完成实名认证
+      </div>
+    </div>
+    <div class="submit-button bac1cc419" onclick="submit()">立即认证</div>
+  </div>
+  <!--报错信息-->
+  <div class="title-msg hide">
+    <div class="col">
+      实名认证失败!
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+<script>
+  function clearNull(s) {
+    $('#'+s).val('')
+  }
+  function iconShow(e) {
+    $(e).siblings('i').css('opacity','100')
+  }
+  function iconHide(e) {
+    $(e).siblings('i').css('opacity','0')
+  }
+  function getSms() {
+    var sec = 60
+    var code= $('.verification-code')
+    var interval = setInterval(function () {
+      code.addClass('col999')
+      sec--
+      code.text(sec + 's' + '后重新发送')
+      if (sec === 0) {
+        code.removeClass('col999')
+        code.text('重新获取')
+        clearInterval(interval)
+      }
+    }, 1000)
+  }
+
+</script>

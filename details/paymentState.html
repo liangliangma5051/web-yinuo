@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>
+  <script src="../js/public.js"></script>
+</head>
+<body>
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  订单状态/订单详情
+</div>
+<div class="cart settlement">
+  <!--等待买家付款-->
+  <div class="state-col">
+    <p><b>等待买家付款</b></p>
+    <span>29分54秒自动取消订单</span>
+  </div>
+  <!--收货地址-->
+  <div class="address-select">
+    <i class="position-icon"></i>
+    <p class="name">收货人:王晓 <span>13321342134</span></p>
+    <p class="type">上海市长宁区定西路</p>
+    <i class="right-icon"></i>
+  </div>
+  <div class="height20"></div>
+  <ul>
+    <li>
+      <div class="top">
+        <img src="../images/header-pic.png" alt="">
+        王晓
+        <a href="#">联系他</a>
+      </div>
+      <div class="col">
+        <img src="../images/img.jpg" alt="">
+        <div class="context">
+          <p>一对一情景教学（60分钟）教学
+            教学教学教学教学教学教学教一情景教学（60分钟）教学</p>
+          <div class="product clear-fix">
+            <s>服务</s>
+          </div>
+          <div class="add-col clear-fix">
+            <p class="price fl"><b>&yen;400</b></p>
+            <s class="price-num">x1</s>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="payment-details">
+    <h4>小计：<b>&yen;400</b></h4>
+    <div class="payment-box">
+      <span><b>他的诺券</b></span>
+      <p>诺券是他对你的承诺，请确认服务时选择使用</p>
+      <div class="payment-details-img">
+        <img src="../images/img.jpg" alt="">
+      </div>
+      <dl>
+        <dd>订单编号：<input type="text" readonly id="inputText" value="89128391038"/>
+          <input type="button"  onclick="copy()"  value="复制"/>
+        </dd>
+
+        <dd>订单类型：普通订单</dd>
+        <dd>下单时间：2017-12-13  12:00:06</dd>
+      </dl>
+    </div>
+  </div>
+<div class="fixed-all-checked clear-fix" style="display: block">
+  <span class="payment-btn bac1cc419">支付</span>
+  <span class="payment-btn">取消订单</span>
+</div>
+</div>
+</body>
+</html>
+<script>
+    function reduce(e) {
+        let currentNum = parseInt($(e).siblings('span').text());
+        if(currentNum === 1){
+            return false;
+        }
+        currentNum--;
+        $(e).siblings('span').text(currentNum)
+
+    }
+    function plus(e,maxLen) {
+        let currentNum = parseInt($(e).siblings('span').text());
+        if(currentNum === maxLen){
+            return false;
+        }
+        currentNum++;
+        $(e).siblings('span').text(currentNum)
+    }
+
+   function copy() {
+       var inputText = document.getElementById('inputText');
+       inputText.focus();
+       var currentFocus = document.activeElement;
+       inputText.setSelectionRange(0, inputText.value.length);
+       document.execCommand('copy', true);
+       currentFocus.focus();
+   }
+
+
+</script>
+
+
+

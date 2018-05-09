@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/h5rem.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/public.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+<div>
+    <!--返回上一页-->
+    <div class="return">
+        <i onclick="history.go(-1)"></i>
+    </div>
+    <!--登录-->
+    <div class="login-wrap">
+        <h1>欢迎来到一诺</h1>
+        <ul class="clear-fix">
+            <li>
+                <input id="tel" type="tel" placeholder="请输入手机号码" onfocus="iconShow(this)" onblur="iconHide(this)">
+                <i class="input-close" onclick="clearNull('tel')" ></i>
+            </li>
+            <li>
+                <input id="number" type="number" placeholder="请输入验证码" onfocus="iconShow(this)" onblur="iconHide(this)">
+                <i  class="input-close sty2" onclick="clearNull('number')"></i>
+                <div class="verification-code"  onclick="getSms()">获取验证码</div>
+            </li>
+        </ul>
+        <div>
+            <a class="see col1cc419" href="agreement.html">随便看看&gt;</a>
+        </div>
+        <div class="submit-button bac1cc419" onclick="submit()">注册/登录</div>
+        <p class="agreement">点击登录，即表示您已阅读并同意<a class="see text-underline" href="agreement.html">《用户协议》</a></p>
+    </div>
+
+    <!--第三方登陆-->
+    <div class="other-login">
+        <div class="line">
+            <p>其他登录方式</p>
+        </div>
+        <ul class="login-icon clear-fix">
+            <li class="fl clear-fix">
+                <a href="agreement.html">
+                    <img class="fr" src="images/wx-icon.png" alt="">
+                </a>
+            </li>
+            <li class="fr clear-fix">
+                <a href="agreement.html">
+                    <img class="fl" src="images/qq-icon.png" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script>
+  function clearNull(s) {
+    $('#'+s).val('')
+  }
+  function iconShow(e) {
+    $(e).siblings('i').css('opacity','100')
+  }
+  function iconHide(e) {
+    $(e).siblings('i').css('opacity','0')
+  }
+  function getSms() {
+      titleMsg('dsa')
+    var sec = 60
+    var code= $('.verification-code')
+    var interval = setInterval(function () {
+      code.addClass('col999')
+      sec--
+      code.text(sec + 's' + '后重新发送')
+      if (sec === 0) {
+        code.removeClass('col999')
+        code.text('重新获取')
+        clearInterval(interval)
+      }
+    }, 1000)
+  }
+
+</script>

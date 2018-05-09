@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <script src="js/swiper.min.js"></script>
+  <script src="js/h5rem.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<header class="clear-fix">
+  <div class="header-col screen-icon" onclick="search()"></div>
+  <div class="header-col searchText">
+    <i></i>
+    <p>
+      <a href="list/list.html">请输入需求或服务名称搜索</a>
+    </p>
+    <!--<input type="text" placeholder="请输入需求或服务名 称搜索">-->
+  </div>
+  <div class="header-col bell">
+    <a href="msg/item.html"></a>
+  </div>
+</header>
+<div class="swiper-container2">
+  <div class="swiper-wrapper">
+    <ul class="swiper-wrapper clear-fix">
+      <li class="index-col ">
+        <div class="clear-fix">
+          <div class="li-context">
+            <div class="pic">
+              <a href="details/service.html">
+                <img class="photo" src="images/img.jpg" alt="">
+              </a>
+              <div class="header-pic">
+                <img src="images/header-pic.png" alt="">
+              </div>
+              <div class="down">
+                <img src="images/index/down.gif" alt="">
+              </div>
+              <div class="pic-explain">
+                我的承诺1：英语不仅是一种工具，更是一种
+                眼界种眼的界种眼界种眼界种眼界种眼界种眼界种界种眼界种
+              </div>
+            </div>
+            <div class="msg clear-fix">
+              <span>往昔的撒</span>
+              <i class="index-num">1诺&nbsp;10次</i>
+              <i class="sex-icon"></i><s class="age">18</s>
+              <div class="follow" onclick="follow(this)"></div>
+              <!--<i class="sex-icon woman"></i><s class="age">18</s>-->
+            </div>
+            <dl class="clear-fix">
+              <dd>我是小明我很敬业</dd>
+              <dd>我是小明我很敬业</dd>
+              <dd>我是小明我很敬业</dd>
+              <dd>我是小明我很敬业</dd>
+              <dd>我是小明我很敬业</dd>
+            </dl>
+            <div class="item clear-fix">
+              <a href="details">
+                <div class="col clear-fix">
+                  <s>服务</s>
+                  <h3>1对1情景实战课(60分钟)</h3>
+                  <p>发布中</p>
+                </div>
+                <div class="price clear-fix">
+                  <p>发售额：1200/3000元</p>
+                  <span>15个/份</span>
+                </div>
+                <div class="progress-bar">
+                  <p style="width:50%"></p>
+                </div>
+                <div class="min-price clear-fix">
+                  <p>最小认购数：200元</p>
+                  <span>认购价：<code><s>200</s>元</code> /份</span>
+                </div>
+              </a>
+            </div>
+            <div class="share clear-fix">
+              <a class="fl" href="#">
+                <i></i>分享
+              </a>
+              <a class="fr" href="#">
+                <i class="buy-icon"></i>购买
+              </a>
+            </div>
+          </div>
+          <div class="index-foot-bj"></div>
+        </div>
+      </li>
+      <li class="index-col " style="display: none">
+        <div class="clear-fix">
+          <div class="li-context">
+            <div class="pic">
+              <a href="details">
+                <img class="photo" src="images/img.jpg" alt="">
+              </a>
+              <div class="header-pic">
+                <img src="images/header-pic.png" alt="">
+              </div>
+              <div class="down">
+                <img src="images/index/down.gif" alt="">
+              </div>
+              <div class="pic-explain">
+                我的承诺2：英语不仅是一种工具，更是一种
+                眼界种眼的界种眼界种眼界种眼界种眼界种眼界种界种眼界种
+              </div>
+            </div>
+            <div class="msg clear-fix">
+              <span>往昔的撒</span>
+              <i class="index-num">1诺10次</i>
+              <i class="sex-icon"></i><s class="age">18</s>
+              <div class="follow" onclick="follow(this)"></div>
+              <!--<i class="sex-icon woman"></i><s class="age">18</s>-->
+            </div>
+            <dl class="clear-fix">
+              <dd>我是小明我很敬业</dd>
+              <dd>我是小明我很敬业</dd>
+              <dd>我是小明我很敬业</dd>
+              <dd>我是小明我很敬业</dd>
+              <dd>我是小明我很敬业</dd>
+            </dl>
+            <div class="item clear-fix">
+              <a href="details">
+                <div class="col clear-fix">
+                  <s>服务</s>
+                  <h3>1对1情景实战课(60分钟)</h3>
+                  <p>发布中</p>
+                </div>
+                <div class="price clear-fix">
+                  <p>发售额：1200/3000元</p>
+                  <span>(15个/份)</span>
+                </div>
+                <div class="progress-bar">
+                  <p style="width:50%"></p>
+                </div>
+                <div class="min-price clear-fix">
+                  <p>最小认购数：200元</p>
+                  <span>认购价：<code><s>200</s>元</code> /份</span>
+                </div>
+              </a>
+            </div>
+            <div class="share clear-fix">
+              <a class="fl" href="#">
+                <i></i>分享
+              </a>
+              <a class="fr" href="#">
+                <i class="buy-icon"></i>购买
+              </a>
+            </div>
+          </div>
+          <div class="index-foot-bj"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <dl class="clear-fix">
+    <dd>
+      <a href="index.html">
+        <i class="index-page checked"></i>
+        <s>首页</s>
+      </a>
+    </dd>
+    <dd>
+      <a href="#">
+        <i class="demand-page"></i>
+        <s>需求</s>
+      </a>
+    </dd>
+    <dd>
+      <a href="#">
+        <i class="add-page"></i>
+      </a>
+    </dd>
+    <dd>
+      <a href="#">
+        <i class="msg-page"></i>
+        <s>消息</s>
+      </a>
+    </dd>
+    <dd >
+      <a href="center/index.html">
+        <i class="my-page "></i>
+        <s>我的</s>
+      </a>
+    </dd>
+  </dl>
+</footer>
+
+<div class="index-button clear-fix">
+  <div class="like-box">
+     <span class="no-like fr swiper-button-next">
+      <i></i>
+     </span>
+  </div>
+  <div class="like-box">
+      <span class="like fl swiper-button-next">
+      <i></i>
+        <!--<i class="checked"></i>-->
+     </span>
+  </div>
+</div>
+<div style="display: none" class="search">
+  <ul class="clear-fix">
+    <li class="checked">服务类型<s>&gt;</s></li>
+    <li>筛选<s>&gt;</s></li>
+    <li>智能排序<s>&gt;</s></li>
+  </ul>
+  <div style="display: block" class="box-dl">
+    <dl class="clear-fix">
+      <dt onclick="follow(this)">特色分类1</dt>
+      <dd class="checked" onclick="follow(this)">扶贫专区</dd>
+      <dd onclick="follow(this)">慈善服务</dd>
+    </dl>
+    <dl class="clear-fix">
+      <dt>产品</dt>
+      <dd onclick="follow(this)" class="checked">日常用品</dd>
+      <dd onclick="follow(this)">大宗商品</dd>
+      <dd onclick="follow(this)">日常用品</dd>
+      <dd onclick="follow(this)">大宗商品</dd>
+      <dd onclick="follow(this)">日常用品</dd>
+      <dd onclick="follow(this)">大宗商品</dd>
+    </dl>
+    <dl class="clear-fix">
+      <dt>技能</dt>
+      <dd onclick="follow(this)" class="checked">日常用品</dd>
+      <dd onclick="follow(this)">大宗商品</dd>
+      <dd onclick="follow(this)">日常用品</dd>
+      <dd onclick="follow(this)">大宗商品</dd>
+      <dd onclick="follow(this)">日常用品</dd>
+      <dd onclick="follow(this)">大宗商品</dd>
+    </dl>
+    <dl class="clear-fix">
+      <dt>服务</dt>
+      <dd onclick="follow(this)" class="checked">日常用品</dd>
+      <dd onclick="follow(this)">大宗商品</dd>
+      <dd onclick="follow(this)">日常用品</dd>
+      <dd onclick="follow(this)">大宗商品</dd>
+      <dd onclick="follow(this)">日常用品</dd>
+      <dd onclick="follow(this)">大宗商品</dd>
+      <dd onclick="follow(this)">大宗商品</dd>
+      <dd onclick="follow(this)">大宗商品</dd>
+    </dl>
+    <div class="search-submit">
+      <div class="button reset">重 置</div>
+      <div class="button ok">确  定</div>
+    </div>
+  </div>
+  <div class="box-dl center">
+    <dl class="clear-fix">
+      <dt>性别</dt>
+      <dd class="checked">男</dd>
+      <dd>女</dd>
+    </dl>
+    <dl class="clear-fix">
+      <dt>诺级</dt>
+      <dd class="checked">一级</dd>
+      <dd>二级</dd>
+      <dd>三级</dd>
+    </dl>
+    <dl class="clear-fix">
+      <dt>距离</dt>
+      <dd class="checked">5km内</dd>
+      <dd>1215km内</dd>
+      <dd>512km内</dd>
+      <dd>大宗商品</dd>
+      <dd>日常用品</dd>
+      <dd>大宗商品</dd>
+    </dl>
+    <dl class="clear-fix">
+      <dt>时间</dt>
+      <dd class="checked">1天内</dd>
+      <dd>一周内</dd>
+      <dd>1月内</dd>
+    </dl>
+    <dl class="clear-fix">
+      <dt>发行额</dt>
+      <dd><input type="tel"></dd>
+      <dd class="and">至</dd>
+      <dd><input type="tel"></dd>
+    </dl>
+    <dl class="clear-fix">
+      <dt>认购价</dt>
+      <dd><input type="tel"></dd>
+      <dd class="and">至</dd>
+      <dd><input type="tel"></dd>
+    </dl>
+    <div class="search-submit">
+      <div class="button reset">重 置</div>
+      <div class="button ok">确  定</div>
+    </div>
+  </div>
+  <div class="box-dl pl0">
+    <p class="checked">按照发布时间远近排序</p>
+    <p>按照发售额大小排序</p>
+    <p>按认购价格高低排序</p>
+    <p>按照距离远近排序</p>
+    <p>全部内容</p>
+  </div>
+</div>
+</body>
+</html>
+<script>
+    function search() {
+        $('.search').show()
+    }
+    function follow(e) {
+        $(e).toggleClass('checked')
+    }
+
+    /*let swiper = new Swiper('.swiper-container', {
+      lazy: true,
+      loop : true,
+      effect: 'coverflow',
+      navigation: {
+        nextEl: '.swiper-button-next',
+      },
+
+    });*/
+    let mySwiper2 = new Swiper('.swiper-container2',{
+        direction: 'vertical',
+        on: {
+            touchEnd: function(event) {
+                if (mySwiper2.translate < -70) {
+                    window.location.href='details/service.html'
+                }
+            }
+        },
+    });
+
+    $('.search li').on('click',function () {
+        $(this).addClass('checked').siblings().removeClass('checked');
+        $(this).hasClass('checked') ?
+            $('.box-dl').eq($(this).index()).show().siblings('.box-dl').hide()
+            : $('.box-dl').eq($(this).index()).hide().siblings('.box-dl').hide()
+    })
+    $(document).ready(function() {
+
+        setTimeout(
+            function () {
+                $('.down').hide()
+            }
+            ,3000)
+
+    });
+
+
+
+</script>

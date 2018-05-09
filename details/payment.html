@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>
+  <script src="../js/public.js"></script>
+</head>
+<body>
+
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  支付
+</div>
+<div class="payment">
+  <h3>付款金额（元）</h3>
+  <h1><b>68</b></h1>
+  <p>剩余时间内：<span class="timer" ></span></p>
+  <div class="height20"></div>
+  <ul class="payment-type">
+    <li class="col666">请选择支付方式</li>
+    <li class="col999">
+      <img class="payment-type1" src="../images/index/payment-type1.icon.png" alt="">余额支付(0元，余额不足）
+    </li>
+    <li onclick="follow(this)" class="checked"><img class="payment-type2" src="../images/index/payment-type2.icon.png" alt="">微信支付</li>
+    <li onclick="follow(this)"><img class="payment-type3" src="../images/index/payment-type3.icon.png" alt="">易联支付</li>
+    <li onclick="follow(this)"><img class="payment-type4" src="../images/index/payment-type4.icon.png" alt="">请选择支付方式</li>
+  </ul>
+  <div class="submit-button bac1cc419">
+    <a href="#">
+      确认支付
+    </a>
+  </div>
+</div>
+</body>
+</html>
+<script>
+    $(function () {
+
+        function follow(el) {
+            $(el).addClass('checked').siblings().removeClass('checked')
+        }
+
+      $('.timer').countDown({second:60*60*2,hour:true})
+    })
+
+</script>
+
+
