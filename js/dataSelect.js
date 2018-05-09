@@ -15,7 +15,7 @@ var mySwiperNian,mySwiperYue,mySwiperTian;
 function selectTime(selectNian) {
     $('#data-mask').show();
     $('.data-select').slideDown()
-    niankk = selectNian
+    niankk = Math.ceil(selectNian)
     nian()
     yue();
     tian();
@@ -34,11 +34,18 @@ function selectTime(selectNian) {
 }
 // 渲染年
 function nian() {
+    // debugger
     let dataLi =$('<li class="swiper-slide" onclick="selectYears(this)"></li>')
     $('.data-years').html('')
     if(niankk < year){
         for(let s=year;s>=niankk;s--){
             dataLi.text(s)
+            $('.data-years').append(dataLi.clone())
+        }
+    }
+    else if(niankk-year === 1){
+        for(let i=niankk;i>=year;i--){
+            dataLi.text(i)
             $('.data-years').append(dataLi.clone())
         }
     }
@@ -264,21 +271,3 @@ function selectDay(event) {
 }
 
 
-// 确定
-function idDate() {
-    if(sYear.n && sYear.y && sYear.d){
-        hideTime();
-        console.log(sYear)
-        return sYear;
-    }else{
-        titleMsg('日期选择不正确')
-        return false;
-
-    }
-
-}
-// 取消
-function hideTime() {
-    $('.data-select').slideUp()
-    $('#data-mask').hide()
-}

@@ -139,6 +139,7 @@
         $('.buy-nav li').eq(num).addClass('col1cc419').siblings().removeClass('col1cc419')
     }
     function b(snum) {
+        // debugger
         if($('.buy-sub-nav dl').eq(snum).css('display') == 'none'){
             $('.voucher-mask').show()
         }else{
@@ -146,7 +147,6 @@
         }
         $('.buy-sub-nav ul li').eq(snum).addClass('col1cc419').siblings().removeClass('col1cc419');
         $('.buy-sub-nav dl').eq(snum).slideToggle().siblings('dl').hide();
-        $('.voucher-mask').show()
     }
     function closeDl(e) {
 

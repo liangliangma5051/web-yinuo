@@ -1307,7 +1307,7 @@ footer {
     width: 100%;
     padding-left: 2.304rem; }
     .product .product-msg .progress-bar {
-      margin: 0.048rem 0 0.288rem 0; }
+      margin: 0.048rem 0 0.24rem 0; }
     .product .product-msg .bottom-l, .product .product-msg .bottom-r {
       color: #999; }
       .product .product-msg .bottom-l i, .product .product-msg .bottom-r i {
@@ -1345,7 +1345,7 @@ footer {
     font-size: 0.192rem; }
   .product strong {
     color: #999;
-    margin-top: 0.096rem; }
+    margin-top: 0.144rem; }
 
 .follow {
   display: block;
@@ -1777,6 +1777,14 @@ footer {
     height: 0.9408rem;
     line-height: 0.9408rem;
     text-align: center; }
+    .fixed-all-checked .btn span {
+      display: block;
+      height: 0.336rem;
+      line-height: 0.336rem; }
+      .fixed-all-checked .btn span:first-child {
+        padding-top: 0.144rem; }
+      .fixed-all-checked .btn span:nth-child(2) {
+        color: #999; }
     .fixed-all-checked .btn b {
       font-size: 0.2592rem;
       color: #f7392e;
@@ -2196,6 +2204,11 @@ i.index-num {
     margin-top: 0.336rem;
     resize: none;
     color: #333; }
+  .release li.text-area .current-text-area {
+    position: absolute;
+    top: 0.336rem;
+    left: 2.304rem;
+    z-index: -1; }
 .release .text-length {
   position: absolute;
   bottom: 0.144rem;
@@ -5067,5 +5080,24 @@ i.nv {
     width: 100%;
     height: 2.88rem;
     margin-bottom: 0.192rem; }
+
+.item.style2 li {
+  margin-bottom: 0.192rem; }
+.item.style2 .checkbox-input {
+  position: absolute;
+  left: 0;
+  top: 0.768rem;
+  z-index: 3; }
+.item.style2 .item-context {
+  padding-top: 0.24rem !important; }
+.item.style2 .product-msg {
+  padding-left: 2.784rem; }
+.item.style2 .product img {
+  left: 0.6336rem;
+  width: 1.92rem;
+  height: 1.92rem;
+  top: 0.0576rem; }
+.item.style2 .index-num {
+  margin-top: 0.3648rem; }
 
 /*# sourceMappingURL=style.css.map */

@@ -19,7 +19,7 @@
   <i onclick="history.go(-1)"></i>
   诺券回购
 </div>
-<div class="voucher">
+<div class="voucher" id="btn1">
   <ul class="item">
     <li>
       <div class="item-context">
@@ -179,15 +179,14 @@
     function followAll(e) {
 
         if($(e).hasClass('checked')){
-            $('.checkbox-input input').attr('checked',false)
+            $('.checkbox-input input').prop('checked',false)
             $(e).removeClass('checked')
         }else{
-            $('.checkbox-input input').attr('checked',true)
+            $('.checkbox-input input').prop('checked',true)
             $(e).addClass('checked')
         }
 
     }
-
     function reduce(e) {
         let currentNum = parseInt($(e).siblings('span').text());
         if(currentNum === 1){

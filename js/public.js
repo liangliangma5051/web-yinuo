@@ -133,6 +133,13 @@ $.fn.extend({
                         return false;
                     }
                 }
+                else if(current.getAttribute('pattern') == 'itemIsNull'){
+                    if($(current).find('.item').length === 0){
+                        isTrue = false
+                        titleMsg(current.getAttribute('label')+'不能为空')
+                        return false;
+                    }
+                }
             })
         };
         _self.isOk = function () {

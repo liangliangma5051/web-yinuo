@@ -64,6 +64,22 @@
 </body>
 </html>
 <script>
-    //选择的日期
-    console.log(sYear)
+    // 确定
+    function idDate() {
+        if(sYear.n && sYear.y && sYear.d){
+            hideTime();
+            console.log(sYear)
+            return sYear;
+        }else{
+            titleMsg('日期选择不正确')
+            return false;
+
+        }
+
+    }
+    // 取消
+    function hideTime() {
+        $('.data-select').slideUp()
+        $('#data-mask').hide()
+    }
 </script>
