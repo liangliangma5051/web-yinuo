@@ -161,6 +161,10 @@
   </div>
 </div>
 
+<div class="mask-release" onclick="hideMask()">
+  <a href="demand/my/release.html" class="icon1"></a>
+  <a href="release" class="icon2"></a>
+</div>
 <footer>
   <dl class="clear-fix">
     <dd>
@@ -175,10 +179,8 @@
         <s>需求</s>
       </a>
     </dd>
-    <dd>
-      <a href="#">
-        <i class="add-page"></i>
-      </a>
+    <dd onclick="showMask()">
+      <i class="add-page"></i>
     </dd>
     <dd>
       <a href="#">
@@ -352,6 +354,12 @@
 
     });
 
+    function showMask() {
+      $('.mask-release').show()
+    }
+    function hideMask() {
+        $('.mask-release').hide()
+    }
 
 
 </script>

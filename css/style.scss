@@ -68,6 +68,9 @@ img{
 .back-f9f9f9{
   background: #f9f9f9 !important;
 }
+.back-bbb{
+  background: #bbb !important;
+}
 .text-underline{
   text-decoration:underline
 }
@@ -5988,6 +5991,35 @@ i.nv{
   *{
     position: relative;
   }
+  .order-top.first{
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: r(130);
+    //padding-bottom: r(30);
+    .index-num{
+      margin-top: r(38);
+    }
+    ul{
+      position: absolute;
+      bottom:r(13);
+      left:r(145)
+    }
+    li{
+        color: #444;
+        background: #ededed;
+        float: left;
+        border-radius: r(8);
+        font-size: r(20);
+        height: r(28);
+        line-height: r(32);
+        overflow: hidden;
+        padding: 0 r(7);
+      float: left;
+      margin-right: r(20);
+    }
+  }
+
   .title{
     font-size: r(28);
     height: r(108);
@@ -6171,6 +6203,82 @@ i.nv{
   }
   .index-num{
     margin-top: r(38);
+  }
+
+}
+.set-list{
+  *{
+    overflow: hidden;
+    position: relative;
+    font-size: r(30);
+  }
+  li{
+    height: r(108);
+    line-height: r(115);
+    border-bottom: 1px solid #eee;
+    padding: 0 r(32);
+    input{
+      width: 100%;
+    }
+    &.text{
+      height: r(300);
+      padding: r(30) r(32);
+      box-sizing: border-box;
+      textarea{
+        width: 100%;
+        resize: none;
+        height: r(240);
+      }
+    }
+
+  }
+  a{
+    font-size: r(30);
+    line-height: r(115);
+    position: absolute;
+    top:0;right: 0;left: 0;bottom:0;
+    padding: 0 r(32);
+  }
+  i{
+    display: block;
+    width: r(15);
+    height: r(27);
+    background: url("../images/index/to-right.png") no-repeat;
+    background-size: contain;
+    margin-top:r(42);
+    margin-left: r(10);
+    float: right;
+  }
+  &.about{
+    a{
+      //float: right;
+      text-align: right;
+    }
+  }
+}
+.pos-fix-b.name{
+  text-align: center;
+  line-height: r(100);
+}
+.mask-release{
+  display: none;
+  position: fixed;
+  background: rgba(51,51,51,0.5);
+  top:0;left:0;bottom:0;right: 0;
+  z-index: 99;
+  a{
+    position: absolute;
+    bottom: r(140);
+    left:20%;
+    width: r(160);
+    height: r(212);
+    background: url("../images/voucher/nav17.png") no-repeat;
+    background-size: contain;
+    &.icon2{
+      left:60%;
+      background: url("../images/voucher/nav18.png") no-repeat;
+      background-size: contain;
+    }
   }
 
 }

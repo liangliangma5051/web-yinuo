@@ -60,6 +60,9 @@ img {
 .back-f9f9f9 {
   background: #f9f9f9 !important; }
 
+.back-bbb {
+  background: #bbb !important; }
+
 .text-underline {
   text-decoration: underline; }
 
@@ -4963,6 +4966,29 @@ i.nv {
 
 .demand-body * {
   position: relative; }
+.demand-body .order-top.first {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 1.248rem; }
+  .demand-body .order-top.first .index-num {
+    margin-top: 0.3648rem; }
+  .demand-body .order-top.first ul {
+    position: absolute;
+    bottom: 0.1248rem;
+    left: 1.392rem; }
+  .demand-body .order-top.first li {
+    color: #444;
+    background: #ededed;
+    float: left;
+    border-radius: 0.0768rem;
+    font-size: 0.192rem;
+    height: 0.2688rem;
+    line-height: 0.3072rem;
+    overflow: hidden;
+    padding: 0 0.0672rem;
+    float: left;
+    margin-right: 0.192rem; }
 .demand-body .title {
   font-size: 0.2688rem;
   height: 1.0368rem;
@@ -5099,5 +5125,71 @@ i.nv {
   top: 0.0576rem; }
 .item.style2 .index-num {
   margin-top: 0.3648rem; }
+
+.set-list * {
+  overflow: hidden;
+  position: relative;
+  font-size: 0.288rem; }
+.set-list li {
+  height: 1.0368rem;
+  line-height: 1.104rem;
+  border-bottom: 1px solid #eee;
+  padding: 0 0.3072rem; }
+  .set-list li input {
+    width: 100%; }
+  .set-list li.text {
+    height: 2.88rem;
+    padding: 0.288rem 0.3072rem;
+    box-sizing: border-box; }
+    .set-list li.text textarea {
+      width: 100%;
+      resize: none;
+      height: 2.304rem; }
+.set-list a {
+  font-size: 0.288rem;
+  line-height: 1.104rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0 0.3072rem; }
+.set-list i {
+  display: block;
+  width: 0.144rem;
+  height: 0.2592rem;
+  background: url("../images/index/to-right.png") no-repeat;
+  background-size: contain;
+  margin-top: 0.4032rem;
+  margin-left: 0.096rem;
+  float: right; }
+.set-list.about a {
+  text-align: right; }
+
+.pos-fix-b.name {
+  text-align: center;
+  line-height: 0.96rem; }
+
+.mask-release {
+  display: none;
+  position: fixed;
+  background: rgba(51, 51, 51, 0.5);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99; }
+  .mask-release a {
+    position: absolute;
+    bottom: 1.344rem;
+    left: 20%;
+    width: 1.536rem;
+    height: 2.0352rem;
+    background: url("../images/voucher/nav17.png") no-repeat;
+    background-size: contain; }
+    .mask-release a.icon2 {
+      left: 60%;
+      background: url("../images/voucher/nav18.png") no-repeat;
+      background-size: contain; }
 
 /*# sourceMappingURL=style.css.map */
