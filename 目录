@@ -71,7 +71,8 @@ service/  服务管理
 
 
 demand/  求购
-求购列表           index.html
+求购列表           demand/list.html
+我的求购列表           index.html
 
 demand/my/
 我的求购详情       myDetails.html
@@ -82,6 +83,7 @@ demand/participate/
 我参加的求购详情        participateDetails.html
 我参加的求购列表        participateList.html
 立即参加求购选择服务     participateJoin.html
+
 
 
 set/

@@ -4296,7 +4296,7 @@ i.nv {
     .voucher .voucher-header h3 {
       height: 1.44rem;
       font-size: 0.3648rem;
-      line-height: 0.72rem; }
+      line-height: 0.624rem; }
     .voucher .voucher-header h4 {
       font-size: 0.432rem;
       height: 1.44rem;
@@ -4332,8 +4332,8 @@ i.nv {
     .voucher .progress .line {
       position: absolute;
       top: 0.096rem;
-      left: 1.296rem;
-      right: 1.296rem;
+      left: 1.152rem;
+      right: 1.152rem;
       background: #333;
       height: 0.096rem;
       z-index: 0; }

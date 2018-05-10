@@ -5149,7 +5149,7 @@ i.nv{
 
     h3{
       height: r(150);
-      font-size: r(38);line-height: r(75);
+      font-size: r(38);line-height: r(65);
     }
     h4{
       font-size: r(45);
@@ -5188,7 +5188,7 @@ i.nv{
     }
     .line{
       position: absolute;
-      top:r(10);left:r(135);right: r(135); background: #333;
+      top:r(10);left:r(120);right: r(120); background: #333;
       height: r(10);
       z-index: 0;
       .line-current{
