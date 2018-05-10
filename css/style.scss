@@ -2074,7 +2074,7 @@ footer{
   height: r(98);
   left: 0;
   width: 100%;
-  z-index: 8;
+  z-index: 4;
   box-shadow: 0px -1px 3px  #ededed;
   .btn{
     width: r(180);
@@ -2165,6 +2165,18 @@ footer{
     }
   }
 }
+.participate-title{
+  padding: r(15) r(32) 0;
+  p{
+    line-height: 1.5;
+    color: #333;
+    font-size: r(28);
+  }
+  span{
+    color: #999;
+  }
+}
+
 
 .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
   margin: 0;
@@ -4886,6 +4898,7 @@ i.nv{
     position: relative;
     line-height: 1.1;
   }
+  padding-bottom: r(100);
   .photo-box{
     overflow:hidden;
     border-radius: 50%;
@@ -5102,11 +5115,14 @@ i.nv{
     //overflow: hidden;
 
   }
+  a{
+    position: initial;
+  }
   position: relative;
   .voucher-mask{
     display: none;
-    position: absolute;
-    top:0;left: 0;right: 0;bottom:0;
+    position: fixed;
+    top:r(100);left: 0;right: 0;bottom:0;
     background:rgba(51,51,51,0.5) ;
     z-index: 5;
   }
@@ -6182,25 +6198,43 @@ i.nv{
   li{
     margin-bottom: r(20);
   }
+  &.participateList{
+    .product-msg{
+      padding-left: r(220);
+    }
+    .product{
+      img{
+        left:0;
+      }
+    }
+
+
+  }
   .checkbox-input{
     position: absolute;
     left:0;top:r(80);
     z-index: 3;
   }
   .item-context{
-    padding-top: r(25) !important;
+    padding-top: r(15) !important;
   }
   .product-msg{
     padding-left: r(290);
   }
-  .product{
-    img{
-      left:r(66);width: r(200);
-      height: r(200);
-      top:r(6)
-    }
+  li{
+    .product{
 
+      padding-bottom: r(15);
+
+      img{
+        left:r(66);width: r(200);
+        height: r(200);
+        top:r(6)
+      }
+
+    }
   }
+
   .index-num{
     margin-top: r(38);
   }

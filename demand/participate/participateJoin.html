@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/swiper.min.css">
+  <script src="../../js/swiper.min.js"></script>
+  <script src="../../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/jquery-2.1.4.min.js"></script>
+  <script src="../../js/public.js"></script>
+</head>
+<body>
+<!--返回上一页-->
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  选择服务
+</div>
+<div class="voucher">
+  <div class="voucher-mask"></div>
+  <div class="buy-sub-nav">
+    <ul>
+      <li onclick="b(0)">参与时间</li>
+      <li onclick="b(1)">发售额</li>
+      <li onclick="b(2)">认购价</li>
+    </ul>
+    <dl>
+      <dd onclick="closeDl(this)">参与时间由近到远</dd>
+      <dd onclick="closeDl(this)">参与时间由远到近</dd>
+      <dd onclick="closeDl(this)">全部内容</dd>
+    </dl>
+    <dl>
+      <dd onclick="closeDl(this)">发售额由少到多</dd>
+      <dd onclick="closeDl(this)">发售额由多到少</dd>
+      <dd onclick="closeDl(this)" >全部内容</dd>
+    </dl>
+    <dl>
+      <dd onclick="closeDl(this)">认购价由少到多</dd>
+      <dd onclick="closeDl(this)">认购价由多到少</dd>
+      <dd onclick="closeDl(this)">全部内容</dd>
+    </dl>
+
+  </div>
+  <div class="participate-title">
+    <p>请选择参与求购的服务(单选)</p>
+    <span>无合适服务，可发布新服务参与</span>
+  </div>
+  <ul class="item style2">
+    <li>
+      <div class="item-context">
+        <div class="product clear-fix">
+          <label class="checkbox-input">
+            <input type="radio" checked name="item">
+            <span></span>
+          </label>
+          <img src="../../images/img.jpg" alt="">
+          <div class="product-msg">
+            <p>陪<b>跑步</b>(60分钟)</p>
+            <div class="clear-fix">
+              <s>服务</s><span>3天前</span>
+            </div>
+            <strong>发售额：1200/3000元</strong>
+            <div class="progress-bar">
+              <p style="width:50%"></p>
+            </div>
+            <div class="clear-fix">
+              <div class="bottom-l fl">26人认购</div>
+              <div class="bottom-r fr">认购价：<i><b>200</b>元</i>/份</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item-context">
+        <div class="product clear-fix">
+          <label class="checkbox-input">
+            <input type="radio"  name="item">
+            <span></span>
+          </label>
+          <img src="../../images/img.jpg" alt="">
+          <div class="product-msg">
+            <p>陪<b>跑步</b>(60分钟)</p>
+            <div class="clear-fix">
+              <s>服务</s><span>3天前</span>
+            </div>
+            <strong>发售额：1200/3000元</strong>
+            <div class="progress-bar">
+              <p style="width:50%"></p>
+            </div>
+            <div class="clear-fix">
+              <div class="bottom-l fl">26人认购</div>
+              <div class="bottom-r fr">认购价：<i><b>200</b>元</i>/份</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+</div>
+<div class="fixed-all-checked">
+  <dl>
+    <dd>发布服务</dd>
+    <dd class="style">确定参与</dd>
+  </dl>
+</div>
+</body>
+</html>
+<script>
+    function a(num) {
+        $('.buy-nav li').eq(num).addClass('col1cc419').siblings().removeClass('col1cc419')
+    }
+    function b(snum) {
+        // debugger
+        if($('.buy-sub-nav dl').eq(snum).css('display') == 'none'){
+            $('.voucher-mask').show()
+        }else{
+            $('.voucher-mask').hide()
+        }
+        $('.buy-sub-nav ul li').eq(snum).addClass('col1cc419').siblings().removeClass('col1cc419');
+        $('.buy-sub-nav dl').eq(snum).slideToggle().siblings('dl').hide();
+    }
+    function closeDl(e) {
+
+        $('.buy-sub-nav dl,.voucher-mask').hide()
+        $(e).addClass('checked').siblings().removeClass('checked');
+    }
+
+
+    function followAll(e){
+        if($(e).hasClass('checked')){
+            $('.item input[type="checkbox"]').each(function (a,current) {
+                $(current).prop('checked',false)
+            })
+            $(e).removeClass('checked')
+        }else{
+            $('.item input[type="checkbox"]').each(function (a,current) {
+                $(current).prop('checked',true)
+            })
+            $(e).addClass('checked')
+        }
+
+    }
+</script>

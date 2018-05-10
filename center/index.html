@@ -114,7 +114,7 @@
   <dl class="clear-fix">
     <dd>
       <a href="../index.html">
-        <i class="index-page"></i>
+        <i class="index-page checked"></i>
         <s>首页</s>
       </a>
     </dd>
@@ -124,10 +124,8 @@
         <s>需求</s>
       </a>
     </dd>
-    <dd>
-      <a href="#">
-        <i class="add-page"></i>
-      </a>
+    <dd onclick="showMask()">
+      <i class="add-page"></i>
     </dd>
     <dd>
       <a href="#">
@@ -136,12 +134,25 @@
       </a>
     </dd>
     <dd >
-      <a href="#">
-        <i class="my-page checked"></i>
+      <a href="../center/index.html">
+        <i class="my-page "></i>
         <s>我的</s>
       </a>
     </dd>
   </dl>
 </footer>
+
+<div class="mask-release" onclick="hideMask()">
+  <a href="../demand/my/release.html" class="icon1"></a>
+  <a href="../release" class="icon2"></a>
+</div>
 </body>
 </html>
+<script>
+    function showMask() {
+        $('.mask-release').show()
+    }
+    function hideMask() {
+        $('.mask-release').hide()
+    }
+</script>

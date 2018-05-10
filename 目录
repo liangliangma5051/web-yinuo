@@ -68,3 +68,23 @@ service/  服务管理
 服务管理列表        index.html
 服务管理详情        details.html
 
+
+
+demand/  求购
+求购列表           index.html
+
+demand/my/
+我的求购详情       myDetails.html
+我的求购参与者     myJoin.html
+发布求购           release.html
+
+demand/participate/
+我参加的求购详情        participateDetails.html
+我参加的求购列表        participateList.html
+立即参加求购选择服务     participateJoin.html
+
+
+set/
+设置       index.html
+关于我们   about.html
+意见反馈   opinion.html
