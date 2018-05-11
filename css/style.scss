@@ -18,6 +18,7 @@ $designWidth : 750; //写scss之前，必须要先定义designWidth。
   -moz-tap-highlight-color:rgba(0,0,0,0);
   -o-tap-highlight-color:rgba(0,0,0,0);
   tap-highlight-color:rgba(0,0,0,0);
+  font-size: r(24);
 
 }
 
@@ -26,6 +27,8 @@ body{
   margin: auto;
   font: r(24)/1.5 '苹方', 'Adobe 黑体 Std',"Microsoft YaHei", arial, 微软雅黑, tahoma, 宋体, sans-serif;
   color: #333;
+  max-width: 680px;
+  margin: auto;
 }
 
 input:focus,input:link,input{
@@ -36,9 +39,6 @@ input:focus,input:link,input{
 }
 .fr{
   float: right;
-}
-.font-iphone{
-  font-family: '苹方';
 }
 .clear{
   clear: both;
@@ -74,7 +74,10 @@ img{
 .text-underline{
   text-decoration:underline
 }
-b{font-weight: bold !important; display: inline !important;}
+b{font-weight: bold !important; display: inline !important;font-size: inherit}
+a,span,s,strong,time{
+  font-size: inherit
+}
 input,textarea{
   font:r(24)/1.5 '苹方','Adobe 黑体 Std','黑体',"Microsoft YaHei", arial, 微软雅黑, tahoma, 宋体, sans-serif;
 }
@@ -86,10 +89,12 @@ input,textarea{
 h1{
   font-size: r(60);
   line-height: r(120);
+  font-weight: bold;
 }
 .return{
   background: white;
   color: #333;
+  font-weight: bold;
   font-size: r(34);
   text-align: center;
   height: r(88);
@@ -104,7 +109,7 @@ h1{
   }
   i{
     display: block;
-    background: url("../images/return-icon.png") no-repeat;
+    background: url("../images/return-icon.png?v=1") no-repeat;
     background-size: contain;
     width: r(23);
     height: r(40);
@@ -250,7 +255,7 @@ h1{
 .other-login{
   //position: absolute;
   //bottom: r(40);
-  margin-top: r(40);
+  margin-top: r(100);
   width: 100%;
   box-sizing: border-box;
   padding: r(0) r(40);
@@ -538,8 +543,8 @@ p.line20{
 }
 
 .checkbox-input{
-  width: r(38);
-  height: r(38);
+  width: r(36);
+  height: r(36);
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -548,8 +553,9 @@ p.line20{
     transition: all 0.3s;
     display: block;
     position: absolute; left: 0; top: 0;bottom: 0;
-    width: r(38);
-    height: r(38);
+    width: r(40);
+    height: r(40);
+    border: 0;
     background: red;
     background: url("../images/no-checked.png");
     background-size: contain;
@@ -892,6 +898,12 @@ header{
   position: absolute !important;
   right: -(r(32));top:0;
 }
+.swiper-wrapper li.index-col{
+  width: 100%;
+}
+.swiper-slide{
+  width: 100% !important;
+}
 .index-col{
   padding: 0 r(20);
   margin-top: r(10);
@@ -946,7 +958,7 @@ header{
   .li-context{
     border-radius: r(10);
     overflow: hidden;
-    border: 1px solid #f4f4f4;
+    border: 1px solid #eee;
 
   }
   .msg{
@@ -1031,8 +1043,8 @@ header{
     }
   }
   .item{
-    border-bottom: 1px solid #f4f4f4;
-    border-top: 1px solid #f4f4f4;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
     *{
       line-height: 1;
     }
@@ -1060,7 +1072,6 @@ header{
         right: r(32);
         margin-top: r(3);
         font-size: r(24);
-        @extend .font-iphone;
       }
     }
   }
@@ -1147,7 +1158,7 @@ footer{
   left: 0;
   width: 100%;
   z-index: 8;
-  box-shadow: 0px -1px 3px  #ededed;
+  box-shadow: 0px -1px 5px rgba(180,180,180,0.2);
   dl{
     dd{
       float: left;
@@ -1198,8 +1209,8 @@ footer{
         }
         &.msg-page{
           position: relative;
-          top: r(2);
-          margin-top: r(15);
+          top: r(4);
+          margin-top: r(18);
           width: r(44);
           height: r(39);
           background: url("../images/index/msg-icon.png") no-repeat;
@@ -1228,6 +1239,7 @@ footer{
       width: 17.3%;
       float: left;
       height: r(98);
+      background: white;
       p{
         width: 100%;
         text-align: center;
@@ -1323,7 +1335,6 @@ footer{
   }
 }
 .search{
-  @extend .font-iphone;
   position: fixed;
   top:0;right: 0;left: 0;bottom: 0;
   z-index: 20;
@@ -1423,7 +1434,7 @@ footer{
 
   }
   .search-submit{
-    position: absolute;
+    position: fixed;
     bottom: r(100);
     width: 100%;
     left: 0;
@@ -1543,6 +1554,7 @@ footer{
     font-size: r(30);
     margin-bottom: r(5);
     line-height: r(50);
+    font-weight: bold;
   }
   s{
     float: left;
@@ -1643,7 +1655,7 @@ footer{
     li{
       line-height: r(100);
       height: r(95);
-      border-bottom: 1px solid #f4f4f4;
+      border-bottom: 1px solid #eee;
       color: #999;
       font-size: r(28);
       &:after{
@@ -1727,6 +1739,7 @@ footer{
   }
   p{
     @extend .overflowText;
+    color: #666;
   }
   //padding: 0 r(32);
   li{
@@ -1996,8 +2009,8 @@ footer{
       border-radius: 50%;
       border: 1px solid #eee;
       &.big{
-        width: r(38);
-        height: r(38);
+        width: r(36);
+        height: r(36);
         display: block;
         border: 1px solid #eee;
         background-size: contain;
@@ -2007,12 +2020,13 @@ footer{
       }
     }
     &.checked{
-      i{
+      i.big{
         position: absolute;
         top:0;
         left:0;
         width: r(40);
         height: r(40);
+        border: 0;
         display: block;
         background: url("../images/msg/yes-icon.png") no-repeat;
         background-size: contain;
@@ -2093,14 +2107,14 @@ footer{
       }
     }
     b{
-      font-size: r(27);
+      font-size: r(32);
       color: #f7392e;
       margin-right: r(10);
     }
     i{
       font-size: r(26);
-      width: r(40);
-      height: r(40);
+      width: r(36);
+      height: r(36);
       vertical-align: middle;
       display: inline-block;
       border: 1px solid #eee;
@@ -2110,6 +2124,7 @@ footer{
         display: inline-block;
         width: r(40);
         height: r(40);
+        border: 0;
         background: url("../images/msg/yes-icon.png") no-repeat;
         background-size: contain;
       }
@@ -2183,9 +2198,9 @@ footer{
 }
 i.index-num{
   height: r(35);
-  line-height: r(40);
-  font-size: r(18);
   box-sizing: border-box;
+  line-height:1;
+  font-size: r(20);
   color: white;
   display: inline-block;
   text-align: center;
@@ -2193,7 +2208,7 @@ i.index-num{
   letter-spacing: -(r(2));
   margin:0 r(13) 0 r(13);
   border-radius: r(5);
-  padding: 0 r(6);
+  padding:r(10) r(6) 0;
 }
 .index-col{
   i.index-num{
@@ -2321,6 +2336,17 @@ i.index-num{
       margin-top: 0;
       .item{
         padding: r(35) 0 0 ;
+        position: relative;
+        border:0;
+        &:after{
+          content: "";
+          position: absolute;
+          bottom:0;
+          left:-(r(32));
+          right:-(r(32));
+          height: 1px;
+          background: #eee;
+        }
         .col  s{
           background: linear-gradient(to right,#e7cf9b, #e2ba6e);
         }
@@ -3073,7 +3099,7 @@ i.index-num{
     font-size: r(50);
     &.fl{
       color: #ccc !important;
-      font-size: r(55) !important;
+      font-size: r(50) !important;
     }
     &.fr{
       position: relative;
@@ -3083,6 +3109,7 @@ i.index-num{
   }
   span{
     line-height: r(60);
+    font-size: r(28);
   }
 }
 
@@ -3131,7 +3158,7 @@ i.index-num{
     height: r(48);
     margin-top: r(2);
     s.fl{
-      line-height: r(55);
+      line-height: r(50);
     }
     s.fr{
       margin-top: r(1)
@@ -3183,6 +3210,7 @@ i.index-num{
     background: #f9f9f9;
     .top{
       background: white;
+      border: 0;
     }
   }
   .top{
@@ -4648,6 +4676,10 @@ i.nv{
     position: relative;
     display: table-cell;
     vertical-align: middle;
+    img{
+      width: 0.672rem;
+      vertical-align: middle;
+    }
   }
   p{display: inline-block; vertical-align:-webkit-baseline-middle;}
   span{
@@ -5277,6 +5309,7 @@ i.nv{
       dt{
         padding: r(15) r(32);
         height: r(128);
+
         box-sizing: border-box;
         border-bottom: 1px solid #eee;
         p{
@@ -5298,10 +5331,15 @@ i.nv{
         }
       }
       dd{
-        padding: 0 r(32);
+        padding: 0 r(32) 0 0;
         height: r(108);
         border-bottom: 1px solid #eee;
         font-size: r(30);
+        margin-left: r(32);
+        box-sizing: border-box;
+        &:last-child{
+          border:0;
+        }
         p{
           line-height: r(115);
         }
