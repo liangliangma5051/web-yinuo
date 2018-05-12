@@ -13,283 +13,298 @@
   <script src="../js/jquery-2.1.4.min.js"></script>
   <script src="../js/public.js"></script>
 </head>
+<style>
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    overflow: auto;
+
+    /*height: 667px !important;*/
+  }
+</style>
 <body>
 <!--返回上一页-->
 <div class="back-history" onclick="history.go(-1)">
   <i ></i>
 </div>
 <!--服务-->
-<div class="swiper-container3" >
+<div class="swiper-container1" >
   <div class="swiper-wrapper clear-fix">
-
-    <div class="service swiper-slide">
-      <div class="banner">
-        <img src="../images/img.jpg" alt="">
-      </div>
-      <section>
-        <div class="index-col clear-fix" >
-          <div class="msg clear-fix">
-            <span>往昔的撒</span>
-            <i class="index-num">1诺&nbsp;10次</i>
-            <i class="sex-icon"></i><s class="age">18</s>
-            <div class="follow" onclick="follow(this)"></div>
-            <!--<i class="sex-icon woman"></i><s class="age">18</s>-->
-            <img src="../images/header-pic.png" alt="">
+    <div class=" swiper-slide">
+        <div class="service">
+          <div class="banner">
+            <img src="../images/img.jpg" alt="">
           </div>
-        </div>
-        <div class="index-col">
-          <dl class="clear-fix">
-            <dd>我是小明我很敬业</dd>
-            <dd>我是小明我很敬业</dd>
-            <dd>我是小明我很敬业</dd>
-            <dd>我是小明我很敬业</dd>
-            <dd>我是小明我很敬业</dd>
-          </dl>
-        </div>
-        <p class="col">我的承诺：英语不仅是一种工具，更是一种眼界种眼界种眼界
-          种眼界种眼界种眼界种眼界种眼界</p>
-      </section>
-      <section>
-
-      <div class="index-col">
-        <div class="item clear-fix">
-          <a href="../details">
-            <div class="col clear-fix">
-              <s>服务</s>
-              <h3>1对1情景实战课(60分钟)</h3>
-            </div>
-            <div class="price clear-fix">
-              <p>发售额：1200/3000元</p>
-              <span>26人认购</span>
-            </div>
-            <div class="progress-bar">
-              <p style="width:50%"></p>
-            </div>
-            <div class="min-price clear-fix">
-              <p>最小认购数：2份</p>
-              <span>认购价：<code><s>200</s>元</code> /份</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="details">
-        <dl class="clear-fix">
-          <dd>服务详情</dd>
-          <dd>综合评价</dd>
-          <dd class="checked">更多服务</dd>
-        </dl>
-      </div>
-      <ul class="service-details">
-        <!--服务详情-->
-          <li style="display:none;" class="service-context">
-            <p>服务内容</p>
-            <div class="box">
-              英语不好，不好意思去开口说英语，这里导师全程一
-              对一指导，让英语学习变成一个有意思的事情。
-              一对一情景教学，在60分钟内让你的哑巴英语变得更
-              有意思。
-            </div>
-            <p>证明资料</p>
-            <div class="box">
-              <img src="../images/img.jpg" alt="">
-              <img src="../images/img.jpg" alt="">
-            </div>
-            <p>服务图片</p>
-            <div class="box">
-              <img src="../images/img.jpg" alt="">
-              <img src="../images/img.jpg" alt="">
-            </div>
-          </li>
-        <!--综合评价-->
-          <li class="evaluate" style="display: none">
-            <p>综合评价：9.0分</p>
-            <dl class="clear-fix">
-              <dd class="checked">全部 886</dd>
-              <dd>全部 886</dd>
-              <dd>全部 886</dd>
-              <dd>全部 886</dd>
-            </dl>
-            <div class="height20"></div>
-            <div class="item clear-fix">
-              <img src="../images/header-pic.png" alt="">
-              <div class="fl">
-                <span class="fl">王**晓</span>
-                <i class="index-num fl">
-                 1诺&nbsp;45次
-                </i>
-                <div class="clear"></div>
-                <div class="start">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                </div>
+          <section>
+            <div class="index-col clear-fix" >
+              <div class="msg clear-fix">
+                <span>往昔的撒</span>
+                <i class="index-num">1诺&nbsp;10次</i>
+                <i class="sex-icon"></i><s class="age">18</s>
+                <div class="follow" onclick="follow(this)"></div>
+                <!--<i class="sex-icon woman"></i><s class="age">18</s>-->
+                <img src="../images/header-pic.png" alt="">
               </div>
-              <div class="clear"></div>
-              <span class="time">
+            </div>
+            <div class="index-col">
+              <dl class="clear-fix">
+                <dd>我是小明我很敬业</dd>
+                <dd>我是小明我很敬业</dd>
+                <dd>我是小明我很敬业</dd>
+                <dd>我是小明我很敬业</dd>
+                <dd>我是小明我很敬业</dd>
+              </dl>
+            </div>
+            <p class="col">我的承诺：英语不仅是一种工具，更是一种眼界种眼界种眼界
+              种眼界种眼界种眼界种眼界种眼界</p>
+          </section>
+          <section>
+
+            <div class="index-col">
+              <div class="item clear-fix">
+                <a href="../details">
+                  <div class="col clear-fix">
+                    <s>服务</s>
+                    <h3>1对1情景实战课(60分钟)</h3>
+                  </div>
+                  <div class="price clear-fix">
+                    <p>发售额：1200/3000元</p>
+                    <span>26人认购</span>
+                  </div>
+                  <div class="progress-bar">
+                    <p style="width:50%"></p>
+                  </div>
+                  <div class="min-price clear-fix">
+                    <p>最小认购数：2份</p>
+                    <span>认购价：<code><s>200</s>元</code> /份</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="details">
+              <dl class="clear-fix">
+                <dd>服务详情</dd>
+                <dd>综合评价</dd>
+                <dd class="checked">更多服务</dd>
+              </dl>
+            </div>
+            <ul class="service-details">
+              <!--服务详情-->
+              <li style="display:none;" class="service-context">
+                <p>服务内容</p>
+                <div class="box">
+                  英语不好，不好意思去开口说英语，这里导师全程一
+                  对一指导，让英语学习变成一个有意思的事情。
+                  一对一情景教学，在60分钟内让你的哑巴英语变得更
+                  有意思。
+                </div>
+                <p>证明资料</p>
+                <div class="box">
+                  <img src="../images/img.jpg" alt="">
+                  <img src="../images/img.jpg" alt="">
+                </div>
+                <p>服务图片</p>
+                <div class="box">
+                  <img src="../images/img.jpg" alt="">
+                  <img src="../images/img.jpg" alt="">
+                </div>
+              </li>
+              <!--综合评价-->
+              <li class="evaluate" style="display: none">
+                <p>综合评价：9.0分</p>
+                <dl class="clear-fix">
+                  <dd class="checked">全部 886</dd>
+                  <dd>全部 886</dd>
+                  <dd>全部 886</dd>
+                  <dd>全部 886</dd>
+                </dl>
+                <div class="height20"></div>
+                <div class="item clear-fix">
+                  <img src="../images/header-pic.png" alt="">
+                  <div class="fl">
+                    <span class="fl">王**晓</span>
+                    <i class="index-num fl">
+                      1诺&nbsp;45次
+                    </i>
+                    <div class="clear"></div>
+                    <div class="start">
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                  <span class="time">
                 2018-02-14&nbsp;&nbsp;&nbsp;成交金额：230元
               </span>
-              <div>
-                英语不好，不好意思去开口说英语，这里导师全程一
-                对一指导，让英语学习变成一个有意思的事情。
-                一对一情景教学，在60分钟内让你的哑巴英语变得更
-                有意思。
-              </div>
-              <div class="reply">
-                <div class="to-top"></div>
-                <s>诺主回复：</s>
-                谢谢捧场，很高兴为您服务！谢谢捧场，很高兴为您服务！谢谢捧场，很高兴为您服务！
-              </div>
-            </div>
-            <div class="item clear-fix">
-              <img src="../images/header-pic.png" alt="">
-              <div class="fl">
-                <span class="fl">王**晓</span>
-                <i class="index-num fl">
-                  1诺&nbsp;45次
-                </i>
-                <div class="clear"></div>
-                <div class="start">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
+                  <div>
+                    英语不好，不好意思去开口说英语，这里导师全程一
+                    对一指导，让英语学习变成一个有意思的事情。
+                    一对一情景教学，在60分钟内让你的哑巴英语变得更
+                    有意思。
+                  </div>
+                  <div class="reply">
+                    <div class="to-top"></div>
+                    <s>诺主回复：</s>
+                    谢谢捧场，很高兴为您服务！谢谢捧场，很高兴为您服务！谢谢捧场，很高兴为您服务！
+                  </div>
                 </div>
-              </div>
-              <div class="clear"></div>
-              <span class="time">
+                <div class="item clear-fix">
+                  <img src="../images/header-pic.png" alt="">
+                  <div class="fl">
+                    <span class="fl">王**晓</span>
+                    <i class="index-num fl">
+                      1诺&nbsp;45次
+                    </i>
+                    <div class="clear"></div>
+                    <div class="start">
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                  <span class="time">
                 2018-02-14&nbsp;&nbsp;&nbsp;成交金额：230元
               </span>
-              <div>
-                英语不好，不好意思去开口说英语，这里导师全程一
-                对一指导，让英语学习变成一个有意思的事情。
-                一对一情景教学，在60分钟内让你的哑巴英语变得更
-                有意思。
-              </div>
-              <div class="img-result clear-fix">
-                <img src="../images/img.jpg" alt="">
-                <img src="../images/img.jpg" alt="">
-                <img src="../images/img.jpg" alt="">
-                <img src="../images/img.jpg" alt="">
-                <img src="../images/img.jpg" alt="">
-                <img src="../images/img.jpg" alt="">
-                <img src="../images/img.jpg" alt="">
-                <img src="../images/img.jpg" alt="">
-                <img src="../images/img.jpg" alt="">
-              </div>
-              <div class="reply">
-                <div class="to-top"></div>
-                <s>诺主回复：</s>
-                谢谢捧场，很高兴为您服务！谢谢捧场，很高兴为您服务！谢谢捧场，很高兴为您服务！
-              </div>
-            </div>
-          </li>
-        <!--更多服务-->
-          <li class="more-service" style="display: block">
-            <!--发布中服务-->
-            <p class="title">发布中服务</p>
-            <dl class="list-top">
-              <dd class="product clear-fix">
-                <img src="../images/img.jpg" alt="">
-                <div class="product-msg">
-                  <p>陪跑步(60分钟)</p>
-                  <div class="clear-fix">
-                    <s>服务</s><span>3天前</span>
+                  <div>
+                    英语不好，不好意思去开口说英语，这里导师全程一
+                    对一指导，让英语学习变成一个有意思的事情。
+                    一对一情景教学，在60分钟内让你的哑巴英语变得更
+                    有意思。
                   </div>
-                  <strong>发售额：1200/3000元</strong>
-                  <div class="progress-bar">
-                    <p style="width:50%"></p>
+                  <div class="img-result clear-fix">
+                    <img src="../images/img.jpg" alt="">
+                    <img src="../images/img.jpg" alt="">
+                    <img src="../images/img.jpg" alt="">
+                    <img src="../images/img.jpg" alt="">
+                    <img src="../images/img.jpg" alt="">
+                    <img src="../images/img.jpg" alt="">
+                    <img src="../images/img.jpg" alt="">
+                    <img src="../images/img.jpg" alt="">
+                    <img src="../images/img.jpg" alt="">
                   </div>
-                  <div class="clear-fix">
-                    <div class="bottom-l fl">26人认购</div>
-                    <div class="bottom-r fr">认购价：<i><b>200</b>元</i>/份</div>
+                  <div class="reply">
+                    <div class="to-top"></div>
+                    <s>诺主回复：</s>
+                    谢谢捧场，很高兴为您服务！谢谢捧场，很高兴为您服务！谢谢捧场，很高兴为您服务！
                   </div>
                 </div>
-              </dd>
-              <dd class="product clear-fix">
-                <img src="../images/img.jpg" alt="">
-                <div class="product-msg">
-                  <p>陪跑步(60分钟)</p>
-                  <div class="clear-fix">
-                    <s>服务</s><span>3天前</span>
-                  </div>
-                  <strong>发售额：1200/3000元</strong>
-                  <div class="progress-bar">
-                    <p style="width:50%"></p>
-                  </div>
-                  <div class="clear-fix">
-                    <div class="bottom-l fl">26人认购</div>
-                    <div class="bottom-r fr">认购价：<i><b>200</b>元</i>/份</div>
-                  </div>
-                </div>
-              </dd>
-              <dd class="product clear-fix">
-                <img src="../images/img.jpg" alt="">
-                <div class="product-msg">
-                  <p>陪跑步(60分钟)</p>
-                  <div class="clear-fix">
-                    <s>服务</s><span>3天前</span>
-                  </div>
-                  <strong>发售额：1200/3000元</strong>
-                  <div class="progress-bar">
-                    <p style="width:50%"></p>
-                  </div>
-                  <div class="clear-fix">
-                    <div class="bottom-l fl">26人认购</div>
-                    <div class="bottom-r fr">认购价：<i><b>200</b>元</i>/份</div>
-                  </div>
-                </div>
-              </dd>
-              <dd class="more">
-                <a href="#">查看更多</a>
-              </dd>
-            </dl>
-            <p class="height20"></p>
-            <!--已结束服务-->
-            <p class="title">已结束服务</p>
-            <dl class="list-top">
-              <dd class="product clear-fix">
-                <img src="../images/img.jpg" alt="">
-                <div class="product-msg">
-                  <p>陪跑步(60分钟)</p>
-                  <div class="clear-fix">
-                    <s>服务</s><span>3天前</span>
-                  </div>
-                  <strong>发售额：1200/3000元</strong>
-                  <div class="progress-bar">
-                    <p class="bac999" style="width:50%"></p>
-                  </div>
-                  <div class="clear-fix">
-                    <div class="bottom-l fl">26人认购</div>
-                    <div class="bottom-r fr">认购价：<i class="col999"><b>200</b>元</i>/份</div>
-                  </div>
-                </div>
-              </dd>
-              <dd class="product clear-fix">
-                <img src="../images/img.jpg" alt="">
-                <div class="product-msg">
-                  <p>陪跑步(60分钟)</p>
-                  <div class="clear-fix">
-                    <s>服务</s><span>3天前</span>
-                  </div>
-                  <strong>发售额：1200/3000元</strong>
-                  <div class="progress-bar">
-                    <p class="bac999" style="width:50%"></p>
-                  </div>
-                  <div class="clear-fix">
-                    <div class="bottom-l fl">26人认购</div>
-                    <div class="bottom-r fr">认购价：<i class="col999"><b>200</b>元</i>/份</div>
-                  </div>
-                </div>
-              </dd>
-              <dd class="more">
-                <a href="#">查看更多</a>
-              </dd>
-            </dl>
-          </li>
-        </ul>
-    </section>
+              </li>
+              <!--更多服务-->
+              <li class="more-service" style="display: block">
+                <!--发布中服务-->
+                <p class="title">发布中服务</p>
+                <dl class="list-top">
+                  <dd class="product clear-fix">
+                    <img src="../images/img.jpg" alt="">
+                    <div class="product-msg">
+                      <p>陪跑步(60分钟)</p>
+                      <div class="clear-fix">
+                        <s>服务</s><span>3天前</span>
+                      </div>
+                      <strong>发售额：1200/3000元</strong>
+                      <div class="progress-bar">
+                        <p style="width:50%"></p>
+                      </div>
+                      <div class="clear-fix">
+                        <div class="bottom-l fl">26人认购</div>
+                        <div class="bottom-r fr">认购价：<i><b>200</b>元</i>/份</div>
+                      </div>
+                    </div>
+                  </dd>
+                  <dd class="product clear-fix">
+                    <img src="../images/img.jpg" alt="">
+                    <div class="product-msg">
+                      <p>陪跑步(60分钟)</p>
+                      <div class="clear-fix">
+                        <s>服务</s><span>3天前</span>
+                      </div>
+                      <strong>发售额：1200/3000元</strong>
+                      <div class="progress-bar">
+                        <p style="width:50%"></p>
+                      </div>
+                      <div class="clear-fix">
+                        <div class="bottom-l fl">26人认购</div>
+                        <div class="bottom-r fr">认购价：<i><b>200</b>元</i>/份</div>
+                      </div>
+                    </div>
+                  </dd>
+                  <dd class="product clear-fix">
+                    <img src="../images/img.jpg" alt="">
+                    <div class="product-msg">
+                      <p>陪跑步(60分钟)</p>
+                      <div class="clear-fix">
+                        <s>服务</s><span>3天前</span>
+                      </div>
+                      <strong>发售额：1200/3000元</strong>
+                      <div class="progress-bar">
+                        <p style="width:50%"></p>
+                      </div>
+                      <div class="clear-fix">
+                        <div class="bottom-l fl">26人认购</div>
+                        <div class="bottom-r fr">认购价：<i><b>200</b>元</i>/份</div>
+                      </div>
+                    </div>
+                  </dd>
+                  <dd class="more">
+                    <a href="#">查看更多</a>
+                  </dd>
+                </dl>
+                <p class="height20"></p>
+                <!--已结束服务-->
+                <p class="title">已结束服务</p>
+                <dl class="list-top">
+                  <dd class="product clear-fix">
+                    <img src="../images/img.jpg" alt="">
+                    <div class="product-msg">
+                      <p>陪跑步(60分钟)</p>
+                      <div class="clear-fix">
+                        <s>服务</s><span>3天前</span>
+                      </div>
+                      <strong>发售额：1200/3000元</strong>
+                      <div class="progress-bar">
+                        <p class="bac999" style="width:50%"></p>
+                      </div>
+                      <div class="clear-fix">
+                        <div class="bottom-l fl">26人认购</div>
+                        <div class="bottom-r fr">认购价：<i class="col999"><b>200</b>元</i>/份</div>
+                      </div>
+                    </div>
+                  </dd>
+                  <dd class="product clear-fix">
+                    <img src="../images/img.jpg" alt="">
+                    <div class="product-msg">
+                      <p>陪跑步(60分钟)</p>
+                      <div class="clear-fix">
+                        <s>服务</s><span>3天前</span>
+                      </div>
+                      <strong>发售额：1200/3000元</strong>
+                      <div class="progress-bar">
+                        <p class="bac999" style="width:50%"></p>
+                      </div>
+                      <div class="clear-fix">
+                        <div class="bottom-l fl">26人认购</div>
+                        <div class="bottom-r fr">认购价：<i class="col999"><b>200</b>元</i>/份</div>
+                      </div>
+                    </div>
+                  </dd>
+                  <dd class="more">
+                    <a href="#">查看更多</a>
+                  </dd>
+                </dl>
+              </li>
+            </ul>
+          </section>
+        </div>
     </div>
   </div>
 </div>
@@ -342,20 +357,40 @@
 </div>
 </body>
 </html>
+
 <script>
-
-
-    let swiper3 = new Swiper('.swiper-container3', {
-        direction: 'vertical', autoHeight:true,
+    var swiper = new Swiper('.swiper-container1', {
+        direction: 'vertical',
         on: {
             touchEnd: function(event) {
-                if (swiper3.translate > 70) {
+                if (swiper.translate > 70) {
                     window.location.href='../index2.html'
                 }
             }
         },
-
     });
+    // debugger
+    $('.swiper-slide').css('height',$(window).height()+'px')
+    var startScroll, touchStart, touchCurrent;
+    swiper.slides.on('touchstart', function (e) {
+        startScroll = this.scrollTop;
+        touchStart = e.targetTouches[0].pageY;
+    }, true);
+    swiper.slides.on('touchmove', function (e) {
+        touchCurrent = e.targetTouches[0].pageY;
+        var touchesDiff = touchCurrent - touchStart;
+        var slide = this;
+        var onlyScrolling =
+            ( slide.scrollHeight > slide.offsetHeight ) &&
+            (
+                ( touchesDiff < 0 && startScroll === 0 ) ||
+                ( touchesDiff > 0 && startScroll === ( slide.scrollHeight - slide.offsetHeight ) ) ||
+                ( startScroll > 0 && startScroll < ( slide.scrollHeight - slide.offsetHeight ) )
+            );
+        if (onlyScrolling) {
+            e.stopPropagation();
+        }
+    }, true);
 
   $('.details dd').on('click',function () {
     $(this).addClass('checked').siblings().removeClass('checked')

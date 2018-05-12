@@ -12,16 +12,13 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -moz-tap-highlight-color: rgba(0, 0, 0, 0);
   -o-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
-  font-size: 0.2304rem; }
+  tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   overflow-x: hidden;
   margin: auto;
   font: 0.2304rem/1.5 "苹方", "Adobe 黑体 Std", "Microsoft YaHei", arial, 微软雅黑, tahoma, 宋体, sans-serif;
-  color: #333;
-  max-width: 680px;
-  margin: auto; }
+  color: #333; }
 
 input:focus, input:link, input {
   box-shadow: none; }
@@ -31,6 +28,9 @@ input:focus, input:link, input {
 
 .fr {
   float: right; }
+
+.font-iphone, .index-col .item .col p, .search {
+  font-family: '苹方'; }
 
 .clear {
   clear: both; }
@@ -68,11 +68,7 @@ img {
 
 b {
   font-weight: bold !important;
-  display: inline !important;
-  font-size: inherit; }
-
-a, span, s, strong, time {
-  font-size: inherit; }
+  display: inline !important; }
 
 input, textarea {
   font: 0.2304rem/1.5 "苹方", "Adobe 黑体 Std", "黑体", "Microsoft YaHei", arial, 微软雅黑, tahoma, 宋体, sans-serif; }
@@ -84,13 +80,11 @@ input, textarea {
 
 h1 {
   font-size: 0.576rem;
-  line-height: 1.152rem;
-  font-weight: bold; }
+  line-height: 1.152rem; }
 
 .return {
   background: white;
   color: #333;
-  font-weight: bold;
   font-size: 0.3264rem;
   text-align: center;
   height: 0.8448rem;
@@ -104,7 +98,7 @@ h1 {
     z-index: 9; }
   .return i {
     display: block;
-    background: url("../images/return-icon.png?v=1") no-repeat;
+    background: url("../images/return-icon.png") no-repeat;
     background-size: contain;
     width: 0.2208rem;
     height: 0.384rem;
@@ -230,7 +224,7 @@ h1 {
     margin-left: 3%; }
 
 .other-login {
-  margin-top: 0.96rem;
+  margin-top: 0.384rem;
   width: 100%;
   box-sizing: border-box;
   padding: 0rem 0.384rem; }
@@ -479,8 +473,8 @@ p.line20 {
   box-sizing: border-box; }
 
 .checkbox-input {
-  width: 0.3456rem;
-  height: 0.3456rem;
+  width: 0.3648rem;
+  height: 0.3648rem;
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -492,9 +486,8 @@ p.line20 {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 0.384rem;
-    height: 0.384rem;
-    border: 0;
+    width: 0.3648rem;
+    height: 0.3648rem;
     background: red;
     background: url("../images/no-checked.png");
     background-size: contain; }
@@ -802,12 +795,6 @@ header {
   right: -0.3072rem;
   top: 0; }
 
-.swiper-wrapper li.index-col {
-  width: 100%; }
-
-.swiper-slide {
-  width: 100% !important; }
-
 .index-col {
   padding: 0 0.192rem;
   margin-top: 0.096rem;
@@ -857,7 +844,7 @@ header {
   .index-col .li-context {
     border-radius: 0.096rem;
     overflow: hidden;
-    border: 1px solid #eee; }
+    border: 1px solid #f4f4f4; }
   .index-col .msg {
     padding: 0.0192rem 0.192rem 0 1.776rem;
     overflow: hidden;
@@ -926,8 +913,8 @@ header {
       overflow: hidden;
       padding: 0 0.0672rem; }
   .index-col .item {
-    border-bottom: 1px solid #eee;
-    border-top: 1px solid #eee;
+    border-bottom: 1px solid #f4f4f4;
+    border-top: 1px solid #f4f4f4;
     padding: 0.336rem 0.3072rem 0;
     position: relative; }
     .index-col .item * {
@@ -1016,7 +1003,7 @@ footer {
   left: 0;
   width: 100%;
   z-index: 8;
-  box-shadow: 0px -1px 5px rgba(180, 180, 180, 0.2); }
+  box-shadow: 0px -1px 3px  #ededed; }
   footer dl dd {
     float: left;
     width: 20%; }
@@ -1059,8 +1046,8 @@ footer {
         background-size: contain; }
       footer dl dd i.msg-page {
         position: relative;
-        top: 0.0384rem;
-        margin-top: 0.1728rem;
+        top: 0.0192rem;
+        margin-top: 0.144rem;
         width: 0.4224rem;
         height: 0.3744rem;
         background: url("../images/index/msg-icon.png") no-repeat;
@@ -1080,8 +1067,7 @@ footer {
     display: block;
     width: 17.3%;
     float: left;
-    height: 0.9408rem;
-    background: white; }
+    height: 0.9408rem; }
     footer .service a p {
       width: 100%;
       text-align: center;
@@ -1248,7 +1234,7 @@ footer {
         width: 1.2rem;
         text-align: center; }
   .search .search-submit {
-    position: fixed;
+    position: absolute;
     bottom: 0.96rem;
     width: 100%;
     left: 0; }
@@ -1345,8 +1331,7 @@ footer {
   .product p {
     font-size: 0.288rem;
     margin-bottom: 0.048rem;
-    line-height: 0.48rem;
-    font-weight: bold; }
+    line-height: 0.48rem; }
   .product s {
     float: left;
     height: 0.2688rem;
@@ -1426,7 +1411,7 @@ footer {
   .list-context .search-col li {
     line-height: 0.96rem;
     height: 0.912rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f4f4f4;
     color: #999;
     font-size: 0.2688rem; }
     .list-context .search-col li:after {
@@ -1495,8 +1480,6 @@ footer {
   background: #6eb8fe; }
 .msg-item * {
   line-height: 1; }
-.msg-item p {
-  color: #666; }
 .msg-item li {
   position: relative;
   height: 1.536rem; }
@@ -1726,21 +1709,20 @@ footer {
       border-radius: 50%;
       border: 1px solid #eee; }
       .friends .yes i.big {
-        width: 0.3456rem;
-        height: 0.3456rem;
+        width: 0.3648rem;
+        height: 0.3648rem;
         display: block;
         border: 1px solid #eee;
         background-size: contain;
         position: absolute;
         top: 0;
         left: 0; }
-    .friends .yes.checked i.big {
+    .friends .yes.checked i {
       position: absolute;
       top: 0;
       left: 0;
       width: 0.384rem;
       height: 0.384rem;
-      border: 0;
       display: block;
       background: url("../images/msg/yes-icon.png") no-repeat;
       background-size: contain; }
@@ -1807,13 +1789,13 @@ footer {
       .fixed-all-checked .btn span:nth-child(2) {
         color: #999; }
     .fixed-all-checked .btn b {
-      font-size: 0.3072rem;
+      font-size: 0.2592rem;
       color: #f7392e;
       margin-right: 0.096rem; }
     .fixed-all-checked .btn i {
       font-size: 0.2496rem;
-      width: 0.3456rem;
-      height: 0.3456rem;
+      width: 0.384rem;
+      height: 0.384rem;
       vertical-align: middle;
       display: inline-block;
       border: 1px solid #eee;
@@ -1823,7 +1805,6 @@ footer {
         display: inline-block;
         width: 0.384rem;
         height: 0.384rem;
-        border: 0;
         background: url("../images/msg/yes-icon.png") no-repeat;
         background-size: contain; }
     .fixed-all-checked .btn.right i {
@@ -1878,9 +1859,9 @@ footer {
 
 i.index-num {
   height: 0.336rem;
+  line-height: 0.384rem;
+  font-size: 0.1728rem;
   box-sizing: border-box;
-  line-height: 1;
-  font-size: 0.192rem;
   color: white;
   display: inline-block;
   text-align: center;
@@ -1888,7 +1869,7 @@ i.index-num {
   letter-spacing: -0.0192rem;
   margin: 0 0.1248rem 0 0.1248rem;
   border-radius: 0.048rem;
-  padding: 0.096rem 0.0576rem 0; }
+  padding: 0 0.0576rem; }
 
 .index-col i.index-num {
   margin-top: 0.1248rem; }
@@ -2004,17 +1985,7 @@ i.index-num {
     .service section .index-col {
       margin-top: 0; }
       .service section .index-col .item {
-        padding: 0.336rem 0 0;
-        position: relative;
-        border: 0; }
-        .service section .index-col .item:after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: -0.3072rem;
-          right: -0.3072rem;
-          height: 1px;
-          background: #eee; }
+        padding: 0.336rem 0 0; }
         .service section .index-col .item .col s {
           background: linear-gradient(to right, #e7cf9b, #e2ba6e); }
   .service p.col {
@@ -2622,14 +2593,13 @@ i.index-num {
     font-size: 0.48rem; }
     .buy-num s.fl {
       color: #ccc !important;
-      font-size: 0.48rem !important; }
+      font-size: 0.528rem !important; }
     .buy-num s.fr {
       position: relative;
       top: -0.0288rem;
       color: #999; }
   .buy-num span {
-    line-height: 0.576rem;
-    font-size: 0.2688rem; }
+    line-height: 0.576rem; }
 
 .null-cart {
   background: #f9f9f9;
@@ -2670,7 +2640,7 @@ i.index-num {
     height: 0.4608rem;
     margin-top: 0.0192rem; }
     .cart .buy-num s.fl {
-      line-height: 0.48rem; }
+      line-height: 0.528rem; }
     .cart .buy-num s.fr {
       margin-top: 0.0096rem; }
     .cart .buy-num s {
@@ -2702,8 +2672,7 @@ i.index-num {
   .cart .cart-invalid {
     background: #f9f9f9; }
     .cart .cart-invalid .top {
-      background: white;
-      border: 0; }
+      background: white; }
   .cart .top {
     padding: 0 0.3072rem;
     height: 0.8256rem;
@@ -3903,9 +3872,6 @@ i.nv {
   position: relative;
   display: table-cell;
   vertical-align: middle; }
-  .select-card .table-center img {
-    width: 0.672rem;
-    vertical-align: middle; }
 .select-card p {
   display: inline-block;
   vertical-align: -webkit-baseline-middle; }
@@ -4087,7 +4053,7 @@ i.nv {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 5.088rem;
+  width: max-content;
   text-align: center;
   border-radius: 0.0768rem;
   -webkit-transform: translate(-50%, -50%);
@@ -4458,14 +4424,10 @@ i.nv {
         font-size: 0.2496rem;
         color: #999; }
     .voucher .sub-nav dd {
-      padding: 0 0.3072rem 0 0;
+      padding: 0 0.3072rem;
       height: 1.0368rem;
       border-bottom: 1px solid #eee;
-      font-size: 0.288rem;
-      margin-left: 0.3072rem;
-      box-sizing: border-box; }
-      .voucher .sub-nav dd:last-child {
-        border: 0; }
+      font-size: 0.288rem; }
       .voucher .sub-nav dd p {
         line-height: 1.104rem; }
       .voucher .sub-nav dd:after {
@@ -5248,5 +5210,72 @@ i.nv {
       left: 60%;
       background: url("../images/voucher/nav18.png") no-repeat;
       background-size: contain; }
+
+.payment-mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  .payment-mask * {
+    position: relative;
+    font-size: 0.288rem; }
+  .payment-mask .box {
+    padding: 0 0.3072rem;
+    height: 6.24rem;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; }
+  .payment-mask .top-line {
+    height: 0.864rem;
+    line-height: 0.864rem; }
+    .payment-mask .top-line img {
+      width: 0.384rem;
+      height: 0.3264rem;
+      vertical-align: middle; }
+    .payment-mask .top-line .close {
+      display: block;
+      float: right;
+      font-size: 0.384rem;
+      color: #666;
+      margin-top: 0.192rem;
+      /*  width: r(30);
+        height: r(30);
+        background: url("../images/index/yuan-x.png") no-repeat;
+        background-size: contain;*/ }
+    .payment-mask .top-line .bank-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+  .payment-mask ul li {
+    height: 0.864rem;
+    border-bottom: 1px solid #eee;
+    overflow: hidden; }
+    .payment-mask ul li span {
+      float: left;
+      line-height: 0.864rem; }
+    .payment-mask ul li p {
+      float: right;
+      line-height: 0.864rem; }
+  .payment-mask .number {
+    text-align: center;
+    margin: 0.192rem 0; }
+    .payment-mask .number b {
+      font-size: 0.576rem; }
+  .payment-mask .remove-bind-card {
+    position: absolute;
+    top: inherit;
+    bottom: 0.768rem;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
+    .payment-mask .remove-bind-card p {
+      padding: 0; }
 
 /*# sourceMappingURL=style.css.map */
