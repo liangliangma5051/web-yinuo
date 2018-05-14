@@ -3872,6 +3872,10 @@ i.nv {
   position: relative;
   display: table-cell;
   vertical-align: middle; }
+  .select-card .table-center img {
+    width: 0.576rem;
+    height: 0.576rem;
+    vertical-align: middle; }
 .select-card p {
   display: inline-block;
   vertical-align: -webkit-baseline-middle; }
@@ -5217,65 +5221,5 @@ i.nv {
   bottom: 0;
   left: 0;
   right: 0; }
-  .payment-mask * {
-    position: relative;
-    font-size: 0.288rem; }
-  .payment-mask .box {
-    padding: 0 0.3072rem;
-    height: 6.24rem;
-    background: white;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box; }
-  .payment-mask .top-line {
-    height: 0.864rem;
-    line-height: 0.864rem; }
-    .payment-mask .top-line img {
-      width: 0.384rem;
-      height: 0.3264rem;
-      vertical-align: middle; }
-    .payment-mask .top-line .close {
-      display: block;
-      float: right;
-      font-size: 0.384rem;
-      color: #666;
-      margin-top: 0.192rem;
-      /*  width: r(30);
-        height: r(30);
-        background: url("../images/index/yuan-x.png") no-repeat;
-        background-size: contain;*/ }
-    .payment-mask .top-line .bank-logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%); }
-  .payment-mask ul li {
-    height: 0.864rem;
-    border-bottom: 1px solid #eee;
-    overflow: hidden; }
-    .payment-mask ul li span {
-      float: left;
-      line-height: 0.864rem; }
-    .payment-mask ul li p {
-      float: right;
-      line-height: 0.864rem; }
-  .payment-mask .number {
-    text-align: center;
-    margin: 0.192rem 0; }
-    .payment-mask .number b {
-      font-size: 0.576rem; }
-  .payment-mask .remove-bind-card {
-    position: absolute;
-    top: inherit;
-    bottom: 0.768rem;
-    -webkit-transform: translate(-50%, 0);
-    -moz-transform: translate(-50%, 0);
-    transform: translate(-50%, 0); }
-    .payment-mask .remove-bind-card p {
-      padding: 0; }
 
 /*# sourceMappingURL=style.css.map */

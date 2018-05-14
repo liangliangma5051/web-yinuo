@@ -4649,6 +4649,11 @@ i.nv{
     position: relative;
     display: table-cell;
     vertical-align: middle;
+    img{
+      width: r(60);
+      height: r(60);
+      vertical-align: middle;
+    }
   }
   p{display: inline-block; vertical-align:-webkit-baseline-middle;}
   span{
@@ -6318,80 +6323,6 @@ i.nv{
 
 }
 .payment-mask{
-  *{
-    position: relative;
-    font-size: r(30);
-    //overflow: hidden;
-  }
   position: fixed;top:0;bottom:0;left:0;right: 0;
-  .box{
-    padding: 0 r(32);
-    height: r(650);
-    background: white;
-    position: absolute;
-    bottom:0;
-    left: 0;width: 100%;
-    box-sizing: border-box;
-  }
-  .top-line{
-    height: r(90);
-    line-height: r(90);
-    img{
-      width: r(40);
-      height: r(34);
-      vertical-align: middle;
-    }
-    .close{
-      display: block;
-      float: right;
-      font-size: r(40);
-      color: #666;
-      margin-top: r(20);
-    /*  width: r(30);
-      height: r(30);
-      background: url("../images/index/yuan-x.png") no-repeat;
-      background-size: contain;*/
 
-    }
-    .bank-logo{
-      position: absolute;
-      top:50%;left: 50%;
-      -webkit-transform: translate(-50%,-50%);
-      -moz-transform: translate(-50%,-50%);
-      transform:translate(-50%,-50%);
-    }
-  }
-  ul{
-    li{
-      height: r(90);
-      border-bottom: 1px solid #eee;
-      overflow: hidden;
-      span{
-        float: left;
-        line-height: r(90);
-      }
-      p{
-        float: right;
-        line-height: r(90);
-      }
-    }
-  }
-  .number{
-    text-align: center;
-    margin: r(20) 0;
-    b{
-      font-size: r(60);
-    }
-  }
-  .remove-bind-card{
-    position: absolute;
-    top:inherit;
-    bottom:r(80);
-     -webkit-transform: translate(-50%, 0);
-    -moz-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    p{
-      padding: 0;
-    }
-  }
 }
