@@ -14,6 +14,8 @@
   <script src="../js/swiper.min.js"></script>
   <script src="../js/public.js"></script>
   <script src="../js/dataSelect.js"></script>
+  <link href="https://cdn.bootcss.com/cropper/4.0.0/cropper.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/cropper/4.0.0/cropper.js"></script>
 </head>
 <body>
 <!--返回上一页-->
@@ -24,7 +26,7 @@
 
 <div class="release">
   <!--发布内容1-->
-  <div class="swiper-container release1" style="display: block">
+  <div class="swiper-container release1" style="display: none">
     <div class="swiper-wrapper">
       <div class="release-context swiper-slide">
         <ul>
@@ -156,7 +158,7 @@
 
   <!--下一步-->
   <!--发布内容2-->
-  <div style="display: none" class="release2">
+  <div style="display: block" class="release2">
     <ul>
       <li class="text-area">
         <label>服务内容</label>
@@ -362,6 +364,16 @@
 <div class="complete" style="display: none">
   <i></i>
 </div>
+
+<div class="cropper-mask" style="display: none" >
+  <div class="container">
+    <img id='image' src='img.jpg' >
+  </div>
+  <div id="btn">
+    确定
+  </div>
+</div>
+
 </body>
 </html>
 <script>

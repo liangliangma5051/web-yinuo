@@ -34,8 +34,8 @@
         <p>
           所在地区
         </p>
-        <input type="text" value="王晓">
-        <div class="city-icon">
+        <input id="putAddress" type="text" value="" readonly>
+        <div class="city-icon" id="selectCity" onclick="selectAddress()">
           <a href="javascript:void(0)">
             请选择
             <i></i>
@@ -46,7 +46,7 @@
         <p>
           详细地址
         </p>
-        <input type="text" value="16号楼308室" readonly>
+        <input type="text" value="16号楼308室">
 
       </li>
     <li>
@@ -62,6 +62,111 @@
     </a>
   </div>
 </div>
+<!--省市区县选择-->
+<div class="select-city-mask"></div>
+<div class="select-city">
+  <p class="select-city-title">
+    配送至
+    <span class="close">
+       <i class="select-city-close" onclick="selectCityClose()"></i>
+    </span>
+  </p>
+  <ul class="clear-fix">
+    <li onclick="selectChecked(this)" class="province checked">北京</li>
+    <li onclick="selectChecked(this)" class="city"></li>
+    <li onclick="selectChecked(this)" class="county"></li>
+    <li onclick="selectChecked(this)" class="town"></li>
+  </ul>
+  <dl style="display: block">
+    <dd onclick="selectProvince(this)">安徽省</dd>
+    <dd onclick="selectProvince(this)">北京</dd>
+    <dd onclick="selectProvince(this)">安徽省</dd>
+    <dd onclick="selectProvince(this)">北京</dd>
+    <dd onclick="selectProvince(this)">安徽省</dd>
+    <dd onclick="selectProvince(this)">安徽省</dd>
+    <dd onclick="selectProvince(this)">北京</dd>
+    <dd onclick="selectProvince(this)">安徽省</dd>
+    <dd onclick="selectProvince(this)">北京</dd>
+    <dd onclick="selectProvince(this)">安徽省</dd>
+    <dd onclick="selectProvince(this)">安徽省</dd>
+    <dd onclick="selectProvince(this)">北京</dd>
+    <dd onclick="selectProvince(this)">安徽省</dd>
+    <dd onclick="selectProvince(this)">北京</dd>
+    <dd onclick="selectProvince(this)">安徽省</dd>
+    <dd onclick="selectProvince(this)">安徽省</dd>
+    <dd onclick="selectProvince(this)">北京</dd>
+    <dd onclick="selectProvince(this)">安徽省</dd>
+    <dd onclick="selectProvince(this)">北京</dd>
+    <dd onclick="selectProvince(this)">安徽省</dd>
+  </dl>
+  <dl>
+    <dd onclick="selectCity(this)">滁州市</dd>
+    <dd onclick="selectCity(this)">蚌埠市</dd>
+    <dd onclick="selectCity(this)">滁州市</dd>
+    <dd onclick="selectCity(this)">蚌埠市</dd>
+    <dd onclick="selectCity(this)">滁州市</dd>
+    <dd onclick="selectCity(this)">蚌埠市</dd>
+    <dd onclick="selectCity(this)">滁州市</dd>
+    <dd onclick="selectCity(this)">蚌埠市</dd>
+    <dd onclick="selectCity(this)">滁州市</dd>
+    <dd onclick="selectCity(this)">蚌埠市</dd>
+    <dd onclick="selectCity(this)">滁州市</dd>
+    <dd onclick="selectCity(this)">蚌埠市</dd>
+    <dd onclick="selectCity(this)">滁州市</dd>
+    <dd onclick="selectCity(this)">蚌埠市</dd>
+    <dd onclick="selectCity(this)">滁州市</dd>
+    <dd onclick="selectCity(this)">蚌埠市</dd>
+  </dl>
+  <dl>
+    <dd onclick="selectCounty(this)">凤阳县</dd>
+    <dd onclick="selectCounty(this)">定远县</dd>
+    <dd onclick="selectCounty(this)">凤阳县</dd>
+    <dd onclick="selectCounty(this)">定远县</dd>
+    <dd onclick="selectCounty(this)">凤阳县</dd>
+    <dd onclick="selectCounty(this)">定远县</dd>
+    <dd onclick="selectCounty(this)">凤阳县</dd>
+    <dd onclick="selectCounty(this)">定远县</dd>
+    <dd onclick="selectCounty(this)">凤阳县</dd>
+    <dd onclick="selectCounty(this)">定远县</dd>
+    <dd onclick="selectCounty(this)">凤阳县</dd>
+    <dd onclick="selectCounty(this)">定远县</dd>
+    <dd onclick="selectCounty(this)">凤阳县</dd>
+    <dd onclick="selectCounty(this)">定远县</dd>
+    <dd onclick="selectCounty(this)">凤阳县</dd>
+    <dd onclick="selectCounty(this)">定远县</dd>
+    <dd onclick="selectCounty(this)">凤阳县</dd>
+    <dd onclick="selectCounty(this)">定远县</dd>
+    <dd onclick="selectCounty(this)">凤阳县</dd>
+    <dd onclick="selectCounty(this)">定远县</dd>
+  </dl>
+  <dl>
+    <dd onclick="selctTown(this)">城区</dd>
+    <dd onclick="selctTown(this)">总铺镇</dd>
+    <dd onclick="selctTown(this)">城区</dd>
+    <dd onclick="selctTown(this)">总铺镇</dd>
+    <dd onclick="selctTown(this)">城区</dd>
+    <dd onclick="selctTown(this)">总铺镇</dd>
+    <dd onclick="selctTown(this)">城区</dd>
+    <dd onclick="selctTown(this)">总铺镇</dd>
+    <dd onclick="selctTown(this)">城区</dd>
+    <dd onclick="selctTown(this)">总铺镇</dd>
+    <dd onclick="selctTown(this)">城区</dd>
+    <dd onclick="selctTown(this)">总铺镇</dd>
+    <dd onclick="selctTown(this)">城区</dd>
+    <dd onclick="selctTown(this)">总铺镇</dd>
+    <dd onclick="selctTown(this)">城区</dd>
+    <dd onclick="selctTown(this)">总铺镇</dd>
+    <dd onclick="selctTown(this)">城区</dd>
+    <dd onclick="selctTown(this)">总铺镇</dd>
+    <dd onclick="selctTown(this)">城区</dd>
+    <dd onclick="selctTown(this)">总铺镇</dd>
+    <dd onclick="selctTown(this)">城区</dd>
+    <dd onclick="selctTown(this)">总铺镇</dd>
+    <dd onclick="selctTown(this)">城区</dd>
+    <dd onclick="selctTown(this)">总铺镇</dd>
+  </dl>
+</div>
+
 
 </body>
 </html>
@@ -69,4 +174,61 @@
   $('.check-address').on('click',function () {
     $(this).toggleClass('checked')
   })
+
+
+
+
+  // 打开选择城市
+  function selectAddress(){
+      $('.select-city').slideDown()
+      $('.select-city-mask').show()
+      $dl.eq(0).show().siblings('dl').hide()
+      $('.province').addClass('checked').siblings().removeClass('checked');
+  }
+  // 关闭选择城市
+  function selectCityClose(){
+      $('.select-city').slideUp()
+      $('.select-city-mask').hide()
+  }
+  // 重新选择
+  function selectChecked(el) {
+      $(el).addClass('checked').siblings().removeClass('checked');
+      $dl.eq($(el).index()).show().siblings('dl').hide()
+  }
+
+//选择省市区
+  let $dl= $('.select-city dl');
+
+  // 选择省
+  function selectProvince(el) {
+      $(el).addClass('checked').siblings().removeClass('checked')
+      $('.province').text($(el).text()).addClass('checked').siblings().removeClass('checked');
+      $dl.eq(1).show().siblings('dl').hide()
+  }
+  // 选择市
+  function selectCity(el) {
+      $(el).addClass('checked').siblings().removeClass('checked')
+      $('.city').text($(el).text()).addClass('checked').siblings().removeClass('checked');
+      $dl.eq(2).show().siblings('dl').hide()
+  }
+  // 选择县
+  function selectCounty(el) {
+      $(el).addClass('checked').siblings().removeClass('checked')
+      $('.county').text($(el).text()).addClass('checked').siblings().removeClass('checked');
+      $dl.eq(3).show().siblings('dl').hide()
+  }
+  // 选择城乡
+  function selctTown(el) {
+      $(el).addClass('checked').siblings().removeClass('checked')
+      $('.town').text($(el).text()).addClass('checked').siblings().removeClass('checked');
+      $dl.hide();
+      let addressText="";
+      $('.select-city ul li').each(function (index,current) {
+          addressText += $(current).text()+' ';
+          $('#putAddress').val(addressText)
+      });
+      selectCityClose()
+  }
+
+
 </script>

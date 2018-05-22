@@ -49,6 +49,12 @@ a{
 img{
   border-radius: r(8);
 }
+/*img{
+  display: block;
+  width: 100%;
+  background: url("../images/noLoad.png") no-repeat;
+  background-size: contain;
+}*/
 .clear-fix:after{
   content: '';
   display: block;
@@ -417,7 +423,7 @@ p.line20{
         background-size: contain;
       }
       &.man{
-        margin-right: r(45);
+        //margin-right: r(45);
       }
       &.woman{
         i{
@@ -795,12 +801,13 @@ header{
 
   }
   .searchText{
-    width: r(545);
     height: r(62);
-    position: relative;
     background: #f4f4f4;
     border-radius: r(8);
-    margin-right:r(32) ;
+    position: absolute;
+    top:r(10);
+    left: r(100);
+    right: r(100);
     p{
       font-size: r(28);
       color: #adadad;
@@ -843,6 +850,7 @@ header{
     background: url("../images/bell-icon.png") no-repeat ;
     background-size:contain ;
     position: relative;
+    float: right;
     a{
       position: absolute;
       top:0;right: 0;left: 0;bottom:0;
@@ -918,6 +926,7 @@ header{
       left: r(18);
       border-radius: 50%;
       overflow: hidden;
+      z-index: 5;
       img{
         width: r(146);
         height: r(146);
@@ -928,8 +937,9 @@ header{
       position: absolute;
       bottom:0;right: 0;
       box-sizing: border-box;
-      width: r(511);
+      width: r(552);
       height: r(86);
+      padding-left: r(30);
       color: white;
       display: -webkit-box;
       -webkit-box-orient: vertical;
@@ -938,7 +948,7 @@ header{
       padding-top:r(10);
       line-height: 1.5;
       background: url("../images/index-banner.png") no-repeat;
-      background-size: contain;
+      background-size: cover;
     }
   }
   li{
@@ -1055,7 +1065,10 @@ header{
         border-radius: r(5);
         margin-right: r(18);
       }
-      h3{font-size: r(30);}
+      h3{font-size: r(30);
+        max-width: r(450);
+        @extend .nowarp;
+      }
       p{
         position: absolute;
         right: r(32);
@@ -1229,6 +1242,7 @@ footer{
       width: 17.3%;
       float: left;
       height: r(98);
+      background: white;
       p{
         width: 100%;
         text-align: center;
@@ -1721,7 +1735,7 @@ footer{
     color: white;
     height: r(160);
     line-height: r(160);
-    background: #6eb8fe;
+    background: #1cc419;
   }
   *{
     line-height: 1;
@@ -6325,4 +6339,112 @@ i.nv{
 .payment-mask{
   position: fixed;top:0;bottom:0;left:0;right: 0;
 
+}
+.select-city-mask{
+  position: fixed;
+  display: none;
+  top:0;left:0;right: 0;bottom:0;
+  z-index: 90;
+  background: transparent;
+}
+.select-city{
+  position: fixed;
+  display: none;
+  height: 380px;
+  background: white;
+  z-index: 99;
+  bottom:0;
+  left:0;right: 0;
+  ul{
+    li{
+      float: left;
+      height: 35px;
+      line-height: 35px;
+      width: 25%;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      position: relative;
+      &.checked:after{
+        content: "";
+        display: block;
+        position: absolute;
+        left:0;right: 0;
+        bottom:0;
+        height: 2px;
+        background: #1cc419;
+      }
+    }
+  }
+  .select-city-close{
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url("../images/select-city-close.png") no-repeat;
+    background-size: contain;
+    float: right;
+    margin-right: 16px;
+    margin-top: 17px;
+
+  }
+  .close{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 0;top:0;
+  }
+  .select-city-title{
+    position: relative;
+    height: 45px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 45px;
+  }
+  dl{
+    display: none;
+    height:300px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    dd{
+      height: 40px;
+      font-size: 14px;
+      line-height: 40px;
+      text-indent: 30px;
+      position: relative;
+      &.checked:after{
+        position: absolute;
+        right: 16px;
+        top:15px;
+        content: "";
+        width: 14px;
+        height: 11px;
+        background: url("../images/select-city-checked.png") no-repeat;
+        background-size: contain;
+      }
+    }
+
+  }
+}
+#putAddress{
+  width: r(400);
+}
+#selectCity{
+  position: absolute;
+  right: r(32);
+}
+.column{
+  .verification-code{
+    position: absolute;
+    right: r(32);top:0;
+  }
+}
+.cropper-mask{
+  display: none;
+  position: fixed;
+  top:0;left:0;right: 0;bottom:0;
+  z-index: 99;
+
+
+
+  background: white;
 }

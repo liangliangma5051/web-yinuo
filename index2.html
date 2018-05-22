@@ -11,6 +11,7 @@
   <script src="js/h5rem.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/public.js"></script>
 </head>
 <body>
 <header class="clear-fix">
@@ -422,34 +423,36 @@
 
 </div>
 
+<div class="mask-release" onclick="hideMask()">
+  <a href="demand/my/release.html" class="icon1"></a>
+  <a href="release" class="icon2"></a>
+</div>
 <footer>
   <dl class="clear-fix">
     <dd>
-      <a href="#">
+      <a href="index.html">
         <i class="index-page checked"></i>
         <s>首页</s>
       </a>
     </dd>
     <dd>
-      <a href="#">
+      <a href="demand/list.html">
         <i class="demand-page"></i>
-        <s>需求</s>
+        <s>求购</s>
       </a>
     </dd>
-    <dd>
-      <a href="#">
-        <i class="add-page"></i>
-      </a>
+    <dd onclick="showMask()">
+      <i class="add-page"></i>
     </dd>
     <dd>
-      <a href="#">
+      <a href="msg/msgList.html">
         <i class="msg-page"></i>
         <s>消息</s>
       </a>
     </dd>
-    <dd>
-      <a href="#">
-        <i class="my-page"></i>
+    <dd >
+      <a href="center/index.html">
+        <i class="my-page "></i>
         <s>我的</s>
       </a>
     </dd>
@@ -510,60 +513,58 @@
       <dd onclick="follow(this)">大宗商品</dd>
       <dd onclick="follow(this)">大宗商品</dd>
     </dl>
-    <div class="search-submit">
-      <div class="button reset">重 置</div>
-      <div class="button ok">确  定</div>
-    </div>
   </div>
   <div class="box-dl center">
     <dl class="clear-fix">
       <dt>性别</dt>
-      <dd class="checked">男</dd>
-      <dd>女</dd>
+      <dd class="checked" onclick="selectRadio(this)">男</dd>
+      <dd onclick="selectRadio(this)">女</dd>
     </dl>
     <dl class="clear-fix">
       <dt>诺级</dt>
-      <dd class="checked">一级</dd>
-      <dd>二级</dd>
-      <dd>三级</dd>
+      <dd class="checked" onclick="selectRadio(this)">一级</dd>
+      <dd onclick="selectRadio(this)">二级</dd>
+      <dd onclick="selectRadio(this)">三级</dd>
     </dl>
     <dl class="clear-fix">
       <dt>距离</dt>
-      <dd class="checked">5km内</dd>
-      <dd>1215km内</dd>
-      <dd>512km内</dd>
-      <dd>大宗商品</dd>
-      <dd>日常用品</dd>
-      <dd>大宗商品</dd>
+      <dd class="checked" onclick="selectRadio(this)">5km内</dd>
+      <dd onclick="selectRadio(this)">1215km内</dd>
+      <dd onclick="selectRadio(this)">512km内</dd>
+      <dd onclick="selectRadio(this)">大宗商品</dd>
+      <dd onclick="selectRadio(this)">日常用品</dd>
+      <dd onclick="selectRadio(this)">大宗商品</dd>
     </dl>
     <dl class="clear-fix">
       <dt>时间</dt>
-      <dd class="checked">1天内</dd>
-      <dd>一周内</dd>
-      <dd>1月内</dd>
+      <dd class="checked" onclick="selectRadio(this)">1天内</dd>
+      <dd onclick="selectRadio(this)">一周内</dd>
+      <dd onclick="selectRadio(this)">1月内</dd>
     </dl>
     <dl class="clear-fix">
       <dt>发行额</dt>
-      <dd><input type="tel"></dd>
+      <dd><input type="tel" name="a1Start"></dd>
       <dd class="and">至</dd>
-      <dd><input type="tel"></dd>
+      <dd><input type="tel" name="a1End"></dd>
     </dl>
     <dl class="clear-fix">
       <dt>认购价</dt>
-      <dd><input type="tel"></dd>
+      <dd><input type="tel" name="a2Start"></dd>
       <dd class="and">至</dd>
-      <dd><input type="tel"></dd>
+      <dd><input type="tel" name="a2End"></dd>
     </dl>
-    <div class="search-submit">
-      <div class="button reset">重 置</div>
-      <div class="button ok">确  定</div>
-    </div>
+
   </div>
   <div class="box-dl pl0">
-    <p class="checked">按照发布时间远近排序</p>
-    <p>按照发售额大小排序</p>
-    <p>按认购价格高低排序</p>
-    <p>按照距离远近排序</p>
+    <p onclick="selectRadio(this)" class="checked">按照发布时间远近排序</p>
+    <p onclick="selectRadio(this)">按照发售额大小排序</p>
+    <p onclick="selectRadio(this)">按认购价格高低排序</p>
+    <p onclick="selectRadio(this)">按照距离远近排序</p>
+    <p onclick="selectRadio(this)">全部内容</p>
+  </div>
+  <div class="search-submit">
+    <div class="button reset">重 置</div>
+    <div class="button ok" onclick="submitSearch()">确  定</div>
   </div>
 </div>
 </body>
@@ -572,8 +573,13 @@
     function search() {
         $('.search').show()
     }
+    // 选择多选
     function follow(e) {
         $(e).toggleClass('checked')
+    }
+    // 选择单选
+    function selectRadio(e) {
+        $(e).toggleClass('checked').siblings().removeClass('checked')
     }
     let swiper = new Swiper('.swiper-container', {
         lazy: true,
@@ -582,6 +588,12 @@
         navigation: {
             nextEl: '.swiper-button-next',
         },
+       on:{
+           touchEnd: function(event){
+              console.log(swiper.activeIndex)
+           },
+
+       }
     });
     let mySwiper2 = new Swiper('.swiper-container2',{
         direction: 'vertical',
@@ -606,4 +618,58 @@
             }
             ,3000)
     });
+
+
+
+    function showMask() {
+        $('.mask-release').show()
+    }
+    function hideMask() {
+        $('.mask-release').hide()
+    }
+
+    function submitSearch() {
+        let a1Start = $.trim($('input[name="a1Start"]').val());
+        let a1End = $.trim($('input[name="a1End"]').val());
+        let a2Start = $.trim($('input[name="a2Start"]').val());
+        let a2End = $.trim($('input[name="a2End"]').val());
+        let isA1 = a1Start !== '' && a1End !== '';
+        if(a1Start==='' && a1End === ''){
+            isA1 = true
+        }else{
+            if((/^[0-9]*[1-9][0-9]*$/).test(a1Start) && (/^[0-9]*[1-9][0-9]*$/).test(a1End)){
+                isA1 = true
+            }else{
+                isA1 = false
+            }
+        }
+
+        let isA2 = a2Start !== '' && a2End !== '';
+        if(a2Start === '' && a2End === ''){
+            isA2 = true
+        }else{
+            if((/^[0-9]*[1-9][0-9]*$/).test(a2Start) && (/^[0-9]*[1-9][0-9]*$/).test(a2End)){
+                isA2 = true
+            }else{
+                isA2 = false
+            }
+        }
+        if(!isA1){
+            titleMsg('发行额输入有误')
+            return false
+        }
+        if(!isA2){
+            titleMsg('认购价输入有误')
+            return false
+        }
+        alert('验证通过')
+
+        // ajax
+
+        console.log($('.search dd.checked').text() +"-"+$('.box-dl p.checked').text())
+        $('.search').hide()
+
+
+
+    }
 </script>

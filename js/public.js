@@ -9,6 +9,11 @@ $.fn.extend({
             _this = $(this);
         let defaults = {type:'checkbox',len:5,};
         let settings = $.extend({},defaults, options);
+
+
+
+
+
         _self.checkImg = function (img) {
             var size = img / 1024
             // 验证图片格式
@@ -23,9 +28,45 @@ $.fn.extend({
             }
 
         };
+
         _this.change(function () {
             for(let i = 0;i<this.files.length;i++){
-                _self.checkImg(this.files[i]) //验证图片
+
+
+
+              /*  $('#btn').click(function () {
+                    $('#loadImg').attr('src', $('.container > img').cropper('getCroppedCanvas').toDataURL())
+
+                })*/
+
+                _self.checkImg(this.files[i]);
+                let reader = new FileReader();
+                reader.readAsDataURL(this.files[i]);
+                reader.onload = function(e){
+                    $('.cropper-mask .container img').attr('src',this.result)
+                    $('.cropper-mask').show()
+                    $('.container > img').cropper({
+                        aspectRatio: 4 / 3,
+                        viewMode: 1,
+                    });
+
+                    $('#btn').click(function () {
+                        let item = ' <div class="item">\n' +
+                            '<img src="'+$('.container > img').cropper('getCroppedCanvas').toDataURL()+'" alt="">\n' +
+                            '<div class="delete-img" onclick="deleteImg(this)"><s></s></div>'
+                        '</div>'
+                        _this.parent().before(item)
+                        $('.cropper-mask').hide()
+                    })
+
+
+
+
+
+                }
+
+
+               /* _self.checkImg(this.files[i]) //验证图片
                 console.log(settings.id)
                 let reader = new FileReader();
                 reader.readAsDataURL(this.files[i]);
@@ -52,9 +93,8 @@ $.fn.extend({
                         _this.parent().siblings('.id-bj').hide();
                         _this.parent().hide();
                     }
-                }
+                }*/
             }
-
         })
     },
 
