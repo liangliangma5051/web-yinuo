@@ -1166,6 +1166,7 @@ footer{
     dd{
       float: left;
       width: 20%;
+      position: relative;
       a{
         color: #333;
         font-size: r(20);
@@ -1174,6 +1175,11 @@ footer{
         display: block;
         width: 100%;
         text-align: center;
+        &.text{
+          position: absolute;
+          bottom:r(16);
+          font-size: r(20);
+        }
       }
       i{
         margin: r(18) auto r(3);
@@ -1203,10 +1209,12 @@ footer{
           }
         }
         &.add-page{
+          margin: 0 auto;
           position: relative;
-          top: -(r(2));
-          width: r(66);
-          height: r(66);
+          top:-(r(42));
+          width: r(114);
+          height: r(114);
+          z-index: 5;
           background: url("../images/index/add-icon.png") no-repeat;
           background-size: contain;
         }
@@ -1738,7 +1746,7 @@ footer{
     background: #1cc419;
   }
   *{
-    line-height: 1;
+    line-height: 1.1;
   }
   p{
     @extend .overflowText;
@@ -5015,7 +5023,7 @@ i.nv{
           background-size: contain;
           width: r(84);
           height: r(69);
-          margin-top: r(1);
+          margin-top: r(3);
         }
         &.nav2{
           background: url("../images/center/t3.png") no-repeat;
@@ -5027,17 +5035,18 @@ i.nv{
         &.nav3{
           background: url("../images/center/t5.png") no-repeat;
           background-size: contain;
-          width: r(73);
+          width: r(76);
           height: r(63);
-          margin-top: r(3);
+          margin-top: r(12);
         }
         &.nav4{
-          background: url("../images/center/t4.png") no-repeat;
+          background: url("../images/center/t14.png") no-repeat;
           background-size: contain;
-          width: r(70);
-          height: r(65);
-          margin-top: r(3);
+          width: r(73);
+          height: r(54);
+          margin-top: r(11);
         }
+
       }
       p{
         position: absolute;
@@ -5083,26 +5092,32 @@ i.nv{
         &.nav7{
           background: url("../images/center/t8.png") no-repeat;
           background-size: contain;
-          width: r(43);
-          height: r(42);
+          width: r(35);
+          height: r(40);
         }
         &.nav8{
           background: url("../images/center/t9.png") no-repeat;
           background-size: contain;
-          width: r(41);
-          height: r(40);
+          width: r(45);
+          height: r(53);
         }
         &.nav9{
           background: url("../images/center/t13.png") no-repeat;
           background-size: contain;
-          width: r(48);
-          height: r(41);
+          width: r(41);
+          height: r(44);
         }
         &.nav10{
           background: url("../images/center/t10.png") no-repeat;
           background-size: contain;
-          width: r(48);
-          height: r(42);
+          width: r(52);
+          height: r(35);
+        }
+        &.nav15{
+          background: url("../images/center/t15.png") no-repeat;
+          background-size: contain;
+          width: r(40);
+          height: r(37);
         }
         &.nav11{
           background: url("../images/center/t11.png") no-repeat;
@@ -6447,4 +6462,15 @@ i.nv{
 
 
   background: white;
+}
+#btn-cropper{
+ position: absolute;
+  right: 20px;top:10px;
+  width: 70px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  background: white;
+  color: #333;
+  font-size: 14px;
 }

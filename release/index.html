@@ -14,8 +14,8 @@
   <script src="../js/swiper.min.js"></script>
   <script src="../js/public.js"></script>
   <script src="../js/dataSelect.js"></script>
-  <link href="https://cdn.bootcss.com/cropper/4.0.0/cropper.css" rel="stylesheet">
-  <script src="https://cdn.bootcss.com/cropper/4.0.0/cropper.js"></script>
+  <link href="../css/cropper-4.0.0.css" rel="stylesheet">
+  <script src="../js/cropper-4.0.0.js"></script>
 </head>
 <body>
 <!--返回上一页-->
@@ -369,15 +369,13 @@
   <div class="container">
     <img id='image' src='img.jpg' >
   </div>
-  <div id="btn">
-    确定
-  </div>
+
 </div>
 
 </body>
 </html>
 <script>
-
+console.log($(document).width())
     function textLen(e) {
         $(e).siblings('.text-length').find('s').text($(e).val().length)
     }

@@ -30,40 +30,78 @@ $.fn.extend({
         };
 
         _this.change(function () {
-            for(let i = 0;i<this.files.length;i++){
-
-
-
-              /*  $('#btn').click(function () {
-                    $('#loadImg').attr('src', $('.container > img').cropper('getCroppedCanvas').toDataURL())
-
-                })*/
-
+            var i = 0;
+            for(i = 0;i<this.files.length;i++){
+                var objURL = getObjectURL(this.files[i]);//这里的objURL就是input file的真实路径
+                $('#image').attr('src',objURL)
+                $('#image').cropper({
+                    aspectRatio: 4 / 3,
+                    viewMode: 1,
+                    // autoCrop:false,
+                    minCropBoxWidth:$(document).width(),
+                    maxCropBoxWidth:$(document).width(),
+                    maxCanvasWidth:$(document).width(),
+                    minCanvasWidth:$(document).width()
+                });
+                console.log(objURL)
+                $('.cropper-mask .container').css('height',$(document).height()+'px')
+                $('.cropper-mask .container').css('width',$(document).width()+'px')
+                $('.cropper-mask').show()
                 _self.checkImg(this.files[i]);
-                let reader = new FileReader();
-                reader.readAsDataURL(this.files[i]);
+                var ss='dasdjahjk'
+                console.log(ss.toString())
+                let btnCropper= $('<div id="btn-cropper" onclick="btnCropper(ss)">\n' +
+                    '    确定\n' +
+                    '  </div>');
+                $('.cropper-mask').append(btnCropper)
+             /*   reader.readAsDataURL(this.files[i]);
                 reader.onload = function(e){
-                    $('.cropper-mask .container img').attr('src',this.result)
-                    $('.cropper-mask').show()
-                    $('.container > img').cropper({
-                        aspectRatio: 4 / 3,
-                        viewMode: 1,
-                    });
-
-                    $('#btn').click(function () {
+                    console.log('1')
+                    $('#btn-cropper').on('click',function () {
+                        console.log('2')
                         let item = ' <div class="item">\n' +
-                            '<img src="'+$('.container > img').cropper('getCroppedCanvas').toDataURL()+'" alt="">\n' +
+                            '<img src="'+$('#image').cropper('getCroppedCanvas').toDataURL()+'" alt="">\n' +
                             '<div class="delete-img" onclick="deleteImg(this)"><s></s></div>'
                         '</div>'
-                        _this.parent().before(item)
+                        // _this.parent().before(item)
                         $('.cropper-mask').hide()
+                        if(_this.parent().siblings('.item').length + 1 > settings.len){
+                            _this.parent().hide()
+                        }else{
+                            _this.parent().before(item)
+                            if(_this.parent().siblings('.item').length === settings.len){
+                                _this.parent().hide()
+                            }
+                        }
                     })
 
 
 
 
 
-                }
+                }*/
+              /*  console.log(change_this.files[i])
+
+                $('#btn-cropper').on('click',function () {
+                    console.log('1')
+                    reader.readAsDataURL(change_this.files);
+                    reader.onload = function(e){
+                        let item = ' <div class="item">\n' +
+                            '<img src="'+$('#image').cropper('getCroppedCanvas').toDataURL()+'" alt="">\n' +
+                            '<div class="delete-img" onclick="deleteImg(this)"><s></s></div>'
+                        '</div>'
+                        $('.cropper-mask').hide()
+                        if(_this.parent().siblings('.item').length + 1 > settings.len){
+                            _this.parent().hide()
+                        }else{
+                            _this.parent().before(item)
+                            if(_this.parent().siblings('.item').length === settings.len){
+                                _this.parent().hide()
+                            }
+                        }
+
+                    }
+                })*/
 
 
                /* _self.checkImg(this.files[i]) //验证图片
@@ -95,6 +133,8 @@ $.fn.extend({
                     }
                 }*/
             }
+            $('.btn-cropper')
+
         })
     },
 
@@ -205,20 +245,52 @@ $.fn.extend({
 
 
 
-    //年月日时间选择
-    selectDate: function (options) {
-        let _self = this,
-            _this = $(this);
-        let defaults = {num:0};
-        let settings = $.extend({}, defaults, options);
-        data()
-    }
+
+
+
+
+
 
 });
+/*
+function btnCropper(changeSelf) {
+    // console.log(e)
+    console.log(changeSelf)
+    // console.log(settings)
+  /!*  var reader = new FileReader();
+    reader.readAsDataURL(e);
+    reader.onload = function(e){
+        let item = ' <div class="item">\n' +
+            '<img src="'+$('#image').cropper('getCroppedCanvas').toDataURL()+'" alt="">\n' +
+            '<div class="delete-img" onclick="deleteImg(this)"><s></s></div>'
+        '</div>'
+
+
+        if(changeSelf.parent().siblings('.item').length + 1 > settings.len){
+            changeSelf.parent().hide()
+        }else{
+            changeSelf.parent().before(item)
+            if(changeSelf.parent().siblings('.item').length === settings.len){
+                changeSelf.parent().hide()
+            }
+        }
 
 
 
+    }*!/
+}*/
 
+function getObjectURL(file) {
+    var url = null;
+    if (window.createObjcectURL != undefined) {
+        url = window.createOjcectURL(file);
+    } else if (window.URL != undefined) {
+        url = window.URL.createObjectURL(file);
+    } else if (window.webkitURL != undefined) {
+        url = window.webkitURL.createObjectURL(file);
+    }
+    return url;
+}
 
 
 // 提示信息

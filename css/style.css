@@ -1015,7 +1015,8 @@ footer {
   box-shadow: 0px -1px 3px  #ededed; }
   footer dl dd {
     float: left;
-    width: 20%; }
+    width: 20%;
+    position: relative; }
     footer dl dd a {
       color: #333;
       font-size: 0.192rem; }
@@ -1023,6 +1024,10 @@ footer {
       display: block;
       width: 100%;
       text-align: center; }
+      footer dl dd s.text {
+        position: absolute;
+        bottom: 0.1536rem;
+        font-size: 0.192rem; }
     footer dl dd i {
       margin: 0.1728rem auto 0.0288rem;
       position: relative;
@@ -1047,10 +1052,12 @@ footer {
           background: url("../images/index/demand-checked.png") no-repeat;
           background-size: contain; }
       footer dl dd i.add-page {
+        margin: 0 auto;
         position: relative;
-        top: -0.0192rem;
-        width: 0.6336rem;
-        height: 0.6336rem;
+        top: -0.4032rem;
+        width: 1.0944rem;
+        height: 1.0944rem;
+        z-index: 5;
         background: url("../images/index/add-icon.png") no-repeat;
         background-size: contain; }
       footer dl dd i.msg-page {
@@ -1489,7 +1496,7 @@ footer {
   line-height: 1.536rem;
   background: #1cc419; }
 .msg-item * {
-  line-height: 1; }
+  line-height: 1.1; }
 .msg-item li {
   position: relative;
   height: 1.536rem; }
@@ -4180,7 +4187,7 @@ i.nv {
         background-size: contain;
         width: 0.8064rem;
         height: 0.6624rem;
-        margin-top: 0.0096rem; }
+        margin-top: 0.0288rem; }
       .center-body .center-nav dd i.nav2 {
         background: url("../images/center/t3.png") no-repeat;
         background-size: contain;
@@ -4190,15 +4197,15 @@ i.nv {
       .center-body .center-nav dd i.nav3 {
         background: url("../images/center/t5.png") no-repeat;
         background-size: contain;
-        width: 0.7008rem;
+        width: 0.7296rem;
         height: 0.6048rem;
-        margin-top: 0.0288rem; }
+        margin-top: 0.1152rem; }
       .center-body .center-nav dd i.nav4 {
-        background: url("../images/center/t4.png") no-repeat;
+        background: url("../images/center/t14.png") no-repeat;
         background-size: contain;
-        width: 0.672rem;
-        height: 0.624rem;
-        margin-top: 0.0288rem; }
+        width: 0.7008rem;
+        height: 0.5184rem;
+        margin-top: 0.1056rem; }
     .center-body .center-nav dd p {
       position: absolute;
       bottom: 0.144rem;
@@ -4239,23 +4246,28 @@ i.nv {
     .center-body ul li i.nav7 {
       background: url("../images/center/t8.png") no-repeat;
       background-size: contain;
-      width: 0.4128rem;
-      height: 0.4032rem; }
+      width: 0.336rem;
+      height: 0.384rem; }
     .center-body ul li i.nav8 {
       background: url("../images/center/t9.png") no-repeat;
       background-size: contain;
-      width: 0.3936rem;
-      height: 0.384rem; }
+      width: 0.432rem;
+      height: 0.5088rem; }
     .center-body ul li i.nav9 {
       background: url("../images/center/t13.png") no-repeat;
       background-size: contain;
-      width: 0.4608rem;
-      height: 0.3936rem; }
+      width: 0.3936rem;
+      height: 0.4224rem; }
     .center-body ul li i.nav10 {
       background: url("../images/center/t10.png") no-repeat;
       background-size: contain;
-      width: 0.4608rem;
-      height: 0.4032rem; }
+      width: 0.4992rem;
+      height: 0.336rem; }
+    .center-body ul li i.nav15 {
+      background: url("../images/center/t15.png") no-repeat;
+      background-size: contain;
+      width: 0.384rem;
+      height: 0.3552rem; }
     .center-body ul li i.nav11 {
       background: url("../images/center/t11.png") no-repeat;
       background-size: contain;
@@ -5332,5 +5344,17 @@ i.nv {
   bottom: 0;
   z-index: 99;
   background: white; }
+
+#btn-cropper {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  width: 70px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  background: white;
+  color: #333;
+  font-size: 14px; }
 
 /*# sourceMappingURL=style.css.map */
