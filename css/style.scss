@@ -224,6 +224,9 @@ h1{
     font-size: r(28);
     text-align: left;
     margin: r(60) 0  r(90) 0;
+    &.text-underline{
+      font-size: r(24);
+    }
   }
   a.text-underline{
     color: #999;
@@ -257,7 +260,7 @@ h1{
 .other-login{
   //position: absolute;
   //bottom: r(40);
-  margin-top: r(40);
+  margin-top: r(80);
   width: 100%;
   box-sizing: border-box;
   padding: r(0) r(40);
@@ -355,19 +358,30 @@ p.line20{
     padding: r(40) 0 r(60);
   }
   .user-pic{
-    width: r(158);
-    height: r(158);
+    width: r(150);
+    height: r(150);
     background: url("../images/user-pic.png");
     background-size: contain;
     margin-left: r(32);
     border-radius: r(8);
     float: left;
-    overflow: hidden;
+    //overflow: hidden;
     position: relative;
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      bottom:-(r(8));
+      right:-(r(8));
+      width: r(44);
+      height: r(44);
+      background: url("../images/user-pic3.png");
+      background-size: contain;
+    }
     input[type='file']{
       opacity: 0;
-      width: r(158);
-      height: r(158);
+      width: r(150);
+      height: r(150);
       display: block;
       position: absolute;
       left: 0;
@@ -375,9 +389,9 @@ p.line20{
       z-index: 2;
     }
     img{
-      display: none;
-      width: r(158);
-      height: r(158);
+      display: block;
+      width: r(150);
+      height: r(150);
       position: absolute;
       left: 0;
       top:0;
@@ -389,10 +403,14 @@ p.line20{
       height: r(150);
       background: url("../images/user-pic2.png");
       background-size: contain;
+      &:after{
+        display: none;
+      }
     }
     img{
-      width: r(160);
-      height: r(160);
+      width: r(150);
+      height: r(150);
+      border-radius: r(5);
     }
   }
 
@@ -745,19 +763,20 @@ p.line20{
       }
     }
   }
-  .add-label{
-    background: url("../images/add-label-col.png?v=1") no-repeat ;
-    background-size:contain ;
-    width: r(140);
+
+}
+.add-label{
+  background: url("../images/add-label-col.png?v=1") no-repeat ;
+  background-size:contain ;
+  width: r(140);
+  height: r(72);
+  display: block;
+  input{
+    color: #666;
+    padding-left: r(50);
     height: r(72);
-    display: block;
-    input{
-      color: #666;
-      padding-left: r(50);
-      height: r(72);
-      width: r(220);
-      box-sizing: border-box;
-    }
+    width: r(220);
+    box-sizing: border-box;
   }
 }
 .swiper-container2{
@@ -957,7 +976,7 @@ header{
   .li-context{
     border-radius: r(10);
     overflow: hidden;
-    border: 1px solid #f4f4f4;
+    border: 1px solid #f8f8f8;
 
   }
   .msg{
@@ -1144,10 +1163,8 @@ header{
     }
   }
   .index-foot-bj{
-    margin-left: r(30);
-    box-sizing: border-box;
-    width: r(656);
-    height: r(44);
+    width: 100%;
+    height: r(70);
     background: url("../images/index-foot-bj.png") no-repeat;
     background-size: contain;
   }
@@ -1172,6 +1189,7 @@ footer{
         font-size: r(20);
       }
       s{
+        color: #444;
         display: block;
         width: 100%;
         text-align: center;
@@ -1186,20 +1204,18 @@ footer{
         position: relative;
         display: block;
         width: r(40);
-        height: r(38);
+        height: r(40);
         background: url("../images/index/index-icon.png") no-repeat;
         background-size: contain;
         &.index-page{
           position: relative;
-          top: r(3);
-          margin-bottom: r(5);
           &.checked{
             background: url("../images/index/index-checked.png") no-repeat;
             background-size: contain;
           }
         }
         &.demand-page{
-          width: r(42);
+          width: r(40);
           height: r(40);
           background: url("../images/index/demand-icon.png") no-repeat;
           background-size: contain;
@@ -1220,10 +1236,8 @@ footer{
         }
         &.msg-page{
           position: relative;
-          top: r(2);
-          margin-top: r(15);
-          width: r(44);
-          height: r(39);
+          width: r(40);
+          height: r(40);
           background: url("../images/index/msg-icon.png") no-repeat;
           background-size: contain;
           &.checked{
@@ -1232,8 +1246,8 @@ footer{
           }
         }
         &.my-page{
-          width: r(38);
-          height: r(39);
+          width: r(40);
+          height: r(40);
           background: url("../images/index/my-icon.png") no-repeat;
           background-size: contain;
           &.checked{
@@ -1391,8 +1405,20 @@ footer{
       line-height: r(110);
       overflow: hidden;
       font-size: r(30);
+      position: relative;
       &.checked{
         color: #000;
+        &:after{
+          content: '';
+          display: block;
+          background: url("../images/index/payment-type5.png") no-repeat;
+          background-size: contain;
+          width: r(25);
+          height: r(18);
+          position: absolute;
+          right: r(32);
+          top:r(50);
+        }
       }
     }
     dl{
@@ -4772,6 +4798,10 @@ i.nv{
     position: relative;
     border-radius: r(12);
     margin-bottom: r(30);
+    &.nobank{
+      background: url("../images/bank/nobank.png");
+      background-size: contain;
+    }
   }
   .close{
     width: r(40);
@@ -5017,7 +5047,6 @@ i.nv{
       i{
         display: block;
         margin: auto;
-
         &.nav1{
           background: url("../images/center/t2.png") no-repeat;
           background-size: contain;
@@ -5126,7 +5155,14 @@ i.nv{
           height: r(41);
         }
       }
-
+      .text{
+        position: absolute;
+        left: r(115);
+        box-sizing: border-box;
+        font-size: r(30);
+        color: #999;
+        line-height: r(115);
+      }
     }
   }
 }
@@ -5975,6 +6011,50 @@ i.nv{
       }
     }
   }
+  a.sty2{
+    display: block;
+    width: 27.5%;
+    float: left;
+    text-align: center;
+    i{
+      &.nav20{
+        background: url("../images/voucher/nav20.png") no-repeat;
+        background-size: contain;
+        width: r(40);
+        height: r(42);
+      }
+      &.nav21{
+        background: url("../images/voucher/nav21.png") no-repeat;
+        background-size: contain;
+        width: r(40);
+        height: r(42);
+      }
+      &.nav22{
+        background: url("../images/voucher/nav22.png") no-repeat;
+        background-size: contain;
+        width: r(40);
+        height: r(42);
+      }
+      &.nav23{
+        background: url("../images/voucher/nav23.png") no-repeat;
+        background-size: contain;
+        width: r(40);
+        height: r(42);
+      }
+
+    }
+  }
+  .service-btn{
+    background: #1cc419;
+    width: 45%;
+    float: right;
+    text-align: center;
+    color: white;
+    font-size: r(36);
+  }
+}
+.service-footer.sty2{
+  padding: 0;
 }
 .my-item{
   position: relative;
@@ -6458,13 +6538,10 @@ i.nv{
   position: fixed;
   top:0;left:0;right: 0;bottom:0;
   z-index: 99;
-
-
-
   background: white;
 }
-#btn-cropper{
- position: absolute;
+.cropper-mask .btn-cropper{
+  position: absolute;
   right: 20px;top:10px;
   width: 70px;
   text-align: center;
@@ -6473,4 +6550,14 @@ i.nv{
   background: white;
   color: #333;
   font-size: 14px;
+}
+.cropper-mask .btn-cropper.qx{
+  left: 20px;top:10px;
+}
+.no-address{
+  position: absolute;
+  left:0;bottom:0;right: 0;top:0;
+  color: #888;font-size: r(28);
+  line-height: r(138);
+  text-align: center;
 }

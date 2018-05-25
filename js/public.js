@@ -1,19 +1,15 @@
 
 
 
-
+var fileThis;
+var set;
 $.fn.extend({
     // 图片上传
     uploadImg:function(options){
         let _self = this,
             _this = $(this);
-        let defaults = {type:'checkbox',len:5,};
+        let defaults = {len:5,aspectNum: 3,id:''};
         let settings = $.extend({},defaults, options);
-
-
-
-
-
         _self.checkImg = function (img) {
             var size = img / 1024
             // 验证图片格式
@@ -28,113 +24,39 @@ $.fn.extend({
             }
 
         };
-
         _this.change(function () {
-            var i = 0;
-            for(i = 0;i<this.files.length;i++){
-                var objURL = getObjectURL(this.files[i]);//这里的objURL就是input file的真实路径
-                $('#image').attr('src',objURL)
-                $('#image').cropper({
-                    aspectRatio: 4 / 3,
+            fileThis = _this;
+             set = settings;
+            for(var i=0;i<this.files.length;i++){
+                let fileImg=this.files[i]
+                _self.checkImg(this.files[i])
+                let cropperMask= $('<div class="cropper-mask" style="display: block" >\n' +
+                    '  <div class="container">\n' +
+                    '    <img class=\'image\' src=\'\' >\n' +
+                    '  </div>\n' +
+                    '  <div class="btn-cropper" onclick="btnCropper(this,fileThis,set)">\n' +
+                    '    确定\n' +
+                    '  </div>\n' +
+                    '  <div class="btn-cropper qx" onclick="btnCropperCancel(this)">\n' +
+                    '    取消\n' +
+                    '  </div>\n' +
+                    '</div>');
+                // cropperMask
+                $(document.body).append(cropperMask)
+                let imgDom=  $('.cropper-mask').eq(i).find('img');
+                imgDom.attr('src',getObjectURL(this.files[i]))
+                imgDom.cropper({
+                    aspectRatio:4 / settings.aspectNum,
                     viewMode: 1,
-                    // autoCrop:false,
                     minCropBoxWidth:$(document).width(),
                     maxCropBoxWidth:$(document).width(),
                     maxCanvasWidth:$(document).width(),
                     minCanvasWidth:$(document).width()
                 });
-                console.log(objURL)
                 $('.cropper-mask .container').css('height',$(document).height()+'px')
                 $('.cropper-mask .container').css('width',$(document).width()+'px')
-                $('.cropper-mask').show()
-                _self.checkImg(this.files[i]);
-                var ss='dasdjahjk'
-                console.log(ss.toString())
-                let btnCropper= $('<div id="btn-cropper" onclick="btnCropper(ss)">\n' +
-                    '    确定\n' +
-                    '  </div>');
-                $('.cropper-mask').append(btnCropper)
-             /*   reader.readAsDataURL(this.files[i]);
-                reader.onload = function(e){
-                    console.log('1')
-                    $('#btn-cropper').on('click',function () {
-                        console.log('2')
-                        let item = ' <div class="item">\n' +
-                            '<img src="'+$('#image').cropper('getCroppedCanvas').toDataURL()+'" alt="">\n' +
-                            '<div class="delete-img" onclick="deleteImg(this)"><s></s></div>'
-                        '</div>'
-                        // _this.parent().before(item)
-                        $('.cropper-mask').hide()
-                        if(_this.parent().siblings('.item').length + 1 > settings.len){
-                            _this.parent().hide()
-                        }else{
-                            _this.parent().before(item)
-                            if(_this.parent().siblings('.item').length === settings.len){
-                                _this.parent().hide()
-                            }
-                        }
-                    })
-
-
-
-
-
-                }*/
-              /*  console.log(change_this.files[i])
-
-                $('#btn-cropper').on('click',function () {
-                    console.log('1')
-                    reader.readAsDataURL(change_this.files);
-                    reader.onload = function(e){
-                        let item = ' <div class="item">\n' +
-                            '<img src="'+$('#image').cropper('getCroppedCanvas').toDataURL()+'" alt="">\n' +
-                            '<div class="delete-img" onclick="deleteImg(this)"><s></s></div>'
-                        '</div>'
-                        $('.cropper-mask').hide()
-                        if(_this.parent().siblings('.item').length + 1 > settings.len){
-                            _this.parent().hide()
-                        }else{
-                            _this.parent().before(item)
-                            if(_this.parent().siblings('.item').length === settings.len){
-                                _this.parent().hide()
-                            }
-                        }
-
-                    }
-                })*/
-
-
-               /* _self.checkImg(this.files[i]) //验证图片
-                console.log(settings.id)
-                let reader = new FileReader();
-                reader.readAsDataURL(this.files[i]);
-                reader.onload = function(e){
-                    console.log(settings.id)
-                    if(settings.type === 'checkbox'){
-                        let item = ' <div class="item">\n' +
-                            '<img src="'+this.result+'" alt="">\n' +
-                            '<div class="delete-img" onclick="deleteImg(this)"><s></s></div>'
-                        '</div>'
-                        if(_this.parent().siblings('.item').length + 1 > settings.len){
-                            _this.parent().hide()
-                        }else{
-                            _this.parent().before(item)
-                            if(_this.parent().siblings('.item').length === settings.len){
-                                _this.parent().hide()
-                            }
-                        }
-                    }
-                    else {
-                        let itemId = ' <img src="'+this.result+'" alt="">';
-                        _this.parent().after(itemId);
-                        _this.parent().siblings('.delete-load-id').show();
-                        _this.parent().siblings('.id-bj').hide();
-                        _this.parent().hide();
-                    }
-                }*/
+                $('.cropper-mask').eq(0).css('z-index',200)
             }
-            $('.btn-cropper')
-
         })
     },
 
@@ -245,40 +167,31 @@ $.fn.extend({
 
 
 
-
-
-
-
-
-
 });
-/*
-function btnCropper(changeSelf) {
-    // console.log(e)
-    console.log(changeSelf)
-    // console.log(settings)
-  /!*  var reader = new FileReader();
-    reader.readAsDataURL(e);
-    reader.onload = function(e){
-        let item = ' <div class="item">\n' +
-            '<img src="'+$('#image').cropper('getCroppedCanvas').toDataURL()+'" alt="">\n' +
-            '<div class="delete-img" onclick="deleteImg(this)"><s></s></div>'
-        '</div>'
-
-
-        if(changeSelf.parent().siblings('.item').length + 1 > settings.len){
-            changeSelf.parent().hide()
-        }else{
-            changeSelf.parent().before(item)
-            if(changeSelf.parent().siblings('.item').length === settings.len){
-                changeSelf.parent().hide()
-            }
+// 确定裁剪
+function btnCropper(self,fileThis,settings) {
+    let item = ' <div class="item">\n' +
+        '<img src="'+$(self).siblings('.container').find('.image').cropper('getCroppedCanvas').toDataURL()+'" alt="">\n' +
+        '<div class="delete-img" onclick="deleteImg(this)"><s></s></div>'
+    '</div>'
+    console.log(settings.id)
+    if(fileThis.parent().siblings('.item').length + 1 > settings.len){
+        fileThis.parent().hide()
+    }else{
+        fileThis.parent().before(item)
+        if(fileThis.parent().siblings('.item').length === settings.len){
+            fileThis.parent().hide()
         }
+    }
+    $(self).parents('.cropper-mask').remove()
+    $('.cropper-mask').eq(0).css('z-index',200)
 
-
-
-    }*!/
-}*/
+}
+// 取消裁剪
+function btnCropperCancel(self) {
+    $(self).parents('.cropper-mask').remove()
+    $('.cropper-mask').eq(0).css('z-index',200)
+}
 
 function getObjectURL(file) {
     var url = null;

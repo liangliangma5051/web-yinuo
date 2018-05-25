@@ -22,8 +22,8 @@ msg/
 好友列表             myFriends.html
 
 
-details/
-服务详情                service.html
+details
+服务详情             service.html
 购物车              cart.html
 订单状态/订单详情    paymentState.html
 确认订单            settlement.html
@@ -67,6 +67,7 @@ voucher/  诺券
 service/  服务管理
 服务管理列表        index.html
 服务管理详情        details.html
+服务管理详情-最新        details2.html
 
 
 

@@ -142,6 +142,12 @@
                 <dd onclick="follow(this)">创意产品</dd>
                 <dd onclick="follow(this)">其他产品</dd>
               </dl>
+              <dl class="clear-fix">
+                <dt>其他</dt>
+                <dd style="border:0;">
+                  <div class="add-label" onclick="$('.zdy').show()"></div>
+                </dd>
+              </dl>
             </div>
           </div>
         </div>
@@ -155,6 +161,15 @@
       <dd onclick="releaseCompany(this)">只</dd>
       <dd onclick="releaseCompany(this)">兜</dd>
     </dl>
+  </div>
+</div>
+<div class="mask zdy" style="display: none">
+  <div class="context">
+    <div class="clear-fix">
+      <input type="text" placeholder="自定义服务类型最多8个字" maxlength="8">
+      <div class="btn">确定</div>
+    </div>
+    <div class="close" onclick="$('.zdy').hide()"></div>
   </div>
 </div>
 <div class="release2" style="display: none">
@@ -272,7 +287,6 @@
     </div>
   </div>
 </div>
-
 
 </body>
 </html>

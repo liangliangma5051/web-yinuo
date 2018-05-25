@@ -181,7 +181,10 @@
       </a>
     </dd>
     <dd onclick="showMask()">
-      <i class="add-page"></i>
+      <a href="javascript:void(0)">
+        <i class="add-page"></i>
+        <s class="text">发布</s>
+      </a>
     </dd>
     <dd>
       <a href="msg/msgList.html">
@@ -251,6 +254,19 @@
       <dd onclick="follow(this)">大宗商品</dd>
       <dd onclick="follow(this)">大宗商品</dd>
       <dd onclick="follow(this)">大宗商品</dd>
+    </dl>
+    <dl class="clear-fix">
+      <dt>其他</dt>
+      <dd onclick="$('.mask').show()">自定义</dd>
+      <div class="mask" style="display: none">
+        <div class="context">
+          <div class="clear-fix">
+            <input type="text" placeholder="自定义服务类型最多8个字" maxlength="8">
+            <div class="btn">确定</div>
+          </div>
+          <div class="close" onclick="$('.mask').hide()"></div>
+        </div>
+      </div>
     </dl>
   </div>
   <div class="box-dl center">

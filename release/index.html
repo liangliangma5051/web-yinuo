@@ -26,7 +26,7 @@
 
 <div class="release">
   <!--发布内容1-->
-  <div class="swiper-container release1" style="display: none">
+  <div class="swiper-container release1" style="display: block">
     <div class="swiper-wrapper">
       <div class="release-context swiper-slide">
         <ul>
@@ -365,17 +365,12 @@
   <i></i>
 </div>
 
-<div class="cropper-mask" style="display: none" >
-  <div class="container">
-    <img id='image' src='img.jpg' >
-  </div>
 
-</div>
+
 
 </body>
 </html>
 <script>
-console.log($(document).width())
     function textLen(e) {
         $(e).siblings('.text-length').find('s').text($(e).val().length)
     }
@@ -420,11 +415,11 @@ console.log($(document).width())
 
     $(function(){
         // 初始化图片上传
-        $('#upload1').uploadImg({type:'checkbox',len:8,id:'upload1'});
-        $('#upload2').uploadImg({type:'checkbox',len:5});
-        $('#upload3').uploadImg({type:'radio'});
-        $('#upload4').uploadImg({type:'radio'});
-        $('#upload5').uploadImg({type:'radio'});
+        $('#upload1').uploadImg({len:8,aspectNum:4,id:'upload1'});
+        $('#upload2').uploadImg({len:5,aspectNum:2});
+        $('#upload3').uploadImg({});
+        $('#upload4').uploadImg({});
+        $('#upload5').uploadImg({});
         mySwiper.init() //初始化服务类型
     });
 
