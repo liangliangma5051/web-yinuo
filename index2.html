@@ -23,7 +23,8 @@
     </p>
     <!--<input type="text" placeholder="请输入需求或服务名 称搜索">-->
   </div>
-  <div class="header-col bell">
+  <div class="header-col bell" value="123123">
+    <input type="hidden" value="123123">
     <a href="msg/item.html"></a>
   </div>
 </header>
@@ -32,7 +33,7 @@
     <div class="swiper-slide">
       <div class="swiper-container" >
         <ul class="swiper-wrapper clear-fix">
-          <li class="index-col swiper-slide">
+          <li class="index-col  swiper-slide" data-hash="slide1">
             <div class="clear-fix">
               <div class="li-context">
                 <div class="pic">
@@ -46,7 +47,7 @@
                     <img src="images/index/down.gif" alt="">
                   </div>
                   <div class="pic-explain">
-                    我的承诺2：英语不仅是一种工具，更是一种
+                    我的承诺1：英语不仅是一种工具，更是一种
                     眼界种眼的界种眼界种眼界种眼界种眼界种眼界种界种眼界种
                   </div>
                 </div>
@@ -96,7 +97,7 @@
               <div class="index-foot-bj"></div>
             </div>
           </li>
-          <li class="index-col swiper-slide">
+          <li class="index-col swiper-slide" data-hash="slide2">
             <div class="clear-fix">
               <div class="li-context">
                 <div class="pic">
@@ -160,7 +161,7 @@
               <div class="index-foot-bj"></div>
             </div>
           </li>
-          <li class="index-col swiper-slide">
+          <li class="index-col swiper-slide" data-hash="slide3">
             <div class="clear-fix">
               <div class="li-context">
                 <div class="pic">
@@ -174,7 +175,7 @@
                     <img src="images/index/down.gif" alt="">
                   </div>
                   <div class="pic-explain">
-                    我的承诺2：英语不仅是一种工具，更是一种
+                    我的承诺3：英语不仅是一种工具，更是一种
                     眼界种眼的界种眼界种眼界种眼界种眼界种眼界种界种眼界种
                   </div>
                 </div>
@@ -581,20 +582,24 @@
     function selectRadio(e) {
         $(e).toggleClass('checked').siblings().removeClass('checked')
     }
-    let swiper = new Swiper('.swiper-container', {
+    var  swiper = new Swiper('.swiper-container', {
         lazy: true,
         loop : false,
         effect: 'coverflow',
         navigation: {
             nextEl: '.swiper-button-next',
         },
+        hashNavigation: true,
        on:{
            touchEnd: function(event){
-              console.log(swiper.activeIndex)
+               $('ul li').removeClass('daksjndkajsdn')
+              $('ul li').eq(swiper.activeIndex).addClass('daksjndkajsdn')
+
            },
 
        }
     });
+
     let mySwiper2 = new Swiper('.swiper-container2',{
         direction: 'vertical',
         on: {

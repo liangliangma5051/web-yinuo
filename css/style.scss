@@ -27,6 +27,16 @@ body{
   font: r(24)/1.5 '苹方', 'Adobe 黑体 Std',"Microsoft YaHei", arial, 微软雅黑, tahoma, 宋体, sans-serif;
   color: #333;
 }
+h6 {
+  *{
+    font-size: r(24);
+  }
+}
+html,body{
+  max-width: 720px;
+  margin: 0 auto;
+}
+
 
 input:focus,input:link,input{
   box-shadow: none;
@@ -1001,6 +1011,7 @@ header{
       padding-right: r(5);
       letter-spacing: -(r(2));
       margin:r(13) r(13) 0 r(13);
+      font-size: r(20);
       //background: url("../images/index-num-icon.png") no-repeat ;
       //background-size:contain;
       s{
@@ -1359,6 +1370,14 @@ footer{
     }
   }
 }
+.search  ul + .box-dl {
+  //display: none;
+  //padding-left: r(30);
+  position: absolute;
+  top:r(84);bottom:r(100);right:0;left:0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .search{
   @extend .font-iphone;
   position: fixed;
@@ -1397,6 +1416,10 @@ footer{
   .box-dl{
     display: none;
     padding-left: r(30) ;
+    /* position: absolute;
+     top:r(84);bottom:r(100);right:0;left:0;
+     overflow-y: auto;
+     -webkit-overflow-scrolling: touch;*/
     p{
       border-bottom:1px solid #ccc;
       text-indent: r(60);
@@ -2769,7 +2792,9 @@ i.index-num{
   line-height: r(92);
   background: #1cc419;
   text-align: center;
-
+  position: fixed;
+  bottom:0;left:0;
+  width: 100%;
   color: white;
   .prev-btn{
     height: r(88);
@@ -4965,6 +4990,10 @@ i.nv{
     margin-left: r(70);
     border: r(5) solid #3aac42;
     margin-right: r(15);
+    img{
+      width: r(168);
+      height: r(168);
+    }
   }
   .center-header{
     background: url("../images/center/t1.png") no-repeat;
@@ -6560,4 +6589,22 @@ i.nv{
   color: #888;font-size: r(28);
   line-height: r(138);
   text-align: center;
+}
+.release{
+  .swiper-container{
+    position: absolute;
+    top:r(88);left:0;right: 0;bottom:0;
+  }
+  .release-scroll{
+    overflow-y: auto;
+    position: absolute;
+    top:0;left:0;right: 0;bottom:r(100);
+    -webkit-overflow-scrolling: touch;
+  }
+
+}
+
+
+.text-center{
+  padding: 0 !important; text-align: center;
 }

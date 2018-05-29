@@ -20,6 +20,13 @@ body {
   font: 0.2304rem/1.5 "苹方", "Adobe 黑体 Std", "Microsoft YaHei", arial, 微软雅黑, tahoma, 宋体, sans-serif;
   color: #333; }
 
+h6 * {
+  font-size: 0.2304rem; }
+
+html, body {
+  max-width: 720px;
+  margin: 0 auto; }
+
 input:focus, input:link, input {
   box-shadow: none; }
 
@@ -887,7 +894,8 @@ header {
       text-align: right;
       padding-right: 0.048rem;
       letter-spacing: -0.0192rem;
-      margin: 0.1248rem 0.1248rem 0 0.1248rem; }
+      margin: 0.1248rem 0.1248rem 0 0.1248rem;
+      font-size: 0.192rem; }
       .index-col .msg i.index-num s {
         float: right;
         line-height: 0.384rem;
@@ -1169,6 +1177,15 @@ footer {
         background: url("../images/index/yuan-xing-checked.png") no-repeat;
         background-size: contain; }
 
+.search ul + .box-dl {
+  position: absolute;
+  top: 0.8064rem;
+  bottom: 0.96rem;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
+
 .search {
   position: fixed;
   top: 0;
@@ -1207,7 +1224,11 @@ footer {
         color: #333; }
   .search .box-dl {
     display: none;
-    padding-left: 0.288rem; }
+    padding-left: 0.288rem;
+    /* position: absolute;
+     top:r(84);bottom:r(100);right:0;left:0;
+     overflow-y: auto;
+     -webkit-overflow-scrolling: touch;*/ }
     .search .box-dl p {
       border-bottom: 1px solid #ccc;
       text-indent: 0.576rem;
@@ -2326,6 +2347,10 @@ i.index-num {
   line-height: 0.8832rem;
   background: #1cc419;
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   color: white; }
   .next .prev-btn {
     height: 0.8448rem;
@@ -4135,6 +4160,9 @@ i.nv {
     margin-left: 0.672rem;
     border: 0.048rem solid #3aac42;
     margin-right: 0.144rem; }
+    .center-wrap .photo-box img {
+      width: 1.6128rem;
+      height: 1.6128rem; }
   .center-wrap .center-header {
     background: url("../images/center/t1.png") no-repeat;
     background-size: contain;
@@ -5436,6 +5464,25 @@ i.nv {
   color: #888;
   font-size: 0.2688rem;
   line-height: 1.3248rem;
+  text-align: center; }
+
+.release .swiper-container {
+  position: absolute;
+  top: 0.8448rem;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+.release .release-scroll {
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0.96rem;
+  -webkit-overflow-scrolling: touch; }
+
+.text-center {
+  padding: 0 !important;
   text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
