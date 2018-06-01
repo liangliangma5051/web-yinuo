@@ -537,11 +537,13 @@
 </html>
 
 <script>
-  // 倒計時
+
   $(".nav li").click(function () {
       $(this).addClass('checked').siblings().removeClass('checked')
       $('.order-item').eq($(this).index()).show().siblings('.order-item').hide()
   })
+
+  // 倒計時
   $(".timer1").countDown({second:60*60*0.5})
   $(".timer3").countDown({second:60*60*0.5})
   $(".timer4").countDown({second:60*60*0.5})

@@ -454,13 +454,14 @@
   <p class="data-title">订单筛选</p>
   <div class="clear"></div>
   <div class="data clear-fix">
-    <div class="data-style fl" onclick="selectTime(new Date().getFullYear()-3)">
+    <div class="data-style fl" id="show1" onclick="selectTime(new Date().getFullYear()-3,this.id)">
       <span>2018</span>
       <span>09</span>
       <span>23</span>
+
     </div>
     <i>至</i>
-    <div class="data-style fr" onclick="selectTime(new Date().getFullYear()-3)">
+    <div class="data-style fr" id="show2" onclick="selectTime(new Date().getFullYear()-3,this.id)">
       <span>2018</span>
       <span>09</span>
       <span>23</span>
@@ -511,10 +512,14 @@
 </script>
 <script>
     // 确定
+
     function idDate() {
         if(sYear.n && sYear.y && sYear.d){
             hideTime();
             console.log(sYear)
+            if(sYear.id === 'show2'){
+              alert()
+            }
             return sYear;
         }else{
             titleMsg('日期选择不正确')
@@ -523,6 +528,15 @@
         }
 
     }
+    var s= getBeforeDate(0);
+   console.log(s.n)
+
+
+
+
+    // $('.data-style').eq(0).html('').append(dataText)
+
+
     // 取消
     function hideTime() {
         $('.data-select').slideUp()

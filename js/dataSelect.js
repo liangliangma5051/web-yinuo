@@ -5,14 +5,13 @@ var month =  oDate.getMonth();  // 月( 0-11 )
 var date =  oDate.getDate();  // 日
 var dataBegin = oDate.getFullYear()
 
-sYear={
-
-};
 var niankk;
 
 var mySwiperNian,mySwiperYue,mySwiperTian;
 // 渲染
-function selectTime(selectNian) {
+var id;
+function selectTime(selectNian,a) {
+    id=a
     $('#data-mask').show();
     $('.data-select').slideDown()
     niankk = Math.ceil(selectNian)
@@ -63,7 +62,8 @@ function selectYears(event) {
     sYear = {
         n:event.innerHTML,
         y:null,
-        d:null
+        d:null,
+        id: id
     };
     $(event).addClass('current').siblings().removeClass('current');
     oDate.setFullYear(sYear.n);
@@ -270,4 +270,35 @@ function selectDay(event) {
     $(event).addClass('current').siblings().removeClass('current');
 }
 
+
+
+
+function getBeforeDate(n) {
+    var n = n;
+    var d = new Date();
+    var year = d.getFullYear();
+    var mon = d.getMonth() + 1;
+    var day = d.getDate();
+    if(day <= n) {
+        if(mon > 1) {
+            mon = mon - 1;
+        } else {
+            year = year - 1;
+            mon = 12;
+        }
+    }
+    d.setDate(d.getDate() - n);
+    year = d.getFullYear();
+    mon = d.getMonth() + 1;
+    day = d.getDate();
+    sYear ={
+        n:year,
+        y:mon < 10 ? ('0' + mon) : mon,
+        d:day < 10 ? ('0' + day) : day
+    }
+
+    return sYear;
+}
+console.log();//今天的日期
+console.log(getBeforeDate(32));//前七天的日期  　
 

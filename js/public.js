@@ -1,18 +1,4 @@
-var fileThis;
-var set;
-var cropBoxData , canvasData;
-var y=1;
-var imgDom;
-var  options = {
-   /* aspectRatio: 16 / 9,
-    viewMode: 1,
-
-    cropBoxResizable:false,
-    cropBoxMovable:false,
-    dragCrop:false,
-    dragMode: 'move',
-    responsive:false,*/
-}
+var fileThis,set;
 $.fn.extend({
     // 图片上传
     uploadImg:function(options){
@@ -32,13 +18,11 @@ $.fn.extend({
                 alert("单张图片不能大于5M");
                 return false;
             }
-
         };
         _this.change(function () {
             fileThis = _this;
              set = settings;
             for(var i=0;i<this.files.length;i++){
-                let fileImg=this.files[i]
                 _self.checkImg(this.files[i])
                 let cropperMask= $('<div class="cropper-mask" style="display: block" >\n' +
                     '  <div class="container">\n' +
@@ -50,39 +34,23 @@ $.fn.extend({
                     '  <div class="btn-cropper qx" onclick="btnCropperCancel(this)">\n' +
                     '    取消\n' +
                     '  </div>\n' +
-                    '<div class="cropper-left" onclick="cropperLeft(this,set)" style= "position: absolute;top:50px;left:100px;background: white">dkja</div>'+
-                    '<div class="cropper-right" onclick="cropperRight(this,set)" style= "position: absolute;top:50px;right:100px;background: white">dkja</div>'+
+                    '<div class="btn-cropper qx cropper-left" onclick="cropperLeft(this)" style= "top:50px">顺时针</div>'+
+                    '<div class="btn-cropper cropper-right" onclick="cropperRight(this)" style= "top:50px">逆时针</div>'+
+                    '<div class="btn-cropper  cropper-reset" onclick="cropperReset(this)" style= "top:50px;left:50%;margin-left: -35px">重置</div>'+
                     '</div>');
-                // cropperMask
                 $(document.body).append(cropperMask)
-                 imgDom=  $('.cropper-mask').eq(i).find('img');
+               var imgDom=  $('.cropper-mask').eq(i).find('img');
                 imgDom.attr('src',getObjectURL(this.files[i]))
-                options= {
-                    aspectRatio:2/1,
+                var options= {
+                    aspectRatio:4 / settings.aspectNum,
                     viewMode : 1,
                     dragMode:'move',
                     cropBoxMovable:false,
                     cropBoxResizable:false,
                     minCropBoxWidth:$(window).width(),
-                    toggleDragModeOnDblclick: false,
-
-
-                   /* viewMode: 3,
-                    dragMode: 'move',
-                    minCropBoxWidth:$(window).width(),
-                    minCanvasWidth:$(window).width(),
-                    dragCrop:false,
-                    autoCropArea: 1,
-                    cropBoxMovable: false,
-                    cropBoxResizable: false,
-                    toggleDragModeOnDblclick: false,*/
-
-
+                    toggleDragModeOnDblclick: false
                 }
-                // imgDom.cropper(options)
-
-                var cropper = imgDom.cropper(options)
-                console.log(cropper)
+               imgDom.cropper(options)
                 $('.cropper-mask .container').css('height',$(window).height()+'px')
                 $('.cropper-mask .container').css('width',$(window).width()+'px')
                 $('.cropper-mask').eq(0).css('z-index',200)
@@ -194,48 +162,44 @@ $.fn.extend({
         }
 
     },
-
-
-
 });
+
 // 确定裁剪
 function btnCropper(self,fileThis,settings,num) {
-
-        let item = ' <div class="item">\n' +
-            '<img src="'+$(self).siblings('.container').find('.image').cropper('getCroppedCanvas').toDataURL()+'" alt="">\n' +
-            '<div class="delete-img" onclick="deleteImg(this)"><s></s></div>'
-        '</div>'
-        console.log(settings.id)
-        if(fileThis.parent().siblings('.item').length + 1 > settings.len){
+    let item = ' <div class="item">\n' +
+        '<img src="'+$(self).siblings('.container').find('.image').cropper('getCroppedCanvas').toDataURL()+'" alt="">\n' +
+        '<div class="delete-img" onclick="deleteImg(this)"><s></s></div>'
+    '</div>'
+    console.log(settings.id)
+    if(fileThis.parent().siblings('.item').length + 1 > settings.len){
+        fileThis.parent().hide()
+    }else{
+        fileThis.parent().before(item)
+        if(fileThis.parent().siblings('.item').length === settings.len){
             fileThis.parent().hide()
-        }else{
-            fileThis.parent().before(item)
-            if(fileThis.parent().siblings('.item').length === settings.len){
-                fileThis.parent().hide()
-            }
         }
-        $(self).parents('.cropper-mask').remove()
-        $('.cropper-mask').eq(0).css('z-index',200)
-
-
-
+    }
+    $(self).parents('.cropper-mask').remove()
+    $('.cropper-mask').eq(0).css('z-index',200)
 }
 // 取消裁剪
 function btnCropperCancel(self) {
     $(self).parents('.cropper-mask').remove()
     $('.cropper-mask').eq(0).css('z-index',200)
 }
-//
-function cropperLeft() {
-    imgDom.cropper("rotate", 45);
-    console.log(imgDom.rotate)
+//顺时针旋转45度
+function cropperLeft(self) {
+    $(self).siblings('.container').find('.image').cropper("rotate", 45);
 
 }
-function cropperRight() {
-    imgDom.cropper("rotate", -45);
-
+//逆时针旋转45度
+function cropperRight(self) {
+    $(self).siblings('.container').find('.image').cropper("rotate", -45);
 }
-
+//还原裁剪图片
+function cropperReset(self) {
+    $(self).siblings('.container').find('.image').cropper("reset")
+}
 
 function getObjectURL(file) {
     var url = null;
@@ -248,6 +212,8 @@ function getObjectURL(file) {
     }
     return url;
 }
+
+
 
 
 // 提示信息

@@ -22,7 +22,7 @@
     </div>
     <!--登录-->
     <div class="login-wrap">
-        <h1>欢迎来到一诺</h1>
+        <h2></h2>
         <ul class="clear-fix">
             <li>
                 <input id="tel" type="tel" placeholder="请输入手机号码" onfocus="iconShow(this)" onblur="iconHide(this)">
@@ -35,7 +35,7 @@
             </li>
         </ul>
         <div>
-            <a class="see col1cc419" href="agreement.html">随便看看&gt;</a>
+            <a class="see" href="agreement.html">随便看看 <i></i></a>
         </div>
         <div class="submit-button bac1cc419" onclick="submit()">注册/登录</div>
         <p class="agreement">点击登录，即表示您已阅读并同意<a class="see text-underline" href="agreement.html">《用户协议》</a></p>
@@ -43,18 +43,20 @@
 
     <!--第三方登陆-->
     <div class="other-login">
-        <div class="line">
-            <p>其他登录方式</p>
-        </div>
+        <!--<div class="line">-->
+            <!--<p>其他登录方式</p>-->
+        <!--</div>-->
         <ul class="login-icon clear-fix">
             <li class="fl clear-fix">
                 <a href="agreement.html">
-                    <img class="fr" src="images/wx-icon.png" alt="">
+                    <img  src="images/wx-icon.png" alt="">
+                    QQ登录
                 </a>
             </li>
             <li class="fr clear-fix">
                 <a href="agreement.html">
-                    <img class="fl" src="images/qq-icon.png" alt="">
+                    <img  src="images/qq-icon.png" alt="">
+                   微信登录
                 </a>
             </li>
         </ul>
@@ -77,11 +79,11 @@
     var sec = 60
     var code= $('.verification-code')
     var interval = setInterval(function () {
-      code.addClass('col999')
+      code.addClass('col42c')
       sec--
-      code.text(sec + 's' + '后重新发送')
+      code.text(sec + 's')
       if (sec === 0) {
-        code.removeClass('col999')
+        code.removeClass('col42c')
         code.text('重新获取')
         clearInterval(interval)
       }
