@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>   <script src="../js/jquery.lazyload.js"></script>
+  <script src="../js/public.js"></script>
+
+</head>
+<body>
+
+<header class="list-header clear-fix">
+    <i class="back" onclick="history.go(-1)"></i>
+    <div class="header-col searchText">
+      <!--<i></i>-->
+      <form onsubmit="text(this)">
+        <input onfocus="deleteShow()"  onblur="deleteHide()" type="text" placeholder="请输入需求或服务名称搜索">
+      </form>
+
+      <div class="delete-text" onclick="deleteText()">
+        <span></span>
+      </div>
+    </div>
+    <div class="header-col cancel-text">
+      <s class="btn1">取消</s>
+      <s class="btn2" style="display: none" onclick="text(this)">搜索</s>
+    </div>
+</header>
+<div class="list-context box-scroll">
+  <!--搜索历史-->
+  <div class="search-history" style="display:block;"  >
+    <div class="search-item clear-fix">
+      <p>
+        历史搜索
+        <i onclick="deleteHistory()"></i>
+      </p>
+      <dl style="display: block">
+        <dd>化妆</dd>
+        <dd>化妆</dd>
+        <dd>化妆</dd>
+        <dd>化妆</dd>
+        <dd>化妆</dd>
+        <dd>化妆</dd>
+        <dd>化妆</dd>
+        <dd>化妆</dd>
+        <dd>化妆</dd>
+        <dd>化妆</dd>
+      </dl>
+      <div class="deleteHistory" style="display: none">
+        暂无搜索历史
+      </div>
+    </div>
+
+  </div>
+
+  <!--搜索结果 无结果-->
+  <div class="search-result" style="display: block;">
+    <img class="nosearch" src="../images/lazyloadImg.jpg" data-original="../images/nosearch.jpg" alt="">
+    <p class="result-title">很遗憾！当前没有您想要的结果！</p>
+    <!--<p class="result-title">以下是“<b>跑步</b>”的搜索结果!</p>-->
+  </div>
+
+  <!--搜索结果 有结果-->
+  <div class="search-result" style="display: block;" >
+    <p class="result-title">以下是“<b>跑步</b>”的搜索结果!</p>
+    <h3>个人</h3>
+    <ul class="peoples-item">
+      <li>
+        <img  src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+        <a href="../service/serviceSee.html">
+          <div class="right">
+            <div class="name">
+              <span>金喜善</span>
+              <i class="index-num">1诺&nbsp;10次</i>
+              <i class="sex sex1"></i> 18
+            </div>
+
+            <div class="label-box">
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+            </div>
+            <p>健身是一件幸福的事情，苹果很有趣趣趣趣苹果很有趣趣趣趣</p>
+          </div>
+        </a>
+        <div class="follow" onclick="follow(this)"></div>
+      </li>
+      <li>
+        <img  src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+        <a href="../service/serviceSee.html">
+          <div class="right">
+            <div class="name">
+              <span>金喜善</span>
+              <i class="index-num">1诺&nbsp;10次</i>
+              <i class="sex sex1"></i> 18
+            </div>
+
+            <div class="label-box">
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+            </div>
+            <p>健身是一件幸福的事情，苹果很有趣趣趣趣苹果很有趣趣趣趣</p>
+          </div>
+        </a>
+        <div class="follow" onclick="follow(this)"></div>
+      </li>
+      <li>
+        <img  src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+        <a href="../service/serviceSee.html">
+          <div class="right">
+            <div class="name">
+              <span>金喜善</span>
+              <i class="index-num">1诺&nbsp;10次</i>
+              <i class="sex sex1"></i> 18
+            </div>
+
+            <div class="label-box">
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+            </div>
+            <p>健身是一件幸福的事情，苹果很有趣趣趣趣苹果很有趣趣趣趣</p>
+          </div>
+        </a>
+        <div class="follow" onclick="follow(this)"></div>
+      </li>
+      <li style="display: none">
+        <img  src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+        <a href="../service/serviceSee.html">
+          <div class="right">
+            <div class="name">
+              <span>金喜善</span>
+              <i class="index-num">1诺&nbsp;10次</i>
+              <i class="sex sex1"></i> 18
+            </div>
+
+            <div class="label-box">
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+              <s class="label">推拿</s>
+            </div>
+            <p>健身是一件幸福的事情，苹果很有趣趣趣趣苹果很有趣趣趣趣</p>
+          </div>
+        </a>
+        <div class="follow" onclick="follow(this)"></div>
+      </li>
+    </ul>
+    <div class="more" onclick="more(this)">
+      查看更多
+    </div>
+    <h3>服务</h3>
+    <ul class="center-list">
+      <li>
+        <a href="../service/manage.html">
+          <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+          <div class="right">
+            <p>富岗苹果红富士苹果水果太行山特
+              产特产特产特产特产特产特产特产特产特产特产特产特产特产特</p>
+            <p class="price colec2"><s>300</s>&nbsp;元/份</p>
+          </div>
+        </a>
+        <i class="yuanxing" onclick="follow(this)"></i>
+      </li>
+      <li>
+        <a href="../service/manage.html">
+          <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+          <div class="right">
+            <p>富岗苹果红富士苹果水果太行山特
+              产特产特产特产特产特产特产特产特产特产特产特产特产特产特</p>
+            <p class="price colec2"><s>300</s>&nbsp;元/份</p>
+          </div>
+        </a>
+        <i class="yuanxing" onclick="follow(this)"></i>
+      </li>
+      <li>
+        <a href="../service/manage.html">
+          <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+          <div class="right">
+            <p>富岗苹果红富士苹果水果太行山特
+              产特产特产特产特产特产特产特产特产特产特产特产特产特产特</p>
+            <p class="price colec2"><s>300</s>&nbsp;元/份</p>
+          </div>
+        </a>
+        <i class="yuanxing" onclick="follow(this)"></i>
+      </li>
+    </ul>
+    <div class="more" onclick="more(this)">
+      查看更多
+    </div>
+    <h3>求购</h3>
+    <ul class="center-list">
+      <li>
+        <a href="../center/moreWantBuyList.html">
+          <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+          <div class="right">
+            <p>富岗苹果红富士苹果水果太行山特
+              产特产特产特产特产特产特产特产特产特产特产特产特产特产特</p>
+            <p class="price colec2"><s>300</s>&nbsp;元/份</p>
+          </div>
+        </a>
+        <i class="yuanxing checked" onclick="follow(this)"></i>
+      </li>
+      <li>
+        <a href="../center/moreWantBuyList.html">
+          <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+          <div class="right">
+            <p>富岗苹果红富士苹果水果太行山特
+              产特产特产特产特产特产特产特产特产特产特产特产特产特产特</p>
+            <p class="price colec2"><s>300</s>&nbsp;元/份</p>
+          </div>
+        </a>
+        <i class="yuanxing" onclick="follow(this)"></i>
+      </li>
+      <li>
+        <a href="../center/moreWantBuyList.html">
+          <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+          <div class="right">
+            <p>富岗苹果红富士苹果水果太行山特
+              产特产特产特产特产特产特产特产特产特产特产特产特产特产特</p>
+            <p class="price colec2"><s>300</s>&nbsp;元/份</p>
+          </div>
+        </a>
+        <i class="yuanxing" onclick="follow(this)"></i>
+      </li>
+    </ul>
+    <!--超过3个 显示更多-->
+    <div class="more" onclick="more(this)">
+      查看更多
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+<script>
+  function text(e) {
+    console.log(e)
+  }
+function deleteShow() {
+  $('.delete-text').css('opacity',100);
+  $('.btn2').show().siblings().hide()
+}
+function deleteHide() {
+  $('.delete-text').css('opacity',0)
+  $('.btn1').show().siblings().hide()
+}
+function deleteText() {
+  $('.searchText input').val('').focus()
+}
+function deleteHistory() {
+}
+function refresh() {
+}
+
+function follow(e) {
+  $(e).toggleClass('checked')
+}
+function more(e) {
+    $(e).hide()
+    $('.peoples-item li').show()
+}
+</script>

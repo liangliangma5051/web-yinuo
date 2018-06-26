@@ -1,0 +1,101 @@
+首页                    index.html          修订
+登录                    login.html          修订
+实名认证                realName.html
+关联手机账号             relationTel.html
+用户协议                agreement.html
+上传身份证图片           uploadId.html       修订
+
+
+details
+支付页面                 payment.html
+支付结果页面             paymentState.html
+
+
+
+list/
+首页搜索结果页           list.html            修订
+
+
+server/
+发布服务                 index.html           修订
+服务预览                 serviceSee.html      修订
+服务详情                 serviceDetails.html  修订
+服务列表                 manage.html          修订
+
+
+seekBuy/    求购
+我的求购列表              index.html           修订
+
+发布求购                  release.html          修订
+求购列表                  list.html
+选择服务                  selectSeekBuy.html     修订
+我的求购详情               myDetails.html         修订
+求购详情                  details.html            修订
+参与者                    participate.html        修订
+
+
+center/
+个人中心                index.html       修订
+我的个人主页             personal.html    新增
+别人个人主页             personal2.html   新增
+我的个人动态             dynamic.html     新增
+别人的个人动态           dynamic2.html    新增
+发表动态                publish.html      新增
+可能认识的人            addFriend.html      新增
+更多求购列表            moreWantBuyList.html         新增
+更多服务列表            moreServiceList.html       新增
+
+
+exchange/
+诺券互换列表              index.html        新增
+诺券互换                 details.html        新增
+发起诺券互换              exchange.html     新增
+
+msg/
+消息中心               item.html
+聊天窗口               chat.html
+消息列表               msgList.html
+好友列表               myFriends.html
+
+
+order/
+我买的                 buy/index.html                修订
+我卖的                 accept/index.html             修订
+评价订单               buy/review.html               修订
+回复评价               buy/reviewEvaluate.html       修订
+
+set/
+设置                    index.html
+关于我们                about.html
+意见反馈                opinion.html
+
+
+
+user/
+用户基本资料          user.html               修订
+联系方式             contact.html
+添加(编辑)新地址      addAddress.html
+个人简介             promise.html          原我的承诺
+个性标签             serviceLabel.html     原擅长服务
+
+
+
+voucher/  我的诺券
+诺券首页             index.html            修订
+诺券认购列表          subscription/*        新增
+购买诺券             subscription/buy.html   新增
+诺券互换             exchange/*            新增
+诺券明细             details.html          修订
+诺券设置             set.html
+诺券模板             model.html
+诺券回购             releaseBack.html      修订
+
+
+
+wallet/
+我的钱包           index.html
+银行卡管理          /card/*
+提现               /extract/*
+交易明细            /details/*
+支付设置            /set/
+

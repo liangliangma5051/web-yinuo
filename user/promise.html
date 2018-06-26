@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>   <script src="../js/jquery.lazyload.js"></script>
+  <script src="../js/public.js"></script>
+</head>
+<body>
+<!--返回上一页-->
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  个人简介
+</div>
+<div class="promise">
+  <p>用最简短的话，向世界介绍你自己！</p>
+  <div class="area">
+    <textarea maxlength="100"></textarea>
+    <div class="area-placeholder" onclick="hidePlaceholder()">
+      <p>请输入你的个人简介，最长不超过100个字</p>
+      <!--<p>示例：我承诺，真诚服务，用心沟通</p>-->
+    </div>
+  </div>
+  <div class="submit-button sty2 bac1cc419">
+    <a href="javascript:void(0)">
+      保存
+    </a>
+  </div>
+</div>
+</body>
+</html>
+<script>
+  function hidePlaceholder() {
+    $('.area-placeholder').hide();
+    $('textarea').focus()
+  }
+</script>

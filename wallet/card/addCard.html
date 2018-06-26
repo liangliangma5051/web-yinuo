@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/jquery-2.1.4.min.js"></script>   <script src="../../js/jquery.lazyload.js"></script>
+  <script src="../../js/public.js"></script>
+</head>
+<body>
+<!--返回上一页-->
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  新增银行卡
+</div>
+<div style="display: block" class="address-edit add-card">
+  <ul id="addCardVerification">
+    <li>
+      <p>
+        卡类型
+      </p>
+      <input type="text" id="cardStyle" pattern="1" label="卡类型" readonly placeholder="工商银行   信用卡">
+      <div class="city-icon">
+        <a href="javascript:void(0)" onclick="openAddCard()">
+          <i></i>
+        </a>
+      </div>
+    </li>
+    <li>
+      <p>
+        持卡人
+      </p>
+      <input type="text" pattern="1,/[\u4e00-\u9fa5]/" label="持卡人">
+    </li>
+    <li>
+      <p>
+        卡号
+      </p>
+      <input type="tel" pattern="1,/^([1-9]{1})(\d{14}|\d{18})$/" label="卡号">
+    </li>
+    <li>
+      <p>
+        持卡人手机
+      </p>
+      <input type="tel" pattern="1,/^[1][3,4,5,7,8][0-9]{9}$/" label="持卡人手机">
+    </li>
+  </ul>
+  <div class="login-wrap">
+    <div class="see col999">
+      <label class="checkbox-input-sty2">
+        <input type="checkbox" checked id="a1" name="public_private">
+        <span></span>
+      </label>
+      <label for="a1">同意用户
+        <a href="../../agreement.html">《支付协议》</a>
+      </label>
+    </div>
+  </div>
+  <div class="next pos-fix-b" onclick="addCard()">提&nbsp;&nbsp;交</div>
+</div>
+<div style="display: none" class="add-select-card">
+  <dl class="clear-fix">
+    <dd class="checked">储蓄卡</dd>
+    <dd>信用卡</dd>
+  </dl>
+  <ul class="clear-fix">
+    <li onclick="closeAddCard(this)">工商银行卡</li>
+    <li onclick="closeAddCard(this)">工商银行卡</li>
+    <li onclick="closeAddCard(this)">工商银行卡</li>
+    <li onclick="closeAddCard(this)">工商银行卡</li>
+    <li onclick="closeAddCard(this)">工商银行卡</li>
+  </ul>
+  <ul class="clear-fix" style="display: none">
+    <li onclick="closeAddCard(this)">工商银行卡</li>
+    <li onclick="closeAddCard(this)">工商银行卡</li>
+    <li onclick="closeAddCard(this)">工商银行卡</li>
+    <li onclick="closeAddCard(this)">工商银行卡</li>
+    <!--<li>工商银行卡</li>-->
+  </ul>
+</div>
+<div style="display: none" class="msgVerification">
+  <div class="address-edit add-card">
+ <ul class="address-edit add-card">
+   <li>
+     <p>
+       验证码
+     </p>
+     <input type="text" placeholder="输入验证码">
+     <div class="city-icon">
+         <div class="verification-code" onclick="getSms()">获取验证码</div>
+     </div>
+   </li>
+ </ul>
+    <div class="login-wrap">
+      <div class="see col999">
+        绑定银行卡需短信认证，已发送手机152****5685
+      </div>
+    </div>
+  <div class="next pos-fix-b" onclick="addCardBtn()">提&nbsp;&nbsp;交</div>
+</div>
+</div>
+</body>
+</html>
+<script>
+    $(".add-select-card dl dd").click(function () {
+        $(this).addClass('checked').siblings().removeClass('checked')
+        $('.add-select-card ul').eq($(this).index()).show().siblings('ul').hide()
+    })
+    // 选择银行
+    function closeAddCard(e) {
+        $('.add-card').show();
+        $('.add-select-card').hide();
+        $('#cardStyle').val($(e).text())
+    }
+    // 选择银行
+    function openAddCard() {
+        $('.add-select-card').show();
+        $('.add-card').hide();
+    }
+
+    // 提交 获取验证码
+    function addCard() {
+      var isTrue1= $("#addCardVerification").verification({})
+        if(isTrue1){
+          $('.msgVerification').show()
+          alert('输入正确')
+        }
+    }
+    // 完成
+    function addCardBtn() {
+
+    }
+    // 倒计时
+    function getSms() {
+        var sec = 60
+        var code= $('.verification-code')
+        var interval = setInterval(function () {
+            code.addClass('col1cc419')
+            sec--
+            code.text(sec + 's' + '后重新发送')
+            if (sec === 0) {
+                code.removeClass('col1cc419')
+                code.text('重新获取')
+                clearInterval(interval)
+            }
+        }, 1000)
+    }
+</script>

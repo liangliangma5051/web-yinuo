@@ -1,0 +1,83 @@
+<!doctype html>
+<!--suppress ALL -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>   <script src="../js/jquery.lazyload.js"></script>
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/public.js"></script>
+  <link href="../css/cropper-4.0.0.css" rel="stylesheet">
+  <script src="../js/cropper-4.0.0.js"></script>
+</head>
+<body>
+<!--返回上一页-->
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  发表动态
+</div>
+<div class="publish">
+  <textarea placeholder="在想什么呢？" maxlength="100"></textarea>
+  <div class="clear-fix upload-put">
+    <!--<div class="add-img loadimg">
+      <div class="delete" onclick="deleteImg(this)"></div>
+      <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+    </div>-->
+    <div class="add-img last">
+      <input id="upload1" type="file" accept="image/*" multiple>
+    </div>
+    <p class="title">最多可添加8张照片</p>
+  </div>
+</div>
+<div class="add-address">
+  <div class="submit-button">
+    发 表
+  </div>
+</div>
+
+</body>
+</html>
+<script>
+
+    $(function(){
+        // 初始化图片上传
+        $('#upload1').uploadImg({len:8,aspectNum:3,id:'upload1'});
+    });
+
+    // 删除图片
+    function deleteImg(e) {
+        $(e).parent().remove();
+        $('.publish p').show()
+
+    }
+
+    // 确定裁剪
+    function btnCropper(self,fileThis,settings,num) {
+
+        let item = $(' <div class="add-img loadimg">\n' +
+            '      <div class="delete" onclick="deleteImg(this)"></div>\n' +
+            '      <img src="'+$(self).siblings('.container').find('.image').cropper('getCroppedCanvas').toDataURL()+'" alt="">\n' +
+            '    </div>');
+
+
+        if(fileThis.parent().siblings('.loadimg').length + 1 > settings.len){
+            fileThis.parent().hide()
+        }else{
+            fileThis.parent().before(item)
+            if(fileThis.parent().siblings('.loadimg').length === settings.len){
+                fileThis.parent().hide()
+            }
+        }
+
+
+        $('.publish p').hide()
+        $(self).parents('.cropper-mask').remove()
+        $('.cropper-mask').eq(0).css('z-index',200)
+    }
+</script>

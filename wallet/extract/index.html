@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/jquery-2.1.4.min.js"></script>   <script src="../../js/jquery.lazyload.js"></script>
+  <script src="../../js/public.js"></script>
+</head>
+<body>
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  提现
+  <!--<div class="return-btn">跳过</div>-->
+</div>
+<div class="select-card">
+  <ul>
+    <li>
+      <a href="selectCard.html">
+        <div class="table-center">
+          <!--<i class="gs"></i>-->
+          <img src="../../images/bank/GDB.png" alt="">
+          <p>
+            <span class="f30">工商银行  储蓄卡</span>
+            <span class="col999">尾号6218</span>
+          </p>
+          <div class="cart">
+            <i class="right-icon"></i>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <div class="carry">
+    <h3>提现金额</h3>
+    <i>&yen;</i>
+    <input type="tel" pattern="1,/^[0-9]*[1-9][0-9]*$/" label="金额" placeholder="可用余额800.00">
+    <div class="all-carry" onclick="allCarry(123)">
+      全部提现
+    </div>
+  </div>
+</div>
+<div class="select-card" style="display: none">
+  <ul>
+    <li class="backf0f">
+      <div class="table-center">
+        <img src="../../images/bank/GDB.png" alt="">
+        <p>
+          <span class="f30">工商银行  储蓄卡</span>
+          <span class="col999">尾号6218</span>
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="table-center">
+        <img src="../../images/bank/GDB.png" alt="">
+        <p>
+          <span class="f30">工商银行  储蓄卡</span>
+          <span class="col999">尾号6218</span>
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="extract-title">
+  现金将于24小时候到账
+</div>
+<div class="next pos-fix-b" onclick="editPassword()">确认</div>
+
+
+
+<div class="card-remove" style="display: none">
+  <div class="remove-bind-card">
+    <p>输入支付密码验证身份</p>
+
+    <input type="number" onkeyup="checkPassWorld(this)"  maxlength="1">
+    <input type="number" onkeyup="checkPassWorld(this)"  maxlength="1">
+    <input type="number" onkeyup="checkPassWorld(this)"  maxlength="1">
+    <input type="number" onkeyup="checkPassWorld(this)"  maxlength="1">
+    <input type="number" onkeyup="checkPassWorld(this)"  maxlength="1">
+    <input type="number" onkeyup="removeBindCard(this)"  maxlength="1">
+
+  </div>
+</div>
+
+</body>
+</html>
+<script>
+  function allCarry(num) {
+      $('.carry input').val(num)
+  }
+  function editPassword() {
+      let s = $(".carry").verification({})
+      if(s){
+          $('.card-remove').show()
+      }
+  }
+
+
+  // 完成
+  function addCardBtn() {
+
+  }
+  function removeBindCard() {
+      alert('完成')
+      openCard()
+  }
+
+  function checkPassWorld(e) {
+
+      if ($(e).val().length > 1) {
+          $(e).val().length = 1
+      }
+      if($(e).val() && $(e).val().match(/\d/)){
+          $(e).next().focus();
+
+      }else{
+          $(e).val('')
+      }
+      document.onkeydown = function(){
+          var oEvent = window.event;
+          if(oEvent.keyCode === 8){
+              $(e).val('')
+              $(e).next().val('')
+              $(e).prev().focus();
+          }
+
+      }
+  }
+
+</script>

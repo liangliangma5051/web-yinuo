@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/swiper.min.css">
+  <script src="../../js/swiper.min.js"></script>
+  <script src="../../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/jquery-2.1.4.min.js"></script>   <script src="../../js/jquery.lazyload.js"></script>
+  <script src="../../js/public.js"></script>
+  <link href="../../css/cropper-4.0.0.css" rel="stylesheet">
+  <script src="../../js/cropper-4.0.0.js"></script>
+</head>
+<body>
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  评价
+</div>
+<div class="order">
+  <dl style="display: block" class="order-item">
+    <dd>
+      <div class="order-body clear-fix">
+        <a href="details.html">
+          <img src="../../images/lazyloadImg.jpg" data-original="../../images/img.jpg" alt="">
+          <div class="item-text">
+            <div class="clear-fix">
+              <h3>1对1情景实战课（60分钟）</h3>
+              <!--<p class="colec2">进行中</p>-->
+              <h5>
+              </h5>
+              <h6 class="colec2">
+                30元/份
+              </h6>
+              <h2>
+                <span>认购额:<i class="colec2">200元</i></span>
+              </h2>
+            </div>
+          </div>
+        </a>
+      </div>
+    </dd>
+  </dl>
+
+  <div class="review">
+    <div class="order-top clear-fix">
+      <img src="../../images/img.jpg" data-original="../../images/img.jpg" alt="">
+      <span>金喜善</span>
+      <!--<i class="nv">18</i>-->
+      <i class="nan">18</i>
+    </div>
+    <div class="text">
+      讲信用的卖家我喜欢讲信用的卖家我喜欢讲信用的卖家我喜欢讲信用的卖家我喜欢
+      <div class="box-img" onclick="showMaskImg(this)">
+        <img class="service-load-img" src="../../images/img.jpg" data-original="../../images/img.jpg" alt="">
+      </div>
+      <div class="box-img" onclick="showMaskImg(this)">
+        <img class="service-load-img" src="../../images/img.jpg" data-original="../../images/img.jpg" alt="">
+      </div>
+      <div class="box-img" onclick="showMaskImg(this)">
+        <img class="service-load-img" src="../../images/img.jpg" data-original="../../images/img.jpg" alt="">
+      </div>
+      <div class="box-img" onclick="showMaskImg(this)">
+        <img class="service-load-img" src="../../images/img.jpg" data-original="../../images/img.jpg" alt="">
+      </div>
+    </div>
+    <div class="review-context">
+      <p class="text-length"><s>0</s>/200</p>
+      <textarea maxlength="200" placeholder="请输入回复内容"></textarea>
+    </div>
+    <div class="service-img">
+      <p class="title">上传图片
+      <span>最多4张，单张小于5M</span>
+      </p>
+      <div class="result-box-img  clear-fix">
+        <!--  <div class="box-img">
+            <img class="service-load-img" src="../images/img.jpg" alt="">
+            <div class="deleteImg" onclick="deleteImg(this,3)"></div>
+          </div>-->
+        <div class="box-img uploadBtn">
+          <div class="file-btn">
+            <img src="../../images/add-load-img.png" alt="">
+            <span>点击上传主图</span>
+            <input type="file" multiple accept="image/*" id="upload1">
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<div class="fixed-all-checked clear-fix" style="display: block">
+
+  <div class="controller-btn">
+    <a href="#" class="focus">回复</a>
+    <!--<a href="#"></a>-->
+  </div>
+</div>
+
+<!--展示说说图片大图-->
+<div class="show-mask-img" style="display: none">
+  <!--返回上一页-->
+  <div class="return show-mask-title">
+    <i onclick="hideMaskImg()"></i>
+    <s>2/8</s>
+  </div>
+  <div class="swipe-pos">
+    <div class="swiper-container">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide">
+          <img src="../../images/lazyloadImg.jpg" data-original="../../images/img.jpg" alt="">
+        </li>
+        <li class="swiper-slide">
+          <img src="../../images/lazyloadImg.jpg" data-original="../../images/img.jpg" alt="">
+        </li>
+        <li class="swiper-slide">
+          <img src="../../images/lazyloadImg.jpg" data-original="../../images/img.jpg" alt="">
+        </li>
+        <li class="swiper-slide">
+          <img src="../../images/lazyloadImg.jpg" data-original="../../images/img.jpg" alt="">
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+<script>
+
+    $(function(){
+        // 初始化图片上传
+        $('#upload1').uploadImg({len:4,aspectNum: 4});
+        // 删除图片
+    });
+
+
+    // 删除图片
+    function deleteImg(e,num) {
+        console.log(num)
+        $(e).parent('.box-img').remove();
+        if($(e).parent('.box-img').length < num){
+            $('.uploadBtn').show()
+        }
+    }
+
+    // 确定裁剪
+    function btnCropper(self,fileThis,settings,num) {
+            let item = $(' <div class="box-img">\n' +
+                '      <img class="service-load-img" src="' + $(self).siblings('.container').find('.image').cropper('getCroppedCanvas').toDataURL() + '" alt="">\n' +
+                '      <div class="deleteImg" onclick="deleteImg(this,' + settings.len + ')"></div>\n' +
+                '      </div>');
+
+            let fileThisDom = fileThis.parents('.box-img')
+            if (fileThisDom.siblings('.box-img').length + 1 > settings.len) {
+                $('.box-img.uploadBtn').hide()
+            }
+            else if (fileThisDom.siblings('.box-img').length + 1 == settings.len) {
+                fileThisDom.before(item)
+                $('.box-img.uploadBtn').hide()
+            }
+            else {
+                fileThisDom.before(item)
+            }
+
+        $(self).parents('.cropper-mask').remove()
+        $('.cropper-mask').eq(0).css('z-index',200)
+
+    }
+
+
+    <!--展示说说图片大图-->
+    function showMaskImg(e) {
+        let activeIndex = $(e).index()+1;
+        let imgLength = $(e).parent().find('img').length;
+        $('.show-mask-img').show()
+        $('.show-mask-title s').html(activeIndex +'/'+ imgLength);
+
+        let mySwiper = new Swiper('.swiper-container',{
+            initialSlide : activeIndex-1,
+            on: {
+                slideChange: function(event) {
+                    $('.show-mask-title s').html(this.activeIndex+1 +'/'+ imgLength)
+                }
+            },
+        });
+
+    }
+    function hideMaskImg() {
+        $('.show-mask-img').hide()
+    }
+</script>

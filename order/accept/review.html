@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/swiper.min.css">
+  <script src="../../js/swiper.min.js"></script>
+  <script src="../../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/jquery-2.1.4.min.js"></script>   <script src="../../js/jquery.lazyload.js"></script>
+  <script src="../../js/public.js"></script>
+  <link href="../../css/cropper-4.0.0.css" rel="stylesheet">
+  <script src="../../js/cropper-4.0.0.js"></script>
+</head>
+<body>
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  评价
+</div>
+<div class="order">
+
+  <dl style="display: block" class="order-item">
+    <dd>
+      <div class="order-body clear-fix">
+        <a href="details.html">
+          <img src="../../images/lazyloadImg.jpg" data-original="../../images/img.jpg" alt="">
+          <div class="item-text">
+            <div class="clear-fix">
+              <h3>1对1情景实战课（60分钟）</h3>
+              <p class="colec2">进行中</p>
+              <h5>
+                每份:1小时
+              </h5>
+              <h6 class="colec2">
+                30元/份*9
+              </h6>
+              <h2>
+                <span>认购额:<i class="colec2">200元</i></span>
+              </h2>
+            </div>
+          </div>
+        </a>
+      </div>
+    </dd>
+  </dl>
+
+  <div class="review">
+    <div class="review-line clear-fix">
+      <label>评价等级</label>
+      <ul>
+        <li onclick="start(1)"></li>
+        <li onclick="start(2)"></li>
+        <li onclick="start(3)"></li>
+        <li onclick="start(4)"></li>
+        <li onclick="start(5)"></li>
+      </ul>
+      <p>好评</p>
+    </div>
+    <div class="review-context">
+      <p class="text-length"><s>0</s>/200</p>
+      <textarea maxlength="200" placeholder="请输入内容"></textarea>
+    </div>
+
+    <div class="service-img">
+      <p class="title">上传图片
+        <span>最多4张，单张小于5M</span>
+      </p>
+      <div class="result-box-img  clear-fix">
+        <!--  <div class="box-img">
+            <img class="service-load-img" src="../images/img.jpg" alt="">
+            <div class="deleteImg" onclick="deleteImg(this,3)"></div>
+          </div>-->
+        <div class="box-img uploadBtn">
+          <div class="file-btn">
+            <img src="../../images/add-load-img.png" alt="">
+            <span>点击上传主图</span>
+            <input type="file" multiple accept="image/*" id="upload1">
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<div class="fixed-all-checked clear-fix" style="display: block">
+
+  <div class="controller-btn">
+    <a href="#" class="focus">提交</a>
+    <!--<a href="#"></a>-->
+  </div>
+</div>
+
+</body>
+</html>
+<script>
+    function start(num) {
+        let  liDom=$('.review-line ul li');
+        liDom.removeClass('checked')
+        let pDom=$('.review-line p');
+        switch (num) {
+            case 1: pDom.text('差评'); break;
+            case 2: pDom.text('中评'); break;
+            case 3: pDom.text('中评'); break;
+            case 4: pDom.text('好评'); break;
+            default : pDom.text('好评');
+        }
+        liDom.each(function (index,current) {
+            current.setAttribute('class','checked');
+            if(index+1 === num){
+                return false
+            }
+        })
+    }
+
+    $(function(){
+        // 初始化图片上传
+        $('#upload1').uploadImg({len:4,aspectNum: 4});
+        // 删除图片
+    });
+
+
+    // 删除图片
+    function deleteImg(e,num) {
+        console.log(num)
+        $(e).parent('.box-img').remove();
+        if($(e).parent('.box-img').length < num){
+            $('.uploadBtn').show()
+        }
+    }
+
+    // 确定裁剪
+    function btnCropper(self,fileThis,settings,num) {
+        let item = $(' <div class="box-img">\n' +
+            '      <img class="service-load-img" src="' + $(self).siblings('.container').find('.image').cropper('getCroppedCanvas').toDataURL() + '" alt="">\n' +
+            '      <div class="deleteImg" onclick="deleteImg(this,' + settings.len + ')"></div>\n' +
+            '      </div>');
+
+        let fileThisDom = fileThis.parents('.box-img')
+        if (fileThisDom.siblings('.box-img').length + 1 > settings.len) {
+            $('.box-img.uploadBtn').hide()
+        }
+        else if (fileThisDom.siblings('.box-img').length + 1 == settings.len) {
+            fileThisDom.before(item)
+            $('.box-img.uploadBtn').hide()
+        }
+        else {
+            fileThisDom.before(item)
+        }
+
+        $(self).parents('.cropper-mask').remove()
+        $('.cropper-mask').eq(0).css('z-index',200)
+
+    }
+</script>

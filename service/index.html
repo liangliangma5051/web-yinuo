@@ -1,0 +1,199 @@
+<!doctype html>
+<!--suppress ALL -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>   <script src="../js/jquery.lazyload.js"></script>
+  <script src="../js/jquery.lazyload.js"></script>
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/public.js"></script>
+  <link href="../css/cropper-4.0.0.css" rel="stylesheet">
+  <script src="../js/cropper-4.0.0.js"></script>
+</head>
+<body>
+<!--返回上一页-->
+<div class="back-header">
+  <div class="back-history" onclick="history.go(-1)">
+    <i></i>
+  </div>
+</div>
+<div class="release release1">
+  <!--发布内容1-->
+  <div class="release-header">
+    <!--上传的图片显示-->
+    <!--<img class="upload-img" src="../images/img.jpg" alt="">-->
+    <div class="file-btn">
+      <img src="../images/add-load-img.png" alt="">
+      <span>点击上传主图</span>
+      <input type="file" accept="image/*" id="upload1">
+    </div>
+  </div>
+  <ul>
+    <li class="text-area">
+      <label><s>*</s>服务名称</label>
+      <textarea maxlength="30" label="服务名称"  pattern="1" onkeydown="textLen(this)" placeholder="请输入服务内容"></textarea>
+      <p class="text-length"><s>0</s>/30</p>
+    </li>
+    <li>
+      <label><s>*</s>认购价</label>
+      <input type="text"  label="认购价"  pattern="1,/^[0-9]*[1-9][0-9]*$/" placeholder="服务单价">
+      <div class="select">
+        元/份
+      </div>
+    </li>
+    <li>
+      <label>最低认购额</label>
+      <input type="tel" placeholder="默认1"  label="最低认购额" pattern="0, /^[0-9]*[1-9][0-9]*$/">
+      <div class="select">
+        元
+      </div>
+    </li>
+    <li class="text-area">
+      <textarea maxlength="50"  onkeydown="textLen(this)" placeholder="请用一句话说明您的服务特性"></textarea>
+      <p class="text-length"><s>0</s>/50</p>
+    </li>
+    <li>
+      <label><s>*</s>诺券额度</label>
+      <input type="tel" placeholder="当前可用额度3000元"  label="诺券额度" pattern="1, /^[0-9]*[1-9][0-9]*$/">
+      <div class="select">
+        元
+      </div>
+    </li>
+  </ul>
+  <div class="release-card">
+    <div class="set-col">
+      <div class="card-img">
+        <img src="../images/card.jpg" alt="">
+        <div class="name">
+          飞猪侠  2诺108次
+        </div>
+        <div class="font-num left">
+          <b>30</b>元
+        </div>
+        <div class="font-num total">
+          余额:270
+        </div>
+        <time class="font-num">2018 03 02</time>
+      </div>
+    </div>
+  </div>
+  <ul>
+    <li class="text-area sty2">
+      <label>服务内容</label>
+      <textarea maxlength="300"  onkeydown="textLen(this)" placeholder="请详细说明您的服务或注意事项"></textarea>
+      <p class="text-length"><s>0</s>/300</p>
+    </li>
+  </ul>
+  <div class="service-img">
+    <p class="title">服务图片</p>
+    <div class="result-box-img  clear-fix" >
+    <!--  <div class="box-img">
+        <img class="service-load-img" src="../images/img.jpg" alt="">
+        <div class="deleteImg" onclick="deleteImg(this,3)"></div>
+      </div>-->
+      <div class="box-img uploadBtn">
+        <div class="file-btn">
+          <img src="../images/add-load-img.png" alt="">
+          <span>点击上传主图</span>
+          <input type="file" multiple accept="image/*" id="upload2">
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="add-address">
+  <div class="submit-button" onclick="submitNext()">
+      保存并预览
+  </div>
+</div>
+
+</body>
+</html>
+<script>
+    function textLen(e) {
+        $(e).siblings('.text-length').find('s').text($(e).val().length)
+    }
+
+   $(function(){
+        // 初始化图片上传
+        $('#upload1').uploadImg({len:1,aspectNum:4,id:'upload1'});
+        $('#upload2').uploadImg({len:8,aspectNum:4,id:'upload2'});
+
+    });
+
+    // 删除图片
+    function deleteImg(e,num) {
+        console.log(num)
+        $(e).parent('.box-img').remove();
+        if($(e).parent('.box-img').length < num){
+            $('.uploadBtn').show()
+        }
+    }
+
+   // 确定裁剪
+function btnCropper(self,fileThis,settings,num) {
+    // $(self).siblings('.container').find('.image').cropper('getCroppedCanvas').toDataURL()
+    // 上传主图
+    if(settings.id == 'upload1'){
+        let item = $('<img class="upload-img" src="'+$(self).siblings('.container').find('.image').cropper('getCroppedCanvas').toDataURL()+'" alt="">')
+
+        if(fileThis.parent().siblings('.upload-img')){
+            fileThis.parent().siblings('.upload-img').remove()
+        }
+        fileThis.parent().before(item)
+        fileThis.parents('.release-header').css('background','none')
+        fileThis.siblings('span').html('点击更换主图')
+    }
+
+
+    // 上传服务图片
+    if(settings.id == 'upload2') {
+        let item = $(' <div class="box-img">\n' +
+            '      <img class="service-load-img" src="' + $(self).siblings('.container').find('.image').cropper('getCroppedCanvas').toDataURL() + '" alt="">\n' +
+            '      <div class="deleteImg" onclick="deleteImg(this,' + settings.len + ')"></div>\n' +
+            '      </div>');
+
+        let fileThisDom = fileThis.parents('.box-img')
+        if (fileThisDom.siblings('.box-img').length + 1 > settings.len) {
+            $('.box-img.uploadBtn').hide()
+        }
+        else if (fileThisDom.siblings('.box-img').length + 1 == settings.len) {
+            fileThisDom.before(item)
+            $('.box-img.uploadBtn').hide()
+        }
+        else {
+            fileThisDom.before(item)
+        }
+
+    }
+
+    $(self).parents('.cropper-mask').remove()
+    $('.cropper-mask').eq(0).css('z-index',200)
+
+
+
+
+}
+
+
+
+
+
+    // 下一步验证
+    function submitNext() {
+        let s = $(".release1").verification({})
+        if(s){
+            window.location.href="/web-yinuo/service/serviceSee.html"
+        }
+    }
+</script>

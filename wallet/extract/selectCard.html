@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/jquery-2.1.4.min.js"></script>   <script src="../../js/jquery.lazyload.js"></script>
+  <script src="../../js/public.js"></script>
+</head>
+<body>
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  选择银行卡
+  <div class="return-btn">
+    <a href="#">新加银行卡</a>
+  </div>
+</div>
+<div class="select-card">
+  <ul>
+    <li onclick="afocus(this)" class="backf0f">
+      <div class="table-center">
+        <img src="../../images/bank/GDB.png" alt="">
+        <p>
+          <span class="f30">工商银行  储蓄卡</span>
+          <span class="col999">尾号6218</span>
+        </p>
+      </div>
+    </li>
+    <li onclick="afocus(this)">
+      <div class="table-center">
+        <img src="../../images/bank/GDB.png" alt="">
+        <p>
+          <span class="f30">工商银行  储蓄卡</span>
+          <span class="col999">尾号6218</span>
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="next pos-fix-b" >确&nbsp;&nbsp;认</div>
+</body>
+</html>
+<script>
+  function afocus(el) {
+      $(el).addClass('backf0f').siblings().removeClass('backf0f')
+  }
+</script>

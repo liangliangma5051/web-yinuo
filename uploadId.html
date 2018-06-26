@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/h5rem.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-2.1.4.min.js"></script>   <script src="js/jquery.lazyload.js"></script>
+  <script src="js/public.js"></script>
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <script src="js/swiper.min.js"></script>
+  <script src="js/public.js"></script>
+  <link href="css/cropper-4.0.0.css" rel="stylesheet">
+  <script src="js/cropper-4.0.0.js"></script>
+
+</head>
+<body>
+<!--返回上一页-->
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  上传身份证
+</div>
+<div class="release">
+  <!--上传身份证-->
+  <div class="release3" style="display: block">
+    <div  class="release-col ">
+      <h4>身份证正面</h4>
+      <div class="load-id">
+        <div class="deleteImg" style="display:none;" onclick="deleteImgId(this)"></div>
+        <div class="id-bj id-bj1"></div>
+        <div class="add-img" >
+          <input type="file" accept="image/*" id="upload1">
+        </div>
+      </div>
+      <h4>身份证反面</h4>
+      <div class="load-id">
+        <div class="deleteImg" style="display:none;"  onclick="deleteImgId(this)"></div>
+        <div class="id-bj id-bj2">
+          <!--<img class="load-id-mask" src="images/img.jpg" alt="">-->
+        </div>
+        <div class="add-img" >
+          <input type="file" accept="image/*" id="upload2">
+        </div>
+      </div>
+      <h4>手持身份证照片</h4>
+      <div class="load-id">
+        <div class="deleteImg" style="display:none;"  onclick="deleteImgId(this)"></div>
+        <div class="load-id-mask"></div>
+        <div class="id-bj id-bj3"></div>
+        <div class="add-img">
+          <input type="file" accept="image/*"  id="upload3">
+        </div>
+      </div>
+      <h4>身份证有效期至</h4>
+      <dl class="id-time clear-fix" id="dateShowBtn">
+        <input type="hidden" value="" id="dateSelectorOne">
+        <dd><time id="time1">1987</time><s>年</s></dd>
+        <dd><time id="time2">1987</time><s>月</s></dd>
+        <dd><time id="time3">1987</time><s>日</s></dd>
+      </dl>
+
+    </div>
+    <div class="next" >
+      提&nbsp;&nbsp;&nbsp;交
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+<script>
+    $(function(){
+        // 初始化图片上传
+        $('#upload1').uploadImg({len:1,aspectNum:3,id:'upload1'});
+        $('#upload2').uploadImg({len:1,aspectNum:3,id:'upload2'});
+        $('#upload3').uploadImg({len:1,aspectNum:3,id:'upload3'});
+    });
+
+    // 确定裁剪
+    function btnCropper(self,fileThis,settings,num) {
+        let item = $('<img class="load-id-mask" src="'+$(self).siblings('.container').find('.image').cropper('getCroppedCanvas').toDataURL()+'" alt="">')
+        fileThis.parents('.load-id').find('.id-bj').append(item);
+        fileThis.parents('.load-id').find('.deleteImg').show();
+
+        $(self).parents('.cropper-mask').remove();
+        $('.cropper-mask').eq(0).css('z-index',200)
+    }
+
+    // 图片删除
+    function deleteImgId(self) {
+        $(self).siblings('.id-bj').find('img').remove()
+        $(self).hide()
+    }
+
+</script>
+<!--选择日期插件-->
+<script src="js/iScroll.js"></script>
+<script src="js/Mdate.js"></script>
+<script>
+    // 最长不超过6个月
+    var oDate = new Date();
+    var year =  oDate.getFullYear();  // 年
+    var month =  oDate.getMonth()+1;  // 月( 0-11 )
+    var date =  oDate.getDate();  // 日
+
+  var newData = new Mdate("dateShowBtn", {
+//"dateShowBtn"为你点击触发Mdate的id，必填项
+
+        acceptId: "dateSelectorOne",
+//此项为你要显示选择后的日期的input，不填写默认为上一行的"dateShowBtn"
+
+        beginYear: year,
+//此项为Mdate的初始年份，不填写默认为2000
+
+        beginMonth: month,
+//此项为Mdate的初始月份，不填写默认为1
+
+        beginDay: date,
+//此项为Mdate的初始日期，不填写默认为1
+        endYear: year+20,
+        //此项为Mdate的结束年份，不填写默认为当年
+        endMonth: month,
+        //此项为Mdate的结束月份，不填写默认为当月
+        endDay: date,
+        //此项为Mdate的结束日期，不填写默认为当天
+
+        format: "-",
+//此项为Mdate需要显示的格式，可填写"/"或"-"或".",不填写默认为年月日
+     /* dateCancel:function () {
+          alert()
+      }*/
+
+    })
+    // 确定日期
+    var  MdatePlugin = document.getElementById('MdatePlugin')
+    var  dateSelectorOne = document.getElementById('dateSelectorOne')
+    var  time1 = document.getElementById('time1')
+    var  time2 = document.getElementById('time2')
+    var  time3 = document.getElementById('time3')
+    newData.dateCancel=function () {
+        MdatePlugin.className = 'slideOut';
+        let  arr = dateSelectorOne.value.split('-')
+        time1.innerHTML = arr[0]
+        time2.innerHTML = arr[1]
+        time3.innerHTML = arr[2]
+        setTimeout(function () {
+            MdatePlugin.innerHTML = ""
+        }, 800)
+    }
+</script>

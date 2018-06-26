@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>   <script src="../js/jquery.lazyload.js"></script>
+  <script src="../js/public.js"></script>
+</head>
+<body>
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  诺券交换
+</div>
+<div class="exchange">
+  <div class="item box-scroll box-scroll-top">
+    <div class="exchange-msg">
+      <p>对方尚未同意诺券互换请求，请耐心等待...</p>
+      <p class="colec2">请输入本次诺券交换的金额</p>
+    </div>
+    <ul>
+      <li>
+        <div class="exchange-top">
+          <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+          <s class="name">王晓1</s>
+          <i class="sex sex1"></i>
+          <s>18</s>
+          <a class="fr" href="#">
+            联系TA
+          </a>
+        </div>
+        <p class="title">
+          TA的诺券
+          <s class="fr">交换中</s>
+        </p>
+        <ul class="center-list">
+          <li>
+            <a href="#">
+              <img src="../../images/img.jpg" data-original="../images/img.jpg" alt="" style="display: block;">
+              <div class="right">
+                <p>富岗苹果红富士苹果水果太行山特
+                  产特产特产特产特产特产特产特产特产特产特产特产特产特产特</p>
+                <p class="price colec2"><s>300</s>&nbsp;元/份</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div class="set-col">
+          <div class="card-img">
+            <img src="../images/card.jpg" alt="">
+            <div class="name">
+              飞猪侠  2诺108次
+            </div>
+            <div class="font-num left">
+              <b>30</b>元
+            </div>
+            <div class="font-num total">
+              余额:270
+            </div>
+            <time class="font-num">2018 03 02</time>
+          </div>
+        </div>
+       <!-- <p class="bottom">
+          <s class="colec2">退回额:200元</s>   余额:70元
+          <span>取消退款</span>
+        </p>-->
+      </li>
+    </ul>
+
+    <div class="exchange-center-box">
+      <p> 本次交换金额：<input type="tel" value="1000">&nbsp;&nbsp;元</p>
+      <span>当前可用额度：3000元</span>
+    </div>
+
+    <ul>
+      <li>
+        <p class="title">
+          我的诺券
+          <s class="fr col1cc419">交换中</s>
+        </p>
+        <ul class="center-list">
+          <li>
+            <a href="#">
+              <img src="../../images/img.jpg" data-original="../images/img.jpg" alt="" style="display: block;">
+              <div class="right">
+                <p>富岗苹果红富士苹果水果太行山特
+                  产特产特产特产特产特产特产特产特产特产特产特产特产特产特</p>
+                <p class="price colec2"><s>300</s>&nbsp;元/份</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div class="set-col">
+          <div class="card-img">
+            <img src="../images/card.jpg" alt="">
+            <div class="name">
+              飞猪侠  2诺108次
+            </div>
+            <div class="font-num left">
+              <b>30</b>元
+            </div>
+            <div class="font-num total">
+              余额:270
+            </div>
+            <time class="font-num">2018 03 02</time>
+          </div>
+        </div>
+        <!-- <p class="bottom">
+           <s class="colec2">退回额:200元</s>   余额:70元
+           <span>取消退款</span>
+         </p>-->
+      </li>
+    </ul>
+
+    <dl class="exchange-item">
+      <dt>交换明细</dt>
+      <dd>
+        <div class="fl">
+          <h3>交换诺券300元</h3>
+          <h4>认购时间：2018-02-09  19:00</h4>
+        </div>
+        <div class="fr">
+          <p>主动发起</p>
+          <h6 class="colec2">交换失败</h6>
+        </div>
+      </dd>
+      <dd>
+        <div class="fl">
+          <h3>交换诺券300元</h3>
+          <h4>认购时间：2018-02-09  19:00</h4>
+        </div>
+        <div class="fr">
+          <p>被动发起</p>
+          <h6 class="col1cc419">交换成功</h6>
+        </div>
+      </dd>
+
+    </dl>
+
+  </div>
+</div>
+<!--同意交换-->
+<div class="mask" style="display: none;"></div>
+<!--立即兑换-->
+<div class="mask" style="display: none;"></div>
+<div class="mask-service" style="display: none;">
+  <div class="close" onclick="closeMask()">
+    <i></i>
+  </div>
+  <img src="../images/img.jpg" alt="">
+  <div class="col-header">
+    <h3>篮球一对一培训</h3>
+    <h4 class="colec2">&yen;200</h4>
+    <h5>最低认购额:100元</h5>
+  </div>
+  <div class="col-body clear-fix">
+    <div class="fl">
+      消费额度 <s class="col999">（当前可购2000元）</s>
+    </div>
+    <div class="fr">
+      <i class="jia sty1" onclick="reduce(this,300)"></i>
+      <input type="text" value="1000" readonly>
+      <i class="jia sty2" onclick="plus(this,300,2000)"></i>
+      元
+    </div>
+  </div>
+  <textarea placeholder="备注:如需寄送到家，请将地址和其他注意事项告知发诺人"></textarea>
+  <footer>
+    <div class="service">
+      <a class="line" href="javascript:">
+        <p>确定交换</p>
+      </a>
+    </div>
+  </footer>
+</div>
+
+
+
+<!--<footer>
+  <div class="service">
+    <div class="btn backfff">查看诺券</div>
+    <div class="btn" onclick="showMask()">兑换服务</div>
+    <div class="btn backfff">同意交换</div>
+    <div class="btn" onclick="showMask()">拒绝交换</div>
+  </div>
+</footer>-->
+<!--取消退回-->
+
+<div class="add-address">
+  <div class="submit-button">
+    <a href="exchange.html">
+    发起交换
+    </a>
+    <!--取消交换-->
+    <!--重新交换-->
+    <!--同意交换-->
+  </div>
+</div>
+</body>
+</html>
+
+
+<script>
+    //关闭
+    function closeMask() {
+        $('.mask').hide()
+        $('.mask-service').slideUp()
+    }
+    function showMask() {
+        $('.mask').show()
+        $('.mask-service').slideDown()
+    }
+</script>
+
+
+
+
+

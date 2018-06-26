@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/jquery-2.1.4.min.js"></script>   <script src="../../js/jquery.lazyload.js"></script>
+</head>
+<body>
+<!--返回上一页-->
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  交易明细
+  <!--<div class="return-btn">跳过</div>-->
+</div>
+<div class="wallet details box-scroll">
+  <dl>
+    <dt>
+      <div class="fl">
+        <p>2018年4月</p>
+        <span>支出&yen;0.00 收入&yen;0.72</span>
+      </div>
+      <div class="fr" id="dateShowBtn">
+        <input type="hidden" id="dateSelectorOne">
+        <i></i>
+      </div>
+    </dt>
+    <dd>
+      <div class="fl">
+        <p>高级化妆预售</p>
+        <span>2018/03/26 08:23:12</span>
+      </div>
+      <div class="fr">
+        <h4>+300</h4>
+        <h5>收入</h5>
+      </div>
+    </dd>
+    <dd>
+      <div class="fl">
+        <p>高级化妆预售</p>
+        <span>2018/03/26 08:23:12</span>
+      </div>
+      <div class="fr">
+        <h4>-300</h4>
+        <h5>支出</h5>
+      </div>
+    </dd>
+    <dt>
+      <p>2018年4月</p>
+      <span>支出&yen;0.00 收入&yen;0.72</span>
+    </dt>
+    <dd>
+      <div class="fl">
+        <p>高级化妆预售</p>
+        <span>2018/03/26 08:23:12</span>
+      </div>
+      <div class="fr">
+        <h4>-300</h4>
+        <h5>支出</h5>
+      </div>
+    </dd>
+    <dd>
+      <div class="fl">
+        <p>高级化妆预售</p>
+        <span>2018/03/26 08:23:12</span>
+      </div>
+      <div class="fr">
+        <h4>+300</h4>
+        <h5>收入</h5>
+      </div>
+    </dd>
+    <dd>
+      <div class="fl">
+        <p>高级化妆预售</p>
+        <span>2018/03/26 08:23:12</span>
+      </div>
+      <div class="fr">
+        <h4>-300</h4>
+        <h5>支出</h5>
+      </div>
+    </dd>
+    <dt>
+      <p>2018年4月</p>
+      <span>支出&yen;0.00 收入&yen;0.72</span>
+    </dt>
+    <dd>
+      <div class="fl">
+        <p>高级化妆预售</p>
+        <span>2018/03/26 08:23:12</span>
+      </div>
+      <div class="fr">
+        <h4>-300</h4>
+        <h5>支出</h5>
+      </div>
+    </dd>
+  </dl>
+</div>
+</body>
+</html>
+<!--选择日期插件-->
+<script src="../../js/iScroll.js"></script>
+<script src="../../js/Mdate.js"></script>
+<script>
+    // 最长不超过6个月
+    var oDate = new Date();
+    var year =  oDate.getFullYear();  // 年
+    var month =  oDate.getMonth()+1;  // 月( 0-11 )
+    var date =  oDate.getDate();  // 日
+    var newDate = new Mdate("dateShowBtn", {
+//"dateShowBtn"为你点击触发Mdate的id，必填项
+
+        acceptId: "dateSelectorOne",
+//此项为你要显示选择后的日期的input，不填写默认为上一行的"dateShowBtn"
+
+        beginYear: year-3,
+//此项为Mdate的初始年份，不填写默认为2000
+
+        beginMonth: month,
+//此项为Mdate的初始月份，不填写默认为1
+
+        beginDay: date,
+//此项为Mdate的初始日期，不填写默认为1
+
+        endYear: year,
+        //此项为Mdate的结束年份，不填写默认为当年
+        endMonth: month,
+        //此项为Mdate的结束月份，不填写默认为当月
+        endDay: date,
+        //此项为Mdate的结束日期，不填写默认为当天
+
+        format: "-",
+//此项为Mdate需要显示的格式，可填写"/"或"-"或".",不填写默认为年月日
+
+
+    })
+    // 确定日期
+    var  MdatePlugin = document.getElementById('MdatePlugin')
+    var  dateSelectorOne = document.getElementById('dateSelectorOne')
+
+    newDate.dateCancel=function () {
+        MdatePlugin.className = 'slideOut';
+        let  arr = dateSelectorOne.value.split('-');
+        console.log(arr)
+        setTimeout(function () {
+            MdatePlugin.innerHTML = ""
+        }, 800)
+    }
+
+</script>

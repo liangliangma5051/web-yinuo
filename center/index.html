@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>   <script src="../js/jquery.lazyload.js"></script>
+  <script src="../js/public.js"></script>
+</head>
+<body>
+<div class="center-wrap">
+  <div class="center-header">
+    <div class="center-header-bj">
+      <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="">
+      <a href="../user/user.html" class="set">
+        <i></i>
+        设置
+      </a>
+      <div class="name">
+        <s></s>
+        肖瑞
+        <i class="sex sex1"></i>
+        <span>18</span>
+
+      </div>
+      <div class="label-box">
+        <s class="label">上门服务</s>
+        <s class="label">上门服务</s>
+        <s class="label">上门服务</s>
+        <s class="label">上门服务</s>
+        <s class="label">上门服务</s>
+        <s class="label">上门服务</s>
+      </div>
+    </div>
+
+  </div>
+  <ul class="center-body clear-fix">
+    <li>
+      <a href="../wallet">
+        <i class="t6"></i>
+        <p>我的钱包</p>
+      </a>
+    </li>
+    <li>
+      <a href="../voucher">
+        <i class="t7"></i>
+        <p>我的诺券</p>
+      </a>
+    </li>
+    <li>
+      <a href="../exchange">
+        <i class="t8"></i>
+        <p>换诺申请</p>
+      </a>
+    </li>
+
+    <li>
+      <a href="../service/manage.html">
+        <i class="t9"></i>
+        <p>服务管理</p>
+      </a>
+    </li>
+    <li>
+      <a href="../order/buy">
+        <i class="t10"></i>
+        <p>我买的</p>
+      </a>
+    </li>
+    <li>
+      <a href="../order/accept">
+        <i class="t11"></i>
+        <p>我卖的</p>
+      </a>
+    </li>
+
+    <li>
+      <a href="../seekBuy">
+        <i class="t12"></i>
+        <p>求购管理</p>
+      </a>
+    </li>
+    <li>
+      <a href="../msg/myFriends.html">
+        <i class="t13"></i>
+        <p>我的好友</p>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+<footer>
+  <dl class="clear-fix">
+    <dd>
+      <a href="../index.html">
+        <i class="index-page checked"></i>
+        <s>首页</s>
+      </a>
+    </dd>
+    <dd>
+      <a href="../seekBuy/list.html">
+        <i class="demand-page"></i>
+        <s>求购</s>
+      </a>
+    </dd>
+    <dd onclick="showMask()">
+      <a href="javascript:void(0)">
+        <i class="add-page"></i>
+        <s class="text">发布</s>
+      </a>
+    </dd>
+    <dd>
+      <a href="../center/personal.html">
+        <i class="msg-page"></i>
+        <s>主页</s>
+      </a>
+    </dd>
+    <dd >
+      <a href="../center/index.html">
+        <i class="my-page "></i>
+        <s>我的</s>
+      </a>
+    </dd>
+  </dl>
+</footer>
+<div class="mask-release" onclick="hideMask()">
+  <a href="../seekBuy/release.html" class="icon1"></a>
+  <a href="../service/index.html" class="icon2"></a>
+</div>
+</body>
+</html>
+<script>
+    function showMask() {
+        $('.mask-release').show()
+    }
+    function hideMask() {
+        $('.mask-release').hide()
+    }
+</script>

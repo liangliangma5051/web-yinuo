@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>   <script src="../js/jquery.lazyload.js"></script>
+  <script src="../js/public.js"></script>
+</head>
+<body>
+<div class="wrap1" style="display: block">
+  <div class="return">
+    <i onclick="history.go(-1)"></i>
+    支付
+  </div>
+  <div class="payment">
+    <h3>付款金额（元）</h3>
+    <h1><b>68</b></h1>
+    <p>剩余时间：<span class="timer" ></span></p>
+    <div class="height20"></div>
+    <ul class="payment-type">
+      <li class="col666">请选择支付方式</li>
+      <li class="col999">
+        <img class="payment-type1" src="../images/index/payment-type1.icon.png" alt="">余额支付(0元，余额不足）
+      </li>
+      <li onclick="follow(this)" class="checked">
+        <img class="payment-type1"   src="../images/index/payment-type2.icon.png" alt="">余额支付
+      </li>
+      <li onclick="follow(this)">
+        <img class="payment-type2" src="../images/index/payment-type3.icon.png" alt="">微信支付
+      </li>
+      <li onclick="follow(this,1)">
+        <img class="payment-type3" src="../images/index/payment-type4.icon.png?v=1" alt="">选择银行卡支付
+      </li>
+
+    </ul>
+    <div class="submit-button bac1cc419" onclick="payment()">
+      <a href="javascript:;">
+        确认支付
+      </a>
+    </div>
+    <div class="payment-mask" style="display: none">
+    </div>
+
+  </div>
+</div>
+
+<!--选择银行卡-->
+<div class="wrap2" style="display: none">
+  <div class="return">
+    <i></i>
+    选择银行卡
+    <div class="return-btn">
+      <a href="../wallet/card/addCard.html">新加银行卡</a>
+    </div>
+  </div>
+  <div class="select-card">
+    <ul>
+      <li onclick="afocus(this)" class="backf0f">
+        <div class="table-center">
+          <img src="../images/bank/GDB.png" alt="">
+          <p>
+            <span class="f30">工商银行  储蓄卡</span>
+            <span class="col999">尾号6218</span>
+          </p>
+        </div>
+      </li>
+      <li onclick="afocus(this)">
+        <div class="table-center">
+          <img src="../images/bank/GDB.png" alt="">
+          <p>
+            <span class="f30">工商银行  储蓄卡</span>
+            <span class="col999">尾号6218</span>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="next pos-fix-b" onclick="selectCard()">确&nbsp;&nbsp;认</div>
+</div>
+
+<!--输入密码-->
+<div class="wrap3" style="display: none">
+  <div class="card-remove" >
+    <div class="return">
+      <i></i>
+      输入密码
+      <!--<div class="return-btn">跳过</div>-->
+    </div>
+    <div class="remove-bind-card">
+      <p>输入支付密码验证身份</p>
+      <input type="number" onkeyup="checkPassWorld(this)"  maxlength="1">
+      <input type="number" onkeyup="checkPassWorld(this)"  maxlength="1">
+      <input type="number" onkeyup="checkPassWorld(this)"  maxlength="1">
+      <input type="number" onkeyup="checkPassWorld(this)"  maxlength="1">
+      <input type="number" onkeyup="checkPassWorld(this)"  maxlength="1">
+      <input type="number" onkeyup="removeBindCard(this)"  maxlength="1">
+    </div>
+  </div>
+</div>
+
+<script>
+    function afocus(el) {
+        $(el).addClass('backf0f').siblings().removeClass('backf0f')
+    }
+    function selectCard() {
+        $('.wrap1').show();
+        $('.wrap2').hide();
+
+    }
+</script>
+
+<script>
+  // 初始化時間
+  $(function () {
+    $('.timer').countDown({second:60*60*2,hour:true})
+  })
+
+
+  // 选择支付方式
+  function follow(el,num) {
+      $(el).addClass('checked').siblings().removeClass('checked');
+      if(num === 1){
+          $('.wrap1').hide();
+          $('.wrap2').show();
+      }
+  }
+
+
+
+  function payment() {
+      $('.wrap3').show()
+      $('.wrap1').hide()
+      $('#put1').prop('autofocus',true)
+  }
+
+
+  // 密码输入框
+  function removeBindCard() {
+      alert('完成')
+  }
+
+  function checkPassWorld(e) {
+
+      if ($(e).val().length > 1) {
+          $(e).val().length = 1
+      }
+      if($(e).val() && $(e).val().match(/\d/)){
+          $(e).next().focus();
+
+      }else{
+          $(e).val('')
+      }
+      document.onkeydown = function(){
+          var oEvent = window.event;
+          if(oEvent.keyCode === 8){
+              $(e).val('')
+              $(e).next().val('')
+              $(e).prev().focus();
+          }
+
+      }
+  }
+
+
+</script>
+
+

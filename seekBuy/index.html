@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/h5rem.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-2.1.4.min.js"></script>   <script src="../js/jquery.lazyload.js"></script>
+  <script src="../js/public.js"></script>
+</head>
+<body>
+<!--返回上一页-->
+<div class="return">
+  <i onclick="history.go(-1)"></i>
+  我的求购
+</div>
+<div class="voucher">
+  <div class="voucher-mask"></div>
+  <ul class="buy-nav">
+    <li class="checked" >我发布的求购</li>
+    <li>我参与的求购</li>
+  </ul>
+  <div class="buy-sub-nav">
+    <ul>
+      <li>
+        <s class="s3"></s>
+        发布时间
+      </li>
+      <li>
+        <s class="s1"></s>
+        筛选
+      </li>
+      <li>
+        <s class="s2"></s>
+        智能排序
+      </li>
+    </ul>
+  </div>
+  <dl class="search my" style="display: none">
+    <dd class="box-dl pl0">
+      <p class="checked"  onclick="window.location.href = window.location.pathname+'?a=1'">发布时间由远及近</p>
+      <p  onclick="window.location.href = window.location.pathname+'?a=2'">发布时间由近及远</p>
+    </dd>
+    <dd class="box-dl reset">
+      <div class="box-scroll">
+        <dl class="clear-fix">
+          <dt>性别</dt>
+          <dd onclick="selectRadio(this)">男</dd>
+          <dd onclick="selectRadio(this)">女</dd>
+        </dl>
+        <dl class="clear-fix">
+          <dt>诺级</dt>
+          <dd onclick="selectRadio(this)">5诺以下</dd>
+          <dd onclick="selectRadio(this)">10诺以下</dd>
+          <dd onclick="selectRadio(this)">20诺以下</dd>
+          <dd onclick="selectRadio(this)">30诺以上</dd>
+        </dl>
+        <dl class="clear-fix">
+          <dt>距离</dt>
+          <dd onclick="selectRadio(this)">5km以下</dd>
+          <dd onclick="selectRadio(this)">10km以下</dd>
+          <dd onclick="selectRadio(this)">20km以下</dd>
+          <dd onclick="selectRadio(this)">30km以上</dd>
+        </dl>
+        <dl class="clear-fix">
+          <dt>结束时间</dt>
+          <dd class="checked" onclick="selectRadio(this)">1天内</dd>
+          <dd onclick="selectRadio(this)">2周内</dd>
+          <dd onclick="selectRadio(this)">1月内</dd>
+          <dd onclick="selectRadio(this)">3月以上</dd>
+        </dl>
+        <dl class="clear-fix">
+          <dt>参与人数</dt>
+          <dd onclick="selectRadio(this)">10人内</dd>
+          <dd onclick="selectRadio(this)">50人内</dd>
+          <dd onclick="selectRadio(this)">100人内</dd>
+          <dd onclick="selectRadio(this)">500人以上</dd>
+        </dl>
+        <dl class="search-put clear-fix">
+        <dt>预算</dt>
+        <dd><input type="tel" name="a1Start"></dd>
+        <dd class="and">至</dd>
+        <dd><input type="tel" name="a1End"></dd>
+        <dd class="and">元</dd>
+      </dl>
+      </div>
+      <div class="add-address">
+        <div class="search-submit ">
+          <div class="button reset" onclick="reset()">重 置</div>
+          <div class="button ok" onclick="submitSearch()">确  定</div>
+        </div>
+      </div>
+
+    </dd>
+    <dd class="box-dl pl0">
+      <p onclick="window.location.href = window.location.pathname+'?name=1'">按照结束时间远近</p>
+      <p onclick="window.location.href = window.location.pathname+'?name=2'">按照诺级高低排序</p>
+      <p onclick="window.location.href = window.location.pathname+'?name=3'">按距离远近</p>
+      <p onclick="window.location.href = window.location.pathname+'?name=4'">按预算多少</p>
+      <p onclick="window.location.href = window.location.pathname+'?name=5'">按参与人数多少排序 </p>
+    </dd>
+  </dl>
+  <!--我发布的求购-->
+  <div class="service-details box-scroll my">
+    <ul class="service">
+      <li class="last-more">
+        <dl>
+          <dd>
+            <div class="seek-top">
+              <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="" >
+              <span>王晓</span>
+              <i class="index-num">1诺&nbsp;10次</i>
+              <i class="sex sex1"></i>
+              <!--<i class="sex sex2"></i>-->
+              <s>18</s>
+            </div>
+            <a href="myDetails.html">
+              <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="" >
+              <div class="context">
+                <h3>
+                  1对1情景实战课1
+                  <span class="colec2">进行中</span>
+                </h3>
+                <h4>认购价:&nbsp;<span class="colec2">300元/份</span></h4>
+                <h5>最低认购额:300元</h5>
+              </div>
+            </a>
+          </dd>
+          <dd>
+            <div class="seek-top">
+              <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="" >
+              <span>王晓</span>
+              <i class="index-num">1诺&nbsp;10次</i>
+              <i class="sex sex1"></i>
+              <!--<i class="sex sex2"></i>-->
+              <s>18</s>
+            </div>
+            <a href="myDetails.html">
+              <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="" >
+              <div class="context">
+                <h3>
+                  1对1情景实战课1
+                  <span>未发布</span>
+                </h3>
+                <h4>认购价:&nbsp;<span class="colec2">300元/份</span></h4>
+                <h5>最低认购额:300元</h5>
+              </div>
+            </a>
+          </dd>
+          <dd class="end">
+            <div class="seek-top">
+              <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="" >
+              <span>王晓</span>
+              <i class="index-num">1诺&nbsp;10次</i>
+              <i class="sex sex1"></i>
+              <!--<i class="sex sex2"></i>-->
+              <s>18</s>
+            </div>
+            <a href="myDetails.html">
+              <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="" >
+              <div class="context">
+                <h3>
+                  1对1情景实战课1
+                  <!--<span>以结束</span>-->
+                </h3>
+                <h4>认购价:&nbsp;<span class="colec2">300元/份</span></h4>
+                <h5>最低认购额:300元</h5>
+              </div>
+            </a>
+          </dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+  <!--我参与的求购-->
+  <div style="display:none;" class="service-details box-scroll my">
+    <ul class="service">
+      <li class="last-more">
+        <dl>
+          <dd>
+            <div class="seek-top">
+              <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="" >
+              <span>王晓2</span>
+              <i class="index-num">1诺&nbsp;10次</i>
+              <i class="sex sex1"></i>
+              <!--<i class="sex sex2"></i>-->
+              <s>18</s>
+            </div>
+            <a href="details.html">
+              <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="" >
+              <div class="context">
+                <h3>
+                  1对1情景实战课1
+                  <span class="colec2">进行中</span>
+                </h3>
+                <h4>认购价:&nbsp;<span class="colec2">300元/份</span></h4>
+                <h5>最低认购额:300元</h5>
+              </div>
+            </a>
+          </dd>
+          <dd>
+            <div class="seek-top">
+              <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="" >
+              <span>王晓</span>
+              <i class="index-num">1诺&nbsp;10次</i>
+              <i class="sex sex1"></i>
+              <!--<i class="sex sex2"></i>-->
+              <s>18</s>
+            </div>
+            <a href="details.html">
+              <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="" >
+              <div class="context">
+                <h3>
+                  1对1情景实战课1
+                  <span>未发布</span>
+                </h3>
+                <h4>认购价:&nbsp;<span class="colec2">300元/份</span></h4>
+                <h5>最低认购额:300元</h5>
+              </div>
+            </a>
+          </dd>
+          <dd class="end">
+            <div class="seek-top">
+              <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="" >
+              <span>王晓</span>
+              <i class="index-num">1诺&nbsp;10次</i>
+              <i class="sex sex1"></i>
+              <!--<i class="sex sex2"></i>-->
+              <s>18</s>
+            </div>
+            <a href="details.html">
+              <img src="../images/lazyloadImg.jpg" data-original="../images/img.jpg" alt="" >
+              <div class="context">
+                <h3>
+                  1对1情景实战课1
+                  <!--<span>以结束</span>-->
+                </h3>
+                <h4>认购价:&nbsp;<span class="colec2">300元/份</span></h4>
+                <h5>最低认购额:300元</h5>
+              </div>
+            </a>
+          </dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
+<script>
+    // 切换
+    $('.buy-nav li').on('click',function () {
+        $('.search').hide();
+        $(this).addClass('checked').siblings().removeClass('checked');
+        $('.service-details').eq($(this).index()).show().siblings('.service-details').hide();
+    })
+    
+    $('.search .box-dl').each(function (index,current) {
+        if($(current).find('.checked').length>0){
+            $('.buy-sub-nav li').eq(index).addClass('checked')
+        }
+    })
+
+    $('.buy-sub-nav li').on('click',function () {
+        let self = $('.search .box-dl').eq($(this).index());
+        if(self.is(":hidden")){
+            $('.search').show();
+            $(this).addClass('checked');
+            self.show().siblings().hide();
+        }else{
+            $('.search').hide();
+            if($('.search .box-dl').eq($(this).index()).find('.checked').length>0){
+                $(this).addClass('checked');
+            }else{
+                $(this).removeClass('checked');
+            }
+        }
+    })
+
+    // 选择单选
+    function selectRadio(e) {
+        $(e).toggleClass('checked').siblings().removeClass('checked')
+    }
+    // 重置
+    function reset() {
+        $('.reset').find('dd').removeClass('checked')
+    }
+    // 提交搜索
+    function submitSearch() {
+        let a1Start = $.trim($('input[name="a1Start"]').val());
+        let a1End = $.trim($('input[name="a1End"]').val());
+        let isA1 = a1Start !== '' && a1End !== '';
+        if(a1Start==='' && a1End === ''){
+            isA1 = true
+        }else{
+            if((/^[0-9]*[1-9][0-9]*$/).test(a1Start) && (/^[0-9]*[1-9][0-9]*$/).test(a1End)){
+                isA1 = true
+            }else{
+                isA1 = false
+            }
+        }
+        if(!isA1){
+            titleMsg('预算输入有误')
+            return false
+        }
+
+        alert('验证通过')
+        console.log($('.box-dl dd.checked').text())
+        $('.search').hide()
+    }
+  
+</script>
